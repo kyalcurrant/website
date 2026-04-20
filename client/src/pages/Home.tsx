@@ -157,6 +157,7 @@ export default function Home() {
               { label: "About", href: "#about" },
               { label: "The Retreat", href: "#retreat" },
               { label: "The Book", href: "#book" },
+              { label: "Podcast", href: "/podcast" },
               { label: "Testimonials", href: "#testimonials" },
             ].map((item) => (
               <a
@@ -192,6 +193,7 @@ export default function Home() {
               { label: "About", href: "#about" },
               { label: "The Retreat", href: "#retreat" },
               { label: "The Book", href: "#book" },
+              { label: "Podcast", href: "/podcast" },
               { label: "Testimonials", href: "#testimonials" },
             ].map((item) => (
               <a
@@ -374,7 +376,7 @@ export default function Home() {
                     14+
                   </p>
                   <p className="font-body text-xs" style={{ color: "oklch(0.75 0.01 75)", fontFamily: "'DM Sans', sans-serif" }}>
-                    Countries & Global Summits
+                    Countries Virtually &amp; Global Summits
                   </p>
                 </div>
               </div>
@@ -403,7 +405,7 @@ export default function Home() {
                 What changed everything for me was learning to listen to what the energy inside my body was actually saying. Not override it. Not manage it. <em>Listen to it.</em>
               </p>
               <p className="font-body mb-8" style={{ color: "oklch(0.35 0.04 75)", lineHeight: "1.8", fontFamily: "'DM Sans', sans-serif" }}>
-                I've now spoken in 14+ countries, facilitated transformation for hundreds of leaders, and built a methodology that sits at the intersection of trauma science, somatic intelligence, and the ancient wisdom of the land. I'm not here to fix you. I'm here to help you remember what you already know.
+                I've now spoken in 14+ countries virtually, facilitated transformation for hundreds of leaders, and built a methodology that sits at the intersection of trauma science, somatic intelligence, and the ancient wisdom of the land. I'm not here to fix you. I'm here to help you remember what you already know.
               </p>
               <div className="flex flex-wrap gap-4">
                 <a href="#retreat" className="btn-gold">Work With Kyal</a>
@@ -543,23 +545,7 @@ export default function Home() {
                   </div>
                 ))}
               </div>
-              <div
-                className="flex items-end justify-between mb-8 pb-6"
-                style={{ borderBottom: "1px solid oklch(0.72 0.12 75 / 0.25)" }}
-              >
-                <div>
-                  <p className="section-label mb-1">Total Value</p>
-                  <p className="font-display text-2xl line-through opacity-40" style={{ color: "oklch(0.96 0.015 75)", fontFamily: "'Playfair Display', serif" }}>
-                    $6,500+
-                  </p>
-                </div>
-                <div className="text-right">
-                  <p className="section-label mb-1">Your Investment</p>
-                  <p className="font-display text-4xl font-bold" style={{ color: "oklch(0.72 0.12 75)", fontFamily: "'Playfair Display', serif" }}>
-                    $2,997
-                  </p>
-                </div>
-              </div>
+
               <div className="mb-4">
                 <p className="font-body text-xs mb-4" style={{ color: "oklch(0.65 0.01 75)", fontFamily: "'DM Sans', sans-serif" }}>
                   Maximum 7 places. This is an intimate, high-touch experience. Once it's full, it's full.
@@ -877,7 +863,7 @@ export default function Home() {
               {
                 level: "Entry",
                 title: "Live Events & Talks",
-                price: "Free — $97",
+                price: "From $97",
                 desc: "Experience Kyal's energy and methodology live. The starting point for many who go on to do the deeper work.",
                 cta: "Find an Event",
                 href: "#",
@@ -895,7 +881,7 @@ export default function Home() {
               {
                 level: "Transformation",
                 title: "Connected Retreat",
-                price: "$2,997",
+                price: "Apply to Join",
                 desc: "Three days on sacred land. The work that changes everything. Maximum 7 people per cohort.",
                 cta: "Apply Now",
                 href: "#retreat",
@@ -904,7 +890,7 @@ export default function Home() {
               {
                 level: "Mastery",
                 title: "12-Month Mastermind",
-                price: "$25,000",
+                price: "Application Only",
                 desc: "For leaders who've done the retreat and are ready to build their legacy at scale. Application only.",
                 cta: "Express Interest",
                 href: "mailto:kyal@kyalcurrant.com?subject=Mastermind Interest",
@@ -1016,7 +1002,7 @@ export default function Home() {
                 stage or summit.
               </h2>
               <p className="font-body mb-5" style={{ color: "oklch(0.35 0.04 75)", lineHeight: "1.8", fontFamily: "'DM Sans', sans-serif" }}>
-                Kyal has spoken at global summits and events in 14+ countries. His talks blend raw personal story, somatic science, and practical tools that audiences feel in their bodies, not just their heads.
+                Kyal has spoken at global summits and events in 14+ countries virtually. His talks blend raw personal story, somatic science, and practical tools that audiences feel in their bodies, not just their heads.
               </p>
               <p className="font-body mb-8" style={{ color: "oklch(0.35 0.04 75)", lineHeight: "1.8", fontFamily: "'DM Sans', sans-serif" }}>
                 Whether it's a corporate leadership event, a wellness summit, or a personal development conference, Kyal's presence on your stage will be the talk of the room.
@@ -1066,7 +1052,7 @@ export default function Home() {
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <a href="mailto:kyal@kyalcurrant.com?subject=Connected Retreat Application" className="btn-gold">
-                Apply for a Place — $2,997
+                Apply for a Place
               </a>
               <button onClick={() => setModalOpen(true)} className="btn-outline-cream">
                 Not Ready Yet? Start Here.

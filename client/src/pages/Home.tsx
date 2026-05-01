@@ -720,21 +720,21 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
-                quote: "I've done every kind of coaching. Nothing touched what Kyal touched in three days. I left feeling like I'd been given my body back.",
-                name: "Michael R.",
-                role: "Founder, 7-figure business",
+                quote: "From tears to tribulation. You have been holding space and guiding me through my limitations and blockages. It was a breakthrough that gave me instant peace within. For me it felt like a natural gift.",
+                name: "Karine Smith",
+                role: "Coaching Client",
                 img: KYAL_4,
               },
               {
-                quote: "I didn't understand why I kept getting injured. After the retreat, I understood everything. The work Kyal does is unlike anything I've experienced.",
-                name: "Sarah T.",
-                role: "Executive Leader",
+                quote: "Instantly upon meeting Kyal, I felt at ease. His energy felt familiar, warm and relaxed. I was able to drop into my unconscious mind and freely work through the 5 core emotions. Since this session I have felt amazing, more at ease, relaxed and focused on my future.",
+                name: "Keven McDougall",
+                role: "Time Line Therapy Client",
                 img: KYAL_7,
               },
               {
-                quote: "I came in disconnected and numb. I left with a clarity about who I am and what I'm building that I've never had before. This is the work.",
-                name: "James K.",
-                role: "Entrepreneur & Speaker",
+                quote: "In only 30 minutes Kyal helped me reframe new ways to go deeper with a potential new client when they come up with objections on a sales call. This skill is absolutely fundamental for anyone having a service based business.",
+                name: "Lahaina",
+                role: "Confidence Coach",
                 img: KYAL_3,
               },
             ].map((t) => (

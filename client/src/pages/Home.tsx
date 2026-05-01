@@ -158,7 +158,7 @@ export default function Home() {
               { label: "The Retreat", href: "#retreat" },
               { label: "The Book", href: "#book" },
               { label: "Podcast", href: "/podcast" },
-              { label: "Testimonials", href: "#testimonials" },
+              { label: "Testimonials", href: "/testimonials" },
             ].map((item) => (
               <a
                 key={item.label}
@@ -194,7 +194,7 @@ export default function Home() {
               { label: "The Retreat", href: "#retreat" },
               { label: "The Book", href: "#book" },
               { label: "Podcast", href: "/podcast" },
-              { label: "Testimonials", href: "#testimonials" },
+              { label: "Testimonials", href: "/testimonials" },
             ].map((item) => (
               <a
                 key={item.label}
@@ -755,15 +755,7 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ════════════════════════════════════════════════════
-          THE BOOK
-      ════════════════════════════════════════════════════ */}
+              </div>            ))}\n          </div>\n          <div className="text-center mt-12 reveal">\n            <a href="/testimonials" className="btn-gold" style={{ padding: "0.75rem 2rem", fontSize: "0.875rem" }}>\n              See All Video Testimonials\n            </a>\n          </div>\n        </div>\n      </section>\n\n      {/* ════════════════════════════════════════════════════\n          THE BOOK  ════════════════════════════════════════════════════ */}
       <section
         id="book"
         style={{ background: "oklch(0.96 0.015 75)", padding: "7rem 0" }}

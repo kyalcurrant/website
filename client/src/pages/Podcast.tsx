@@ -222,7 +222,7 @@ export default function Podcast() {
             className="font-display text-lg tracking-wide"
             style={{ color: "oklch(0.96 0.015 75)", fontFamily: "'Playfair Display', serif", textDecoration: "none" }}
           >
-            Kyal Currant
+            Kyal Neil Currant
           </a>
           <div className="hidden md:flex items-center gap-8">
             {[
@@ -290,7 +290,7 @@ export default function Podcast() {
               className="font-body text-lg"
               style={{ color: "oklch(0.75 0.01 75)", lineHeight: "1.8", maxWidth: "520px", fontFamily: "'DM Sans', sans-serif" }}
             >
-              Conversations about what it means to be human, to lead with your whole body, and to build a life that actually feels like yours. Hosted by Kyal Currant.
+              Conversations about what it means to be human, to lead with your whole body, and to build a life that actually feels like yours. Hosted by Kyal Neil Currant.
             </p>
 
             {/* Subscribe links — add real URLs when available */}
@@ -428,13 +428,13 @@ export default function Podcast() {
       <footer style={{ background: "oklch(0.14 0.04 155)", borderTop: "1px solid oklch(0.72 0.12 75 / 0.15)", padding: "2.5rem 0" }}>
         <div className="container flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="font-display text-lg" style={{ color: "oklch(0.96 0.015 75)", fontFamily: "'Playfair Display', serif" }}>
-            Kyal Currant
+            Kyal Neil Currant
           </p>
           <a href="/" style={{ color: "oklch(0.55 0.01 75)", fontFamily: "'DM Sans', sans-serif", fontSize: "0.75rem", textDecoration: "none" }}>
             ← Back to main site
           </a>
           <p className="font-body text-xs" style={{ color: "oklch(0.4 0.02 75)", fontFamily: "'DM Sans', sans-serif" }}>
-            © 2025 Kyal Currant
+            © 2025 Kyal Neil Currant
           </p>
         </div>
       </footer>

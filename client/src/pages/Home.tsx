@@ -149,7 +149,7 @@ export default function Home() {
       <nav className={`site-nav ${scrolled ? "scrolled" : ""}`} style={!scrolled ? { background: "transparent" } : {}}>
         <div className="container flex items-center justify-between py-5">
           <a href="#" className="font-display text-lg tracking-wide" style={{ color: "oklch(0.96 0.015 75)", fontFamily: "'Playfair Display', serif", textDecoration: "none" }}>
-            Kyal Currant
+            Kyal Neil Currant
           </a>
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-8">
@@ -341,7 +341,7 @@ export default function Home() {
             >
               "You are not holding energy that hasn't been expressed. You are not broken. You are holding energy that hasn't been expressed."
             </p>
-            <p className="section-label mt-5" style={{ color: "oklch(0.72 0.12 75 / 0.7)" }}>— Kyal Currant</p>
+            <p className="section-label mt-5" style={{ color: "oklch(0.72 0.12 75 / 0.7)" }}>— Kyal Neil Currant</p>
           </div>
         </div>
       </section>
@@ -360,7 +360,7 @@ export default function Home() {
               <div className="relative">
                 <img
                   src={KYAL_1}
-                  alt="Kyal Currant"
+                  alt="Kyal Neil Currant"
                   className="w-full object-cover"
                   style={{ maxHeight: "600px", objectPosition: "top" }}
                 />
@@ -791,7 +791,7 @@ export default function Home() {
                     <p className="font-body text-xs" style={{ color: "oklch(0.75 0.01 75)", fontFamily: "'DM Sans', sans-serif", lineHeight: "1.6" }}>
                       How to heal trauma and overcome disability to transform your life
                     </p>
-                    <p className="section-label mt-4" style={{ color: "oklch(0.72 0.12 75 / 0.7)" }}>Kyal Currant</p>
+                    <p className="section-label mt-4" style={{ color: "oklch(0.72 0.12 75 / 0.7)" }}>Kyal Neil Currant</p>
                   </div>
                 </div>
               </div>
@@ -1006,7 +1006,7 @@ export default function Home() {
             <div className="reveal">
               <img
                 src={KYAL_4}
-                alt="Kyal Currant speaking"
+                alt="Kyal Neil Currant speaking"
                 className="w-full object-cover"
                 style={{ maxHeight: "480px", objectPosition: "top" }}
               />
@@ -1067,7 +1067,7 @@ export default function Home() {
                 className="font-display text-xl mb-1"
                 style={{ color: "oklch(0.96 0.015 75)", fontFamily: "'Playfair Display', serif" }}
               >
-                Kyal Currant
+                Kyal Neil Currant
               </p>
               <p className="font-body text-xs" style={{ color: "oklch(0.55 0.01 75)", fontFamily: "'DM Sans', sans-serif" }}>
                 Trauma-Informed Facilitator · Speaker · Coach
@@ -1094,7 +1094,7 @@ export default function Home() {
               ))}
             </div>
             <p className="font-body text-xs" style={{ color: "oklch(0.4 0.02 75)", fontFamily: "'DM Sans', sans-serif" }}>
-              © 2025 Kyal Currant
+              © 2025 Kyal Neil Currant
             </p>
           </div>
         </div>

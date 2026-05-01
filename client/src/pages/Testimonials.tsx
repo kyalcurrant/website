@@ -324,7 +324,7 @@ export default function Testimonials() {
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <Link href="/">
             <span className="font-['Playfair_Display'] text-xl font-bold text-[#f5f0e8] cursor-pointer hover:text-[#c9a84c] transition-colors">
-              Kyal Currant
+              Kyal Neil Currant
             </span>
           </Link>
           <div className="hidden md:flex items-center gap-8">
@@ -544,11 +544,11 @@ export default function Testimonials() {
       <footer className="bg-[#0d1a0d] border-t border-white/10 py-10 px-6 text-center">
         <Link href="/">
           <span className="font-['Playfair_Display'] text-xl font-bold text-[#f5f0e8] cursor-pointer hover:text-[#c9a84c] transition-colors">
-            Kyal Currant
+            Kyal Neil Currant
           </span>
         </Link>
         <p className="text-[#f5f0e8]/40 text-xs mt-3">
-          © {new Date().getFullYear()} Kyal Currant. All rights reserved.
+          © {new Date().getFullYear()} Kyal Neil Currant. All rights reserved.
         </p>
       </footer>
 

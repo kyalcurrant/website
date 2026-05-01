@@ -417,7 +417,7 @@ export default function Home() {
       </section>
 
       {/* ════════════════════════════════════════════════════
-          LAND BREAK — Full-bleed Currumbin Valley
+          LAND BREAK — Full-bleed Sacred Land
       ════════════════════════════════════════════════════ */}
       <div
         className="relative"
@@ -431,7 +431,7 @@ export default function Home() {
         <div className="absolute inset-0" style={{ background: "oklch(0.12 0.04 155 / 0.45)" }} />
         <div className="relative h-full flex items-center justify-center text-center px-6">
           <div>
-            <p className="section-label mb-4" style={{ color: "oklch(0.72 0.12 75)" }}>Currumbin Valley, Queensland</p>
+            <p className="section-label mb-4" style={{ color: "oklch(0.72 0.12 75)" }}>Sacred Land</p>
             <h2
               className="font-display"
               style={{
@@ -471,7 +471,7 @@ export default function Home() {
             >
               Connected.<br />
               <em style={{ color: "oklch(0.72 0.12 75)" }}>A 3-Day Immersive Retreat</em><br />
-              in Currumbin.
+              on sacred land.
             </h2>
             <p className="font-body" style={{ color: "oklch(0.75 0.01 75)", lineHeight: "1.8", maxWidth: "520px", fontFamily: "'DM Sans', sans-serif" }}>
               For high-level leaders who are ready to stop managing their body and start listening to it. Seven people. Three days. One piece of sacred land. A complete reset of how you lead, communicate, and create.
@@ -593,7 +593,7 @@ export default function Home() {
               {
                 step: "2",
                 title: "Arrive",
-                body: "Show up to Currumbin with nothing but yourself. The land, the group, and the process will take care of the rest.",
+                body: "Show up as you are. The land, the group and the process will take care of the rest.",
               },
               {
                 step: "3",

@@ -12,7 +12,7 @@ morgantnelson.com · contiki.com · portfoliowealth.com · followyourpassionmedi
 **Design Movement:** Dark Luxury Naturalism — a fusion of Portfolio Wealth's editorial restraint, Higher Self Circle's dark premium aesthetic, and the immersive photography of Contiki.
 
 **Core Principles:**
-1. The land is the brand. Every visual decision references the sacred earth of Currumbin — dark soil, golden light, ancient trees.
+1. The land is the brand. Every visual decision references sacred earth — dark soil, golden light, ancient trees.
 2. Premium through restraint. Generous whitespace. Every element earns its place. Nothing decorative that doesn't serve the story.
 3. The body is the hero. Photography is raw, grounded, and human — Kyal on the land, not in a studio.
 4. Copy is the design. Headlines are large enough to be felt, not just read.

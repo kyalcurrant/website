@@ -1,32 +1,34 @@
 /**
- * DESIGN: Sacred Earth Premium — Podcast page with Anchor embed players (avoids CORS)
+ * DESIGN: Sacred Earth Premium — Podcast page
+ * Uses creators.spotify.com embed (correct URL after Anchor -> Spotify migration)
+ * Falls back to native HTML5 audio player using direct MP3 URLs from RSS
  */
 import { useState } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 
 const EPISODES = [
-  { num: 1, title: "Reclaiming Your Mojo: From Stuck to Self-Empowered", guest: "Loz Antonenko", date: "5 Dec 2025", slug: "Reclaiming-Your-Mojo-From-Stuck-to-Self-Empowered---Loz-Antonenko-e3brolo", description: "Loz Antonenko joins Kyal to talk about what it really means to reclaim your energy, your drive, and your sense of self when life has knocked you flat." },
-  { num: 2, title: "The Fire Bender: Turning Darkness Into Light", guest: "Brad Barnett", date: "5 Sep 2025", slug: "The-Fire-Bender-Turning-Darkness-Into-Light---Brad-Barnett-e37o708", description: "Brad Barnett shares how he transformed his darkest moments into a life of fire, purpose, and authentic expression." },
-  { num: 3, title: "Finding Self Beyond the Binary: His Story", guest: "Alex Transcend", date: "20 Aug 2025", slug: "Finding-Self-Beyond-the-Binary-His-Story---Alex-Transcend-e371iqg", description: "Identity coach Alex Transcend opens up about the journey of finding yourself when the world categories do not fit." },
-  { num: 4, title: "Redefining Strength: From Refugee to Brotherhood", guest: "Eric Em", date: "2 Aug 2025", slug: "Redefining-Strength-From-Refugee-to-Importance-of-Brotherhood---Eric-Em-e35pa12", description: "Eric Em shares a powerful story of resilience, identity, and the transformative role of brotherhood in rebuilding a life after displacement." },
-  { num: 5, title: "From Depression to Divine: The Journey Back to Self", guest: "Loridana Montalto", date: "21 Jul 2025", slug: "From-Depression-to-Divine-The-Journey-Back-to-Self---Loridana-Montalto-e35p8qt", description: "Loridana Montalto takes us through the depths of depression and out the other side into a life of spiritual connection and embodied joy." },
-  { num: 6, title: "Breaking the Cycle: From Bulimia to Inner Freedom", guest: "Claire Phillips", date: "3 Jul 2025", slug: "Breaking-the-Cycle-From-Bulimia-to-Inner-Freedom---Claire-Phillips-e34giap", description: "Claire Phillips shares her raw and honest journey through an eating disorder and the path she walked to reclaim her body, her worth, and her freedom." },
-  { num: 7, title: "Rebuilding the Man: From Risk to Responsibility", guest: "Mitchell Lowe", date: "19 Jun 2025", slug: "Rebuilding-the-Man-From-Risk-to-Responsibility---Mitchell-Lowe-e34c12u", description: "Mitchell Lowe gets real about what it takes to step up, take responsibility, and rebuild yourself into the man you were always meant to be." },
-  { num: 8, title: "From Hammer to Healing: Inner Child Transformation", guest: "Brendan Lucas", date: "1 Jun 2025", slug: "From-Hammer-to-Healing-A-Journey-Through-Inner-Child-Transformation---Brendan-Lucas-e33km83", description: "Brendan Lucas explores the profound work of inner child healing and what it means to finally move forward whole." },
-  { num: 9, title: "Healing Beyond the Bars: A Journey to Inner Peace", guest: "Ty Brazel", date: "18 May 2025", slug: "Healing-Beyond-the-Bars-A-Journey-to-Inner-Peace---Ty-Brazel-e32v6vs", description: "Ty Brazel shares a story of finding peace and purpose from within, even when the walls around you feel impossible to escape." },
-  { num: 10, title: "Fear to Freedom: Redefining Success on Your Terms", guest: "Maggie Tilley", date: "20 Mar 2025", slug: "Fear-to-Freedom-Redefining-Success-on-Your-Terms---Maggie-Tilley-e30e40u", description: "Maggie Tilley dismantles the conventional definition of success and shares what it looks like to build a life that actually feels like yours." },
-  { num: 11, title: "OCD to Opportunity: Finding Purpose Through Art and Nature", guest: "Lydia Davies", date: "30 Nov 2024", slug: "OCD-to-Opportunity-Finding-Purpose-Through-Art-and-Nature---Lydia-Davies-e2rm4k2", description: "Lydia Davies shares how she transformed the relentless grip of OCD into a creative force using art and nature as her path back to presence." },
-  { num: 12, title: "Conformity to Clarity: Embracing Authenticity and Purpose", guest: "Sarah van Eck", date: "2 Nov 2024", slug: "Conformity-to-Clarity-Embracing-Authenticity-and-Purpose---Sarah-van-Eck-e2qf4gr", description: "Sarah van Eck talks about shedding the weight of other people expectations and the moment she chose herself fully and without apology." },
-  { num: 13, title: "Despair to Purpose: Embracing the Light Within", guest: "Brodie Klotz", date: "3 May 2024", slug: "Despair-to-Purpose-Embracing-the-Light-Within---Brodie-Klotz-e2j6rke", description: "Brodie Klotz opens up about the moment he hit rock bottom and what it took to find the light not outside himself, but within." },
-  { num: 14, title: "Struggles to Innovation: Building Resilience Through Weight Loss", guest: "Phil Hedges", date: "30 Mar 2024", slug: "Struggles-to-Innovation-Building-Resilience-Through-Weight-Loss---Phil-Hedges-e2ho9tk", description: "Phil Hedges shares how his weight loss journey became a masterclass in resilience, identity, and the innovation that comes from being forced to change." },
-  { num: 15, title: "Surviving to Thriving: Embracing Strength Through Being Abused", guest: "Tasha Nicholas", date: "13 Mar 2024", slug: "Surviving-to-Thriving-Embracing-Strength-Through-Being-Abused---Tasha-Nicholas-e2h0rid", description: "Tasha Nicholas shares her courageous story of surviving abuse and the long brave road to reclaiming her strength, her voice, and her life." },
-  { num: 16, title: "Struggle to Strength: Embracing Fatherhood with CMT", guest: "Ashton Cole", date: "23 Feb 2024", slug: "Struggle-to-Strength-Embracing-Fatherhood-with-CMT---Ashton-Cole-e2g5ujh", description: "Ashton Cole navigates the intersection of disability and fatherhood and what it means to show up fully for your children when your own body is the challenge." },
-  { num: 17, title: "Overcoming 11-Year Drug Addiction to Finding Acceptance", guest: "Ryan McCarthy", date: "12 Feb 2024", slug: "Overcoming-11-Year-Old-Drug-Addiction-to-Finding-Acceptance---Ryan-McCarthy-e2flv2r", description: "Ryan McCarthy shares eleven years of addiction, the moment he chose differently, and what acceptance of self truly looks and feels like on the other side." },
-  { num: 18, title: "Disability to Adaptability: Navigating Life with Charcot-Marie-Tooth", guest: "Kyle Will", date: "7 Jan 2024", slug: "Disability-to-Adaptability-Navigating-Life-with-Charcot-Marie-Tooth---Kyle-Will-e2duchn", description: "Kyle Will shares what it means to live, adapt, and thrive with Charcot-Marie-Tooth disease and why disability is never the end of the story." },
-  { num: 19, title: "Suicide Attempt to Mental Fitness: Brad Journey of Resilience", guest: "Brad Wright", date: "1 Jan 2024", slug: "Suicide-Attempt-to-Mental-Fitness-Brads-Journey-of-Resilience---Brad-Wright-e2dpel1", description: "Brad Wright shares one of the most raw and honest conversations on the show, from the edge of ending it all to building a life of mental strength and purpose." },
-  { num: 20, title: "Overcoming Cocaine Addiction to Motherhood Magic", guest: "Gemmah Carr", date: "22 Dec 2023", slug: "Overcoming-Cocaine-Addiction-to-Motherhood-Magic---Gemmah-Carr-e2di6fo", description: "Gemmah Carr shares her journey from addiction to motherhood and the profound transformation that happens when you choose love over everything." },
-  { num: 21, title: "Who is the Host?", guest: "Kyal Neil Currant", date: "18 Dec 2023", slug: "Who-is-the-host----Kyal-Neil-Currant-e2dcq1g", description: "The very first episode. Kyal Neil Currant introduces himself, his story, and why he created The To Be Podcast." },
+  { num: 1,  title: "Reclaiming Your Mojo: From Stuck to Self-Empowered", guest: "Loz Antonenko",      date: "5 Dec 2025",  shortId: "e3brolo", audio: "https://anchor.fm/s/eee2180c/podcast/play/112107640/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-11-4%2F02ba864f-c068-9028-1831-cf16dfdb063e.mp3", description: "Loz Antonenko joins Kyal to talk about what it really means to reclaim your energy, your drive, and your sense of self when life has knocked you flat." },
+  { num: 2,  title: "The Fire Bender: Turning Darkness Into Light",         guest: "Brad Barnett",       date: "5 Sep 2025",  shortId: "e37o708", audio: "https://anchor.fm/s/eee2180c/podcast/play/107796936/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-8-4%2F1da7c54c-de9b-2c0f-6df8-b1939c192de1.mp3", description: "Brad Barnett shares how he transformed his darkest moments into a life of fire, purpose, and authentic expression." },
+  { num: 3,  title: "Finding Self Beyond the Binary: His Story",            guest: "Alex Transcend",     date: "20 Aug 2025", shortId: "e371iqg", audio: "https://anchor.fm/s/eee2180c/podcast/play/107055376/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-7-19%2F7c09b8a5-ea4b-e5cb-86da-1bd0eff57611.mp3", description: "Identity coach Alex Transcend opens up about the journey of finding yourself when the world categories do not fit." },
+  { num: 4,  title: "Redefining Strength: From Refugee to Brotherhood",     guest: "Eric Em",            date: "2 Aug 2025",  shortId: "e35pa12", audio: "https://anchor.fm/s/eee2180c/podcast/play/105735650/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-6-20%2F27102719-9f3a-6753-2d8d-449f69860712.mp3", description: "Eric Em shares a powerful story of resilience, identity, and the transformative role of brotherhood in rebuilding a life after displacement." },
+  { num: 5,  title: "From Depression to Divine: The Journey Back to Self",  guest: "Loridana Montalto",  date: "21 Jul 2025", shortId: "e35p8qt", audio: "https://anchor.fm/s/eee2180c/podcast/play/105734429/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-6-20%2F49dab951-bd14-f38b-f554-5d2707978338.mp3", description: "Loridana Montalto takes us through the depths of depression and out the other side into a life of spiritual connection and embodied joy." },
+  { num: 6,  title: "Breaking the Cycle: From Bulimia to Inner Freedom",    guest: "Claire Phillips",    date: "3 Jul 2025",  shortId: "e34giap", audio: "https://anchor.fm/s/eee2180c/podcast/play/104400665/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-5-20%2F82112682-d5a8-92b0-81fc-16fadd99d349.mp3", description: "Claire Phillips shares her raw and honest journey through an eating disorder and the path she walked to reclaim her body, her worth, and her freedom." },
+  { num: 7,  title: "Rebuilding the Man: From Risk to Responsibility",       guest: "Mitchell Lowe",      date: "19 Jun 2025", shortId: "e34c12u", audio: "https://anchor.fm/s/eee2180c/podcast/play/104251934/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-5-17%2F084d9144-f244-a1b8-1896-7f79c381bc3b.mp3", description: "Mitchell Lowe gets real about what it takes to step up, take responsibility, and rebuild yourself into the man you were always meant to be." },
+  { num: 8,  title: "From Hammer to Healing: Inner Child Transformation",   guest: "Brendan Lucas",      date: "1 Jun 2025",  shortId: "e33km83", audio: "https://anchor.fm/s/eee2180c/podcast/play/103487171/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-5-1%2F43ff3561-7d3b-3ee4-ac43-481325aefd03.mp3", description: "Brendan Lucas explores the profound work of inner child healing and what it means to finally move forward whole." },
+  { num: 9,  title: "Healing Beyond the Bars: A Journey to Inner Peace",    guest: "Ty Brazel",          date: "18 May 2025", shortId: "e32v6vs", audio: "https://anchor.fm/s/eee2180c/podcast/play/102783420/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-4-17%2Fd734ab9d-4e34-a92e-cce0-bb5f820fdd57.mp3", description: "Ty Brazel shares a story of finding peace and purpose from within, even when the walls around you feel impossible to escape." },
+  { num: 10, title: "Fear to Freedom: Redefining Success on Your Terms",    guest: "Maggie Tilley",      date: "20 Mar 2025", shortId: "e30e40u", audio: "https://anchor.fm/s/eee2180c/podcast/play/100126174/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-2-20%2F8d60a122-6b93-b546-be33-00fb768ce08f.mp3", description: "Maggie Tilley dismantles the conventional definition of success and shares what it looks like to build a life that actually feels like yours." },
+  { num: 11, title: "OCD to Opportunity: Finding Purpose Through Art and Nature", guest: "Lydia Davies",  date: "30 Nov 2024", shortId: "e2rm4k2", audio: "https://anchor.fm/s/eee2180c/podcast/play/95146050/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2024-10-29%2F77ac8b19-852d-7651-ba5e-70f7ed3ff204.mp3", description: "Lydia Davies shares how she transformed the relentless grip of OCD into a creative force using art and nature as her path back to presence." },
+  { num: 12, title: "Conformity to Clarity: Embracing Authenticity and Purpose", guest: "Sarah van Eck", date: "2 Nov 2024",  shortId: "e2qf4gr", audio: "https://anchor.fm/s/eee2180c/podcast/play/93867995/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2024-10-2%2F47147d90-07cb-e1c7-cd98-78d8c3882822.mp3", description: "Sarah van Eck talks about shedding the weight of other people expectations and the moment she chose herself fully and without apology." },
+  { num: 13, title: "Despair to Purpose: Embracing the Light Within",       guest: "Brodie Klotz",       date: "3 May 2024",  shortId: "e2j6rke", audio: "https://anchor.fm/s/eee2180c/podcast/play/86256718/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2024-4-3%2F0d7dad22-a0f6-1fba-544b-547c72c1cf8c.mp3", description: "Brodie Klotz opens up about the moment he hit rock bottom and what it took to find the light not outside himself, but within." },
+  { num: 14, title: "Struggles to Innovation: Building Resilience Through Weight Loss", guest: "Phil Hedges", date: "30 Mar 2024", shortId: "e2ho9tk", audio: "https://anchor.fm/s/eee2180c/podcast/play/84731252/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2024-2-30%2F7112efd9-5a74-f9ea-e996-61e44517e425.mp3", description: "Phil Hedges shares how his weight loss journey became a masterclass in resilience, identity, and the innovation that comes from being forced to change." },
+  { num: 15, title: "Surviving to Thriving: Embracing Strength Through Being Abused", guest: "Tasha Nicholas", date: "13 Mar 2024", shortId: "e2h0rid", audio: "https://anchor.fm/s/eee2180c/podcast/play/83962893/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2024-2-13%2F1c2c051f-aaa8-8eec-5ad2-9f9f664badbb.mp3", description: "Tasha Nicholas shares her courageous story of surviving abuse and the long brave road to reclaiming her strength, her voice, and her life." },
+  { num: 16, title: "Struggle to Strength: Embracing Fatherhood with CMT", guest: "Ashton Cole",         date: "23 Feb 2024", shortId: "e2g5ujh", audio: "https://anchor.fm/s/eee2180c/podcast/play/83081265/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2024-1-23%2F18e6a00b-0938-b1e4-8df9-e0c7a98ad537.mp3", description: "Ashton Cole navigates the intersection of disability and fatherhood and what it means to show up fully for your children when your own body is the challenge." },
+  { num: 17, title: "Overcoming 11-Year Drug Addiction to Finding Acceptance", guest: "Ryan McCarthy",   date: "12 Feb 2024", shortId: "e2flv2r", audio: "https://anchor.fm/s/eee2180c/podcast/play/82557467/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2024-1-12%2Fbf8e411a-02de-cd4d-fdaa-967446d0b4df.mp3", description: "Ryan McCarthy shares eleven years of addiction, the moment he chose differently, and what acceptance of self truly looks and feels like on the other side." },
+  { num: 18, title: "Disability to Adaptability: Navigating Life with Charcot-Marie-Tooth", guest: "Kyle Will", date: "7 Jan 2024", shortId: "e2duchn", audio: "https://anchor.fm/s/eee2180c/podcast/play/80736247/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2024-0-3%2Fa29a01e0-3939-ce77-fc81-32f4b0365370.mp3", description: "Kyle Will shares what it means to live, adapt, and thrive with Charcot-Marie-Tooth disease and why disability is never the end of the story." },
+  { num: 19, title: "Suicide Attempt to Mental Fitness: Brad Journey of Resilience", guest: "Brad Wright", date: "1 Jan 2024", shortId: "e2dpel1", audio: "https://anchor.fm/s/eee2180c/podcast/play/80574561/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2024-0-1%2Fa6365a76-5a5d-5c29-c10b-f65a90abcd94.mp3", description: "Brad Wright shares one of the most raw and honest conversations on the show, from the edge of ending it all to building a life of mental strength and purpose." },
+  { num: 20, title: "Overcoming Cocaine Addiction to Motherhood Magic",     guest: "Gemmah Carr",        date: "22 Dec 2023", shortId: "e2di6fo", audio: "https://anchor.fm/s/eee2180c/podcast/play/80336824/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2023-11-22%2F25b043fb-b21f-b5fd-46bf-1cc3e801dd01.mp3", description: "Gemmah Carr shares her journey from addiction to motherhood and the profound transformation that happens when you choose love over everything." },
+  { num: 21, title: "Who is the Host?",                                      guest: "Kyal Neil Currant",  date: "18 Dec 2023", shortId: "e2dcq1g", audio: "https://anchor.fm/s/eee2180c/podcast/play/80160240/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2023-11-18%2F5a81e6c2-0a66-b174-c9f8-1c32aafd57f4.mp3", description: "The very first episode. Kyal Neil Currant introduces himself, his story, and why he created The To Be Podcast." },
 ];
 
 const COVER = "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/39977947/39977947-1732882100626-cb24df1fd1b98.jpg";
@@ -36,8 +38,11 @@ export default function Podcast() {
   const [active, setActive] = useState(EPISODES[0]);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const embedUrl = `https://creators.spotify.com/pod/profile/the-to-be-podcast/embed/episodes/${active.shortId}`;
+
   return (
     <div className="min-h-screen bg-[#0d1a0d] text-[#f5f0e8]" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+
       {/* NAV */}
       <nav className="fixed top-0 left-0 right-0 z-40 bg-[#0d1a0d]/95 backdrop-blur-md border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -93,18 +98,37 @@ export default function Podcast() {
           <h2 className="font-['Playfair_Display'] text-xl md:text-2xl font-bold text-[#f5f0e8] mb-1">{active.title}</h2>
           <p className="text-[#f5f0e8]/60 text-sm mb-2">with {active.guest} · {active.date}</p>
           <p className="text-[#f5f0e8]/50 text-sm mb-5 max-w-2xl">{active.description}</p>
-          <div className="w-full rounded-xl overflow-hidden shadow-xl">
+
+          {/* Spotify Creators embed — correct URL after Anchor migration */}
+          <div className="w-full rounded-xl overflow-hidden shadow-xl mb-4">
             <iframe
-              key={active.slug}
-              src={`https://anchor.fm/s/eee2180c/podcast/embed/episodes/${active.slug}`}
-              height="102"
+              key={active.shortId}
+              src={embedUrl}
+              height="152"
               width="100%"
               frameBorder="0"
               scrolling="no"
               title={active.title}
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
               style={{ borderRadius: "12px", display: "block" }}
             />
           </div>
+
+          {/* HTML5 audio fallback */}
+          <details className="mt-2">
+            <summary className="text-[#c9a84c]/60 text-xs cursor-pointer hover:text-[#c9a84c] transition-colors">Having trouble with the player? Use the audio player below</summary>
+            <div className="mt-3">
+              <audio
+                key={active.audio}
+                controls
+                className="w-full"
+                style={{ accentColor: "#c9a84c" }}
+              >
+                <source src={active.audio} type="audio/mpeg" />
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          </details>
         </div>
       </section>
 

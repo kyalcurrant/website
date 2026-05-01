@@ -39,7 +39,7 @@ interface Episode {
 
 // ── RSS Parser ─────────────────────────────────────────────────────────────
 // TODO: Replace with your actual RSS feed URL when available
-const RSS_FEED_URL = ""; // e.g. "https://feeds.buzzsprout.com/YOUR_SHOW_ID.rss"
+const RSS_FEED_URL = "https://anchor.fm/s/eee2180c/podcast/rss";
 
 async function fetchEpisodes(): Promise<Episode[]> {
   if (!RSS_FEED_URL) return [];

@@ -1,442 +1,154 @@
 /**
- * KYAL CURRANT — PODCAST PAGE
- * Sacred Earth Premium Design System
- * "The To Be Podcast" — RSS feed ready scaffold
- * Replace RSS_FEED_URL with the actual feed URL when available.
+ * DESIGN: Sacred Earth Premium — Podcast page with Anchor embed players (avoids CORS)
  */
+import { useState } from "react";
+import { Link } from "wouter";
+import { Button } from "@/components/ui/button";
 
-import { useEffect, useState } from "react";
-
-// ── Scroll-reveal hook ─────────────────────────────────────────────────────
-function useReveal() {
-  useEffect(() => {
-    const els = document.querySelectorAll(".reveal");
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            e.target.classList.add("visible");
-            observer.unobserve(e.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-    els.forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
-}
-
-// ── Types ──────────────────────────────────────────────────────────────────
-interface Episode {
-  title: string;
-  description: string;
-  pubDate: string;
-  duration: string;
-  audioUrl: string;
-  episodeNumber?: string;
-}
-
-// ── RSS Parser ─────────────────────────────────────────────────────────────
-// TODO: Replace with your actual RSS feed URL when available
-const RSS_FEED_URL = "https://anchor.fm/s/eee2180c/podcast/rss";
-
-async function fetchEpisodes(): Promise<Episode[]> {
-  if (!RSS_FEED_URL) return [];
-  try {
-    const res = await fetch(
-      `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(RSS_FEED_URL)}`
-    );
-    const data = await res.json();
-    if (data.status !== "ok") return [];
-    return data.items.map((item: Record<string, string>, idx: number) => ({
-      title: item.title || "",
-      description: item.description?.replace(/<[^>]+>/g, "").slice(0, 200) + "..." || "",
-      pubDate: item.pubDate ? new Date(item.pubDate).toLocaleDateString("en-AU", { year: "numeric", month: "long", day: "numeric" }) : "",
-      duration: item.itunes_duration || "",
-      audioUrl: item.enclosure || item.link || "",
-      episodeNumber: String(data.items.length - idx).padStart(3, "0"),
-    }));
-  } catch {
-    return [];
-  }
-}
-
-// ── Placeholder episodes (shown until RSS feed is connected) ───────────────
-const PLACEHOLDER_EPISODES: Episode[] = [
-  {
-    title: "Why Your Body Is Trying to Save You",
-    description: "Kyal unpacks the connection between unexpressed emotion, nervous system dysregulation, and the physical injuries that keep showing up in high-performing leaders.",
-    pubDate: "Coming Soon",
-    duration: "",
-    audioUrl: "",
-    episodeNumber: "001",
-  },
-  {
-    title: "The Disability That Set Me Free",
-    description: "The story behind Disabled Delusion — how growing up with a disability became the greatest teacher Kyal ever had, and what it means for your own perceived limitations.",
-    pubDate: "Coming Soon",
-    duration: "",
-    audioUrl: "",
-    episodeNumber: "002",
-  },
-  {
-    title: "Somatic Intelligence for Leaders",
-    description: "What is somatic intelligence, why does it matter more than strategy, and how do you start developing it? Kyal breaks it down in plain language.",
-    pubDate: "Coming Soon",
-    duration: "",
-    audioUrl: "",
-    episodeNumber: "003",
-  },
+const EPISODES = [
+  { num: 1, title: "Reclaiming Your Mojo: From Stuck to Self-Empowered", guest: "Loz Antonenko", date: "5 Dec 2025", slug: "Reclaiming-Your-Mojo-From-Stuck-to-Self-Empowered---Loz-Antonenko-e3brolo", description: "Loz Antonenko joins Kyal to talk about what it really means to reclaim your energy, your drive, and your sense of self when life has knocked you flat." },
+  { num: 2, title: "The Fire Bender: Turning Darkness Into Light", guest: "Brad Barnett", date: "5 Sep 2025", slug: "The-Fire-Bender-Turning-Darkness-Into-Light---Brad-Barnett-e37o708", description: "Brad Barnett shares how he transformed his darkest moments into a life of fire, purpose, and authentic expression." },
+  { num: 3, title: "Finding Self Beyond the Binary: His Story", guest: "Alex Transcend", date: "20 Aug 2025", slug: "Finding-Self-Beyond-the-Binary-His-Story---Alex-Transcend-e371iqg", description: "Identity coach Alex Transcend opens up about the journey of finding yourself when the world categories do not fit." },
+  { num: 4, title: "Redefining Strength: From Refugee to Brotherhood", guest: "Eric Em", date: "2 Aug 2025", slug: "Redefining-Strength-From-Refugee-to-Importance-of-Brotherhood---Eric-Em-e35pa12", description: "Eric Em shares a powerful story of resilience, identity, and the transformative role of brotherhood in rebuilding a life after displacement." },
+  { num: 5, title: "From Depression to Divine: The Journey Back to Self", guest: "Loridana Montalto", date: "21 Jul 2025", slug: "From-Depression-to-Divine-The-Journey-Back-to-Self---Loridana-Montalto-e35p8qt", description: "Loridana Montalto takes us through the depths of depression and out the other side into a life of spiritual connection and embodied joy." },
+  { num: 6, title: "Breaking the Cycle: From Bulimia to Inner Freedom", guest: "Claire Phillips", date: "3 Jul 2025", slug: "Breaking-the-Cycle-From-Bulimia-to-Inner-Freedom---Claire-Phillips-e34giap", description: "Claire Phillips shares her raw and honest journey through an eating disorder and the path she walked to reclaim her body, her worth, and her freedom." },
+  { num: 7, title: "Rebuilding the Man: From Risk to Responsibility", guest: "Mitchell Lowe", date: "19 Jun 2025", slug: "Rebuilding-the-Man-From-Risk-to-Responsibility---Mitchell-Lowe-e34c12u", description: "Mitchell Lowe gets real about what it takes to step up, take responsibility, and rebuild yourself into the man you were always meant to be." },
+  { num: 8, title: "From Hammer to Healing: Inner Child Transformation", guest: "Brendan Lucas", date: "1 Jun 2025", slug: "From-Hammer-to-Healing-A-Journey-Through-Inner-Child-Transformation---Brendan-Lucas-e33km83", description: "Brendan Lucas explores the profound work of inner child healing and what it means to finally move forward whole." },
+  { num: 9, title: "Healing Beyond the Bars: A Journey to Inner Peace", guest: "Ty Brazel", date: "18 May 2025", slug: "Healing-Beyond-the-Bars-A-Journey-to-Inner-Peace---Ty-Brazel-e32v6vs", description: "Ty Brazel shares a story of finding peace and purpose from within, even when the walls around you feel impossible to escape." },
+  { num: 10, title: "Fear to Freedom: Redefining Success on Your Terms", guest: "Maggie Tilley", date: "20 Mar 2025", slug: "Fear-to-Freedom-Redefining-Success-on-Your-Terms---Maggie-Tilley-e30e40u", description: "Maggie Tilley dismantles the conventional definition of success and shares what it looks like to build a life that actually feels like yours." },
+  { num: 11, title: "OCD to Opportunity: Finding Purpose Through Art and Nature", guest: "Lydia Davies", date: "30 Nov 2024", slug: "OCD-to-Opportunity-Finding-Purpose-Through-Art-and-Nature---Lydia-Davies-e2rm4k2", description: "Lydia Davies shares how she transformed the relentless grip of OCD into a creative force using art and nature as her path back to presence." },
+  { num: 12, title: "Conformity to Clarity: Embracing Authenticity and Purpose", guest: "Sarah van Eck", date: "2 Nov 2024", slug: "Conformity-to-Clarity-Embracing-Authenticity-and-Purpose---Sarah-van-Eck-e2qf4gr", description: "Sarah van Eck talks about shedding the weight of other people expectations and the moment she chose herself fully and without apology." },
+  { num: 13, title: "Despair to Purpose: Embracing the Light Within", guest: "Brodie Klotz", date: "3 May 2024", slug: "Despair-to-Purpose-Embracing-the-Light-Within---Brodie-Klotz-e2j6rke", description: "Brodie Klotz opens up about the moment he hit rock bottom and what it took to find the light not outside himself, but within." },
+  { num: 14, title: "Struggles to Innovation: Building Resilience Through Weight Loss", guest: "Phil Hedges", date: "30 Mar 2024", slug: "Struggles-to-Innovation-Building-Resilience-Through-Weight-Loss---Phil-Hedges-e2ho9tk", description: "Phil Hedges shares how his weight loss journey became a masterclass in resilience, identity, and the innovation that comes from being forced to change." },
+  { num: 15, title: "Surviving to Thriving: Embracing Strength Through Being Abused", guest: "Tasha Nicholas", date: "13 Mar 2024", slug: "Surviving-to-Thriving-Embracing-Strength-Through-Being-Abused---Tasha-Nicholas-e2h0rid", description: "Tasha Nicholas shares her courageous story of surviving abuse and the long brave road to reclaiming her strength, her voice, and her life." },
+  { num: 16, title: "Struggle to Strength: Embracing Fatherhood with CMT", guest: "Ashton Cole", date: "23 Feb 2024", slug: "Struggle-to-Strength-Embracing-Fatherhood-with-CMT---Ashton-Cole-e2g5ujh", description: "Ashton Cole navigates the intersection of disability and fatherhood and what it means to show up fully for your children when your own body is the challenge." },
+  { num: 17, title: "Overcoming 11-Year Drug Addiction to Finding Acceptance", guest: "Ryan McCarthy", date: "12 Feb 2024", slug: "Overcoming-11-Year-Old-Drug-Addiction-to-Finding-Acceptance---Ryan-McCarthy-e2flv2r", description: "Ryan McCarthy shares eleven years of addiction, the moment he chose differently, and what acceptance of self truly looks and feels like on the other side." },
+  { num: 18, title: "Disability to Adaptability: Navigating Life with Charcot-Marie-Tooth", guest: "Kyle Will", date: "7 Jan 2024", slug: "Disability-to-Adaptability-Navigating-Life-with-Charcot-Marie-Tooth---Kyle-Will-e2duchn", description: "Kyle Will shares what it means to live, adapt, and thrive with Charcot-Marie-Tooth disease and why disability is never the end of the story." },
+  { num: 19, title: "Suicide Attempt to Mental Fitness: Brad Journey of Resilience", guest: "Brad Wright", date: "1 Jan 2024", slug: "Suicide-Attempt-to-Mental-Fitness-Brads-Journey-of-Resilience---Brad-Wright-e2dpel1", description: "Brad Wright shares one of the most raw and honest conversations on the show, from the edge of ending it all to building a life of mental strength and purpose." },
+  { num: 20, title: "Overcoming Cocaine Addiction to Motherhood Magic", guest: "Gemmah Carr", date: "22 Dec 2023", slug: "Overcoming-Cocaine-Addiction-to-Motherhood-Magic---Gemmah-Carr-e2di6fo", description: "Gemmah Carr shares her journey from addiction to motherhood and the profound transformation that happens when you choose love over everything." },
+  { num: 21, title: "Who is the Host?", guest: "Kyal Neil Currant", date: "18 Dec 2023", slug: "Who-is-the-host----Kyal-Neil-Currant-e2dcq1g", description: "The very first episode. Kyal Neil Currant introduces himself, his story, and why he created The To Be Podcast." },
 ];
 
-// ── Podcast Player ─────────────────────────────────────────────────────────
-function EpisodeCard({ ep, index }: { ep: Episode; index: number }) {
-  const [playing, setPlaying] = useState(false);
-  const audioRef = useState<HTMLAudioElement | null>(null);
+const COVER = "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/39977947/39977947-1732882100626-cb24df1fd1b98.jpg";
+const SHOW_URL = "https://podcasters.spotify.com/pod/show/the-to-be-podcast";
 
-  const togglePlay = () => {
-    if (!ep.audioUrl) return;
-    if (!audioRef[0]) {
-      audioRef[0] = new Audio(ep.audioUrl);
-      audioRef[0].onended = () => setPlaying(false);
-    }
-    if (playing) {
-      audioRef[0].pause();
-      setPlaying(false);
-    } else {
-      audioRef[0].play();
-      setPlaying(true);
-    }
-  };
-
-  return (
-    <div
-      className="reveal flex gap-5 p-6 md:p-8"
-      style={{
-        background: index % 2 === 0 ? "oklch(0.22 0.055 155)" : "oklch(0.20 0.05 155)",
-        borderBottom: "1px solid oklch(0.72 0.12 75 / 0.12)",
-        animationDelay: `${index * 0.08}s`,
-      }}
-    >
-      {/* Episode number */}
-      <div className="flex-shrink-0 w-14 text-right pt-1">
-        <span
-          className="font-display text-xs font-bold"
-          style={{ color: "oklch(0.72 0.12 75 / 0.5)", fontFamily: "'Playfair Display', serif", letterSpacing: "0.1em" }}
-        >
-          {ep.episodeNumber}
-        </span>
-      </div>
-
-      {/* Play button */}
-      <button
-        onClick={togglePlay}
-        className="flex-shrink-0 w-11 h-11 flex items-center justify-center transition-all"
-        style={{
-          background: ep.audioUrl ? "oklch(0.72 0.12 75)" : "oklch(0.35 0.04 75 / 0.4)",
-          borderRadius: "50%",
-          cursor: ep.audioUrl ? "pointer" : "default",
-        }}
-        aria-label={playing ? "Pause episode" : "Play episode"}
-        disabled={!ep.audioUrl}
-      >
-        {playing ? (
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="oklch(0.18 0.05 155)">
-            <rect x="2" y="1" width="4" height="12" rx="1" />
-            <rect x="8" y="1" width="4" height="12" rx="1" />
-          </svg>
-        ) : (
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="oklch(0.18 0.05 155)">
-            <path d="M3 1.5L12 7L3 12.5V1.5Z" />
-          </svg>
-        )}
-      </button>
-
-      {/* Content */}
-      <div className="flex-1 min-w-0">
-        <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
-          <h3
-            className="font-display text-lg leading-snug"
-            style={{ color: "oklch(0.96 0.015 75)", fontFamily: "'Playfair Display', serif" }}
-          >
-            {ep.title}
-          </h3>
-          {ep.duration && (
-            <span
-              className="flex-shrink-0 text-xs px-2 py-0.5"
-              style={{
-                color: "oklch(0.72 0.12 75)",
-                border: "1px solid oklch(0.72 0.12 75 / 0.3)",
-                fontFamily: "'DM Sans', sans-serif",
-                letterSpacing: "0.05em",
-              }}
-            >
-              {ep.duration}
-            </span>
-          )}
-        </div>
-        <p
-          className="text-sm mb-3"
-          style={{ color: "oklch(0.70 0.01 75)", lineHeight: "1.7", fontFamily: "'DM Sans', sans-serif" }}
-        >
-          {ep.description}
-        </p>
-        {ep.pubDate && (
-          <p
-            className="text-xs"
-            style={{ color: "oklch(0.55 0.01 75)", fontFamily: "'DM Sans', sans-serif", letterSpacing: "0.05em" }}
-          >
-            {ep.pubDate}
-          </p>
-        )}
-      </div>
-    </div>
-  );
-}
-
-// ── Main Component ─────────────────────────────────────────────────────────
 export default function Podcast() {
-  useReveal();
-  const [episodes, setEpisodes] = useState<Episode[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetchEpisodes().then((eps) => {
-      setEpisodes(eps.length > 0 ? eps : PLACEHOLDER_EPISODES);
-      setLoading(false);
-    });
-  }, []);
+  const [active, setActive] = useState(EPISODES[0]);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen" style={{ background: "oklch(0.18 0.05 155)", fontFamily: "'DM Sans', sans-serif" }}>
-
-      {/* ── Nav ── */}
-      <nav
-        className="sticky top-0 z-50"
-        style={{ background: "oklch(0.14 0.04 155)", borderBottom: "1px solid oklch(0.72 0.12 75 / 0.15)" }}
-      >
-        <div className="container flex items-center justify-between py-4">
-          <a
-            href="/"
-            className="font-display text-lg tracking-wide"
-            style={{ color: "oklch(0.96 0.015 75)", fontFamily: "'Playfair Display', serif", textDecoration: "none" }}
-          >
-            Kyal Neil Currant
-          </a>
+    <div className="min-h-screen bg-[#0d1a0d] text-[#f5f0e8]" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+      {/* NAV */}
+      <nav className="fixed top-0 left-0 right-0 z-40 bg-[#0d1a0d]/95 backdrop-blur-md border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+          <Link href="/"><span className="font-['Playfair_Display'] text-xl font-bold text-[#f5f0e8] cursor-pointer hover:text-[#c9a84c] transition-colors">Kyal Neil Currant</span></Link>
           <div className="hidden md:flex items-center gap-8">
-            {[
-              { label: "Home", href: "/" },
-              { label: "About", href: "/#about" },
-              { label: "The Retreat", href: "/#retreat" },
-              { label: "The Book", href: "/#book" },
-              { label: "Podcast", href: "/podcast" },
-              { label: "Testimonials", href: "/testimonials" },
-            ].map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="text-xs transition-colors"
-                style={{ color: "oklch(0.85 0.01 75)", textDecoration: "none", fontFamily: "'DM Sans', sans-serif", letterSpacing: "0.04em" }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "oklch(0.72 0.12 75)")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "oklch(0.85 0.01 75)")}
-              >
-                {item.label}
-              </a>
+            {[{ label: "About", href: "/#about" }, { label: "The Retreat", href: "/#retreat" }, { label: "The Book", href: "/#book" }, { label: "Podcast", href: "/podcast" }, { label: "Testimonials", href: "/testimonials" }].map((item) => (
+              <Link key={item.label} href={item.href}><span className={`text-sm font-medium transition-colors cursor-pointer ${item.href === "/podcast" ? "text-[#c9a84c]" : "text-[#f5f0e8]/70 hover:text-[#f5f0e8]"}`}>{item.label}</span></Link>
             ))}
+            <Link href="/#retreat"><Button className="bg-[#c9a84c] hover:bg-[#b8943d] text-[#0d1a0d] font-semibold text-sm px-5 py-2 rounded-none">Apply Now</Button></Link>
           </div>
-          <a
-            href="/#retreat"
-            className="text-xs px-5 py-2.5 transition-all"
-            style={{
-              background: "oklch(0.72 0.12 75)",
-              color: "oklch(0.14 0.04 155)",
-              fontFamily: "'DM Sans', sans-serif",
-              fontWeight: 600,
-              letterSpacing: "0.08em",
-              textTransform: "uppercase",
-              textDecoration: "none",
-            }}
-          >
-            Apply Now
-          </a>
+          <button className="md:hidden text-[#f5f0e8] p-2" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+            <div className="space-y-1.5"><span className="block w-6 h-0.5 bg-current" /><span className="block w-6 h-0.5 bg-current" /><span className="block w-6 h-0.5 bg-current" /></div>
+          </button>
         </div>
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-[#0d1a0d] border-t border-white/10 px-6 py-4 space-y-4">
+            {[{ label: "Home", href: "/" }, { label: "About", href: "/#about" }, { label: "The Retreat", href: "/#retreat" }, { label: "The Book", href: "/#book" }, { label: "Podcast", href: "/podcast" }, { label: "Testimonials", href: "/testimonials" }].map((item) => (
+              <Link key={item.label} href={item.href}><span className="block text-sm text-[#f5f0e8]/80 hover:text-[#c9a84c] transition-colors cursor-pointer" onClick={() => setMobileMenuOpen(false)}>{item.label}</span></Link>
+            ))}
+            <Link href="/#retreat"><Button className="w-full bg-[#c9a84c] hover:bg-[#b8943d] text-[#0d1a0d] font-semibold rounded-none">Apply Now</Button></Link>
+          </div>
+        )}
       </nav>
 
-      {/* ── Hero ── */}
-      <section style={{ padding: "6rem 0 4rem" }}>
-        <div className="container">
-          <div className="max-w-2xl reveal">
-            <p
-              className="text-xs mb-5 tracking-widest uppercase"
-              style={{ color: "oklch(0.72 0.12 75)", fontFamily: "'DM Sans', sans-serif", letterSpacing: "0.18em" }}
-            >
-              The Podcast
-            </p>
-            <h1
-              className="font-display mb-6"
-              style={{
-                fontFamily: "'Playfair Display', serif",
-                fontSize: "clamp(2.8rem, 6vw, 4.5rem)",
-                fontWeight: 700,
-                lineHeight: 1.1,
-                color: "oklch(0.96 0.015 75)",
-              }}
-            >
-              The To Be<br />
-              <em style={{ color: "oklch(0.72 0.12 75)" }}>Podcast.</em>
-            </h1>
-            <p
-              className="font-body text-lg"
-              style={{ color: "oklch(0.75 0.01 75)", lineHeight: "1.8", maxWidth: "520px", fontFamily: "'DM Sans', sans-serif" }}
-            >
-              Conversations about what it means to be human, to lead with your whole body, and to build a life that actually feels like yours. Hosted by Kyal Neil Currant.
-            </p>
-
-            {/* Subscribe links — add real URLs when available */}
-            <div className="flex flex-wrap gap-3 mt-8">
-              {[
-                { label: "Spotify", href: "#", icon: "S" },
-                { label: "Apple Podcasts", href: "#", icon: "A" },
-                { label: "RSS Feed", href: RSS_FEED_URL || "#", icon: "R" },
-              ].map((platform) => (
-                <a
-                  key={platform.label}
-                  href={platform.href}
-                  className="flex items-center gap-2 px-4 py-2.5 text-xs transition-all"
-                  style={{
-                    border: "1px solid oklch(0.72 0.12 75 / 0.35)",
-                    color: "oklch(0.85 0.01 75)",
-                    fontFamily: "'DM Sans', sans-serif",
-                    letterSpacing: "0.06em",
-                    textDecoration: "none",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = "oklch(0.72 0.12 75)";
-                    e.currentTarget.style.color = "oklch(0.72 0.12 75)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = "oklch(0.72 0.12 75 / 0.35)";
-                    e.currentTarget.style.color = "oklch(0.85 0.01 75)";
-                  }}
-                >
-                  <span
-                    className="w-5 h-5 flex items-center justify-center text-xs font-bold"
-                    style={{ background: "oklch(0.72 0.12 75 / 0.2)", color: "oklch(0.72 0.12 75)" }}
-                  >
-                    {platform.icon}
-                  </span>
-                  {platform.label}
+      {/* HERO */}
+      <section className="pt-32 pb-12 px-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex flex-col md:flex-row items-center gap-10">
+            <img src={COVER} alt="The To Be Podcast" className="w-44 h-44 md:w-52 md:h-52 rounded-2xl shadow-2xl object-cover flex-shrink-0" />
+            <div>
+              <p className="text-[#c9a84c] text-xs tracking-[0.25em] uppercase mb-3">Hosted by Kyal Neil Currant</p>
+              <h1 className="font-['Playfair_Display'] text-4xl md:text-5xl font-bold text-[#f5f0e8] mb-4 leading-tight">The To Be Podcast</h1>
+              <p className="text-[#f5f0e8]/70 text-base leading-relaxed max-w-xl mb-6">Conversations about what it means to be human, to lead with your whole body, and to build a life that actually feels like yours.</p>
+              <div className="flex flex-wrap gap-3">
+                <a href={SHOW_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-[#1DB954] hover:bg-[#1aa34a] text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+                  Listen on Spotify
                 </a>
-              ))}
+                <a href="https://podcasts.apple.com/search?term=the+to+be+podcast+kyal" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-[#872EC4] hover:bg-[#7525b0] text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
+                  Apple Podcasts
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── Divider ── */}
-      <div style={{ borderTop: "1px solid oklch(0.72 0.12 75 / 0.15)" }} />
-
-      {/* ── Episode List ── */}
-      <section style={{ padding: "3rem 0 6rem" }}>
-        <div className="container">
-          <div className="flex items-center justify-between mb-8 reveal">
-            <p
-              className="text-xs tracking-widest uppercase"
-              style={{ color: "oklch(0.72 0.12 75)", fontFamily: "'DM Sans', sans-serif", letterSpacing: "0.18em" }}
-            >
-              {loading ? "Loading episodes..." : `All Episodes`}
-            </p>
-            {!RSS_FEED_URL && (
-              <span
-                className="text-xs px-3 py-1"
-                style={{
-                  background: "oklch(0.72 0.12 75 / 0.15)",
-                  color: "oklch(0.72 0.12 75)",
-                  fontFamily: "'DM Sans', sans-serif",
-                  border: "1px solid oklch(0.72 0.12 75 / 0.3)",
-                }}
-              >
-                RSS Feed Pending
-              </span>
-            )}
-          </div>
-
-          {loading ? (
-            <div className="py-20 text-center" style={{ color: "oklch(0.55 0.01 75)", fontFamily: "'DM Sans', sans-serif" }}>
-              Loading episodes...
-            </div>
-          ) : (
-            <div style={{ border: "1px solid oklch(0.72 0.12 75 / 0.15)" }}>
-              {episodes.map((ep, i) => (
-                <EpisodeCard key={ep.title} ep={ep} index={i} />
-              ))}
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* ── CTA ── */}
-      <section style={{ background: "oklch(0.22 0.055 155)", padding: "5rem 0", borderTop: "1px solid oklch(0.72 0.12 75 / 0.15)" }}>
-        <div className="container">
-          <div className="max-w-xl mx-auto text-center reveal">
-            <p
-              className="text-xs mb-5 tracking-widest uppercase"
-              style={{ color: "oklch(0.72 0.12 75)", fontFamily: "'DM Sans', sans-serif", letterSpacing: "0.18em" }}
-            >
-              Ready to Go Deeper?
-            </p>
-            <h2
-              className="font-display mb-5"
-              style={{
-                fontFamily: "'Playfair Display', serif",
-                fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
-                color: "oklch(0.96 0.015 75)",
-                lineHeight: 1.2,
-              }}
-            >
-              The podcast is the beginning.<br />
-              <em style={{ color: "oklch(0.72 0.12 75)" }}>The retreat is the work.</em>
-            </h2>
-            <p
-              className="font-body mb-8"
-              style={{ color: "oklch(0.75 0.01 75)", lineHeight: "1.8", fontFamily: "'DM Sans', sans-serif" }}
-            >
-              Three days on sacred land in Currumbin. Maximum 7 people. The most transformative experience you will ever have as a leader.
-            </p>
-            <a
-              href="/#retreat"
-              className="inline-block px-8 py-4 text-sm font-semibold transition-all"
-              style={{
-                background: "oklch(0.72 0.12 75)",
-                color: "oklch(0.14 0.04 155)",
-                fontFamily: "'DM Sans', sans-serif",
-                letterSpacing: "0.08em",
-                textTransform: "uppercase",
-                textDecoration: "none",
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.background = "oklch(0.80 0.14 75)")}
-              onMouseLeave={(e) => (e.currentTarget.style.background = "oklch(0.72 0.12 75)")}
-            >
-              Apply for the Retreat
-            </a>
+      {/* FEATURED PLAYER */}
+      <section className="py-10 px-6 bg-[#1a2e1a]">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-[#c9a84c] text-xs tracking-[0.25em] uppercase mb-1">Now Playing — Ep. {String(active.num).padStart(2, "0")}</p>
+          <h2 className="font-['Playfair_Display'] text-xl md:text-2xl font-bold text-[#f5f0e8] mb-1">{active.title}</h2>
+          <p className="text-[#f5f0e8]/60 text-sm mb-2">with {active.guest} · {active.date}</p>
+          <p className="text-[#f5f0e8]/50 text-sm mb-5 max-w-2xl">{active.description}</p>
+          <div className="w-full rounded-xl overflow-hidden shadow-xl">
+            <iframe
+              key={active.slug}
+              src={`https://anchor.fm/s/eee2180c/podcast/embed/episodes/${active.slug}`}
+              height="102"
+              width="100%"
+              frameBorder="0"
+              scrolling="no"
+              title={active.title}
+              style={{ borderRadius: "12px", display: "block" }}
+            />
           </div>
         </div>
       </section>
 
-      {/* ── Footer ── */}
-      <footer style={{ background: "oklch(0.14 0.04 155)", borderTop: "1px solid oklch(0.72 0.12 75 / 0.15)", padding: "2.5rem 0" }}>
-        <div className="container flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="font-display text-lg" style={{ color: "oklch(0.96 0.015 75)", fontFamily: "'Playfair Display', serif" }}>
-            Kyal Neil Currant
-          </p>
-          <a href="/" style={{ color: "oklch(0.55 0.01 75)", fontFamily: "'DM Sans', sans-serif", fontSize: "0.75rem", textDecoration: "none" }}>
-            ← Back to main site
-          </a>
-          <p className="font-body text-xs" style={{ color: "oklch(0.4 0.02 75)", fontFamily: "'DM Sans', sans-serif" }}>
-            © 2025 Kyal Neil Currant
-          </p>
+      {/* EPISODE LIST */}
+      <section className="py-16 px-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="mb-8">
+            <p className="text-[#c9a84c] text-xs tracking-[0.25em] uppercase mb-2">All Episodes</p>
+            <h2 className="font-['Playfair_Display'] text-3xl font-bold text-[#f5f0e8]">{EPISODES.length} conversations worth having</h2>
+          </div>
+          <div className="space-y-2">
+            {EPISODES.map((ep) => (
+              <button key={ep.num} onClick={() => { setActive(ep); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                className={`w-full text-left group rounded-xl border transition-all duration-200 p-4 ${active.num === ep.num ? "bg-[#1a2e1a] border-[#c9a84c]/40" : "bg-[#0d1a0d] border-white/10 hover:border-[#c9a84c]/30 hover:bg-[#1a2e1a]/60"}`}>
+                <div className="flex items-center gap-4">
+                  <span className={`flex-shrink-0 text-xs font-mono font-bold w-6 text-right ${active.num === ep.num ? "text-[#c9a84c]" : "text-[#f5f0e8]/30"}`}>{String(ep.num).padStart(2, "0")}</span>
+                  <div className="flex-1 min-w-0">
+                    <p className={`font-semibold text-sm leading-snug truncate ${active.num === ep.num ? "text-[#f5f0e8]" : "text-[#f5f0e8]/80"}`}>{ep.title}</p>
+                    <p className="text-xs text-[#c9a84c]/70 mt-0.5">with {ep.guest} · {ep.date}</p>
+                  </div>
+                  <div className={`flex-shrink-0 w-7 h-7 rounded-full border flex items-center justify-center ${active.num === ep.num ? "bg-[#c9a84c] border-[#c9a84c]" : "border-white/20"}`}>
+                    <svg width="8" height="10" viewBox="0 0 10 12" fill="currentColor" className={active.num === ep.num ? "text-[#0d1a0d]" : "text-[#f5f0e8]/40"}><path d="M0 0l10 6-10 6V0z" /></svg>
+                  </div>
+                </div>
+              </button>
+            ))}
+          </div>
         </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 bg-[#1a2e1a] text-center px-6">
+        <div className="max-w-2xl mx-auto">
+          <p className="text-[#c9a84c] text-xs tracking-[0.25em] uppercase mb-5">Go Deeper</p>
+          <h2 className="font-['Playfair_Display'] text-3xl md:text-5xl font-bold text-[#f5f0e8] mb-5 leading-tight">The podcast is just <span className="italic text-[#c9a84c]">the beginning.</span></h2>
+          <p className="text-[#f5f0e8]/60 text-base leading-relaxed mb-8">If something in these conversations landed in your body, that is not an accident. The next step is to experience it in person on sacred land with a small group of leaders who are ready to do the real work.</p>
+          <Link href="/#retreat"><Button className="bg-[#c9a84c] hover:bg-[#b8943d] text-[#0d1a0d] font-semibold text-base px-10 py-4 rounded-none h-auto">Apply for Connected</Button></Link>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="bg-[#0d1a0d] border-t border-white/10 py-10 px-6 text-center">
+        <Link href="/"><span className="font-['Playfair_Display'] text-xl font-bold text-[#f5f0e8] cursor-pointer hover:text-[#c9a84c] transition-colors">Kyal Neil Currant</span></Link>
+        <p className="text-[#f5f0e8]/40 text-xs mt-3">© {new Date().getFullYear()} Kyal Neil Currant. All rights reserved.</p>
       </footer>
     </div>
   );

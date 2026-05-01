@@ -16,6 +16,39 @@ export default function Testimonials() {
 
   return (
     <div className="min-h-screen bg-background">
+      {/* Navigation Bar */}
+      <nav className="bg-[#1C3A2E] text-white sticky top-0 z-50 shadow-lg">
+        <div className="container max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+          <a href="/" className="font-serif text-lg font-bold tracking-wide" style={{ color: "#F5F0E8", textDecoration: "none" }}>
+            Kyal Currant
+          </a>
+          <div className="hidden md:flex items-center gap-8">
+            {[
+              { label: "Home", href: "/" },
+              { label: "About", href: "/#about" },
+              { label: "The Retreat", href: "/#retreat" },
+              { label: "The Book", href: "/#book" },
+              { label: "Podcast", href: "/podcast" },
+              { label: "Testimonials", href: "/testimonials" },
+            ].map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                className="text-sm font-body transition-colors"
+                style={{ color: "#E8DFD0", textDecoration: "none", fontFamily: "'DM Sans', sans-serif", letterSpacing: "0.04em" }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#C9A84C")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "#E8DFD0")}
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
+          <a href="/#retreat" className="hidden md:inline-block" style={{ padding: "0.6rem 1.5rem", fontSize: "0.75rem", background: "#C9A84C", color: "#1C3A2E", textDecoration: "none", borderRadius: "0.5rem", fontWeight: "600", transition: "all 0.3s" }} onMouseEnter={(e) => (e.currentTarget.style.background = "#B89840")} onMouseLeave={(e) => (e.currentTarget.style.background = "#C9A84C")}>
+            Apply Now
+          </a>
+        </div>
+      </nav>
+
       {/* Header */}
       <div className="bg-gradient-to-b from-[#1C3A2E] to-[#0F1F1A] text-white py-20 px-4">
         <div className="container max-w-4xl mx-auto text-center">

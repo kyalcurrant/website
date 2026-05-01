@@ -224,6 +224,27 @@ export default function Podcast() {
           >
             Kyal Currant
           </a>
+          <div className="hidden md:flex items-center gap-8">
+            {[
+              { label: "Home", href: "/" },
+              { label: "About", href: "/#about" },
+              { label: "The Retreat", href: "/#retreat" },
+              { label: "The Book", href: "/#book" },
+              { label: "Podcast", href: "/podcast" },
+              { label: "Testimonials", href: "/testimonials" },
+            ].map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                className="text-xs transition-colors"
+                style={{ color: "oklch(0.85 0.01 75)", textDecoration: "none", fontFamily: "'DM Sans', sans-serif", letterSpacing: "0.04em" }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "oklch(0.72 0.12 75)")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "oklch(0.85 0.01 75)")}
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
           <a
             href="/#retreat"
             className="text-xs px-5 py-2.5 transition-all"

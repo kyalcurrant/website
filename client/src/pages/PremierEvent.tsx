@@ -550,133 +550,141 @@ export default function PremierEvent() {
           </div>
 
           {/* Video Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6" style={{ minHeight: "600px" }}>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Peter Huynh */}
-            <div className="reveal" style={{ height: "100%" }}>
-              <div className="relative rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16", width: "100%", height: "100%", overflow: "visible" }}>
+            <div>
+              <div style={{ aspectRatio: "9/16", width: "100%", borderRadius: "8px", overflow: "hidden", backgroundColor: "#f5f0e8" }}>
                 <iframe
+                  width="100%"
+                  height="100%"
                   src="https://www.youtube.com/embed/Zi3ToMfVHOM?autoplay=0&controls=1"
                   title="Peter Huynh testimonial"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
-                  style={{ width: "100%", height: "100%", display: "block" }}
                 />
               </div>
-              <p className="font-display font-bold mt-4" style={{ color: "oklch(0.18 0.05 155)", fontFamily: "'Playfair Display', serif" }}>Peter Huynh</p>
-              <p className="font-body text-sm" style={{ color: "oklch(0.35 0.04 75)", fontFamily: "'DM Sans', sans-serif" }}>Client Acquisitions</p>
+              <p className="font-bold mt-4" style={{ fontSize: "18px", color: "#0d1a0d" }}>Peter Huynh</p>
+              <p style={{ fontSize: "14px", color: "#666" }}>Client Acquisitions</p>
             </div>
 
             {/* Maetreyii */}
-            <div className="reveal" style={{ height: "100%" }}>
-              <div className="relative rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16", width: "100%", height: "100%", overflow: "visible" }}>
+            <div>
+              <div style={{ aspectRatio: "9/16", width: "100%", borderRadius: "8px", overflow: "hidden", backgroundColor: "#f5f0e8" }}>
                 <iframe
+                  width="100%"
+                  height="100%"
                   src="https://www.youtube.com/embed/jrdvCFWWlQU?autoplay=0&controls=1"
                   title="Maetreyii testimonial"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
-                  style={{ width: "100%", height: "100%", display: "block" }}
                 />
               </div>
-              <p className="font-display font-bold mt-4" style={{ color: "oklch(0.18 0.05 155)", fontFamily: "'Playfair Display', serif" }}>Maetreyii</p>
-              <p className="font-body text-sm" style={{ color: "oklch(0.35 0.04 75)", fontFamily: "'DM Sans', sans-serif" }}>Sound Healer</p>
+              <p className="font-bold mt-4" style={{ fontSize: "18px", color: "#0d1a0d" }}>Maetreyii</p>
+              <p style={{ fontSize: "14px", color: "#666" }}>Sound Healer</p>
             </div>
 
             {/* Nathan Phillips */}
-            <div className="reveal" style={{ height: "100%" }}>
-              <div className="relative rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16", width: "100%", height: "100%", overflow: "visible" }}>
+            <div>
+              <div style={{ aspectRatio: "9/16", width: "100%", borderRadius: "8px", overflow: "hidden", backgroundColor: "#f5f0e8" }}>
                 <iframe
+                  width="100%"
+                  height="100%"
                   src="https://www.youtube.com/embed/4NSErppvPkY?autoplay=0&controls=1"
                   title="Nathan Phillips testimonial"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
-                  style={{ width: "100%", height: "100%", display: "block" }}
                 />
               </div>
-              <p className="font-display font-bold mt-4" style={{ color: "oklch(0.18 0.05 155)", fontFamily: "'Playfair Display', serif" }}>Nathan Phillips</p>
-              <p className="font-body text-sm" style={{ color: "oklch(0.35 0.04 75)", fontFamily: "'DM Sans', sans-serif" }}>Event Attendee</p>
+              <p className="font-bold mt-4" style={{ fontSize: "18px", color: "#0d1a0d" }}>Nathan Phillips</p>
+              <p style={{ fontSize: "14px", color: "#666" }}>Event Attendee</p>
             </div>
 
             {/* Jacqui Mync */}
-            <div className="reveal" style={{ height: "100%" }}>
-              <div className="relative rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16", width: "100%", height: "100%", overflow: "visible" }}>
+            <div>
+              <div style={{ aspectRatio: "9/16", width: "100%", borderRadius: "8px", overflow: "hidden", backgroundColor: "#f5f0e8" }}>
                 <iframe
+                  width="100%"
+                  height="100%"
                   src="https://www.youtube.com/embed/DB3xu8FWoTc?autoplay=0&controls=1"
                   title="Jacqui Mync testimonial"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
-                  style={{ width: "100%", height: "100%", display: "block" }}
                 />
               </div>
-              <p className="font-display font-bold mt-4" style={{ color: "oklch(0.18 0.05 155)", fontFamily: "'Playfair Display', serif" }}>Jacqui Mync</p>
-              <p className="font-body text-sm" style={{ color: "oklch(0.35 0.04 75)", fontFamily: "'DM Sans', sans-serif" }}>Fertility Coach</p>
+              <p className="font-bold mt-4" style={{ fontSize: "18px", color: "#0d1a0d" }}>Jacqui Mync</p>
+              <p style={{ fontSize: "14px", color: "#666" }}>Fertility Coach</p>
             </div>
 
             {/* Alex Transcend */}
-            <div className="reveal" style={{ height: "100%" }}>
-              <div className="relative rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16", width: "100%", height: "100%", overflow: "visible" }}>
+            <div>
+              <div style={{ aspectRatio: "9/16", width: "100%", borderRadius: "8px", overflow: "hidden", backgroundColor: "#f5f0e8" }}>
                 <iframe
+                  width="100%"
+                  height="100%"
                   src="https://www.youtube.com/embed/2C_0SYc67s0?autoplay=0&controls=1"
                   title="Alex Transcend testimonial"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
-                  style={{ width: "100%", height: "100%", display: "block" }}
                 />
               </div>
-              <p className="font-display font-bold mt-4" style={{ color: "oklch(0.18 0.05 155)", fontFamily: "'Playfair Display', serif" }}>Alex Transcend</p>
-              <p className="font-body text-sm" style={{ color: "oklch(0.35 0.04 75)", fontFamily: "'DM Sans', sans-serif" }}>Identity Coach & Speaker</p>
+              <p className="font-bold mt-4" style={{ fontSize: "18px", color: "#0d1a0d" }}>Alex Transcend</p>
+              <p style={{ fontSize: "14px", color: "#666" }}>Identity Coach & Speaker</p>
             </div>
 
             {/* Imogen Hobbs */}
-            <div className="reveal" style={{ height: "100%" }}>
-              <div className="relative rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16", width: "100%", height: "100%", overflow: "visible" }}>
+            <div>
+              <div style={{ aspectRatio: "9/16", width: "100%", borderRadius: "8px", overflow: "hidden", backgroundColor: "#f5f0e8" }}>
                 <iframe
+                  width="100%"
+                  height="100%"
                   src="https://www.youtube.com/embed/O7a1v22K4ds?autoplay=0&controls=1"
                   title="Imogen Hobbs testimonial"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
-                  style={{ width: "100%", height: "100%", display: "block" }}
                 />
               </div>
-              <p className="font-display font-bold mt-4" style={{ color: "oklch(0.18 0.05 155)", fontFamily: "'Playfair Display', serif" }}>Imogen Hobbs</p>
-              <p className="font-body text-sm" style={{ color: "oklch(0.35 0.04 75)", fontFamily: "'DM Sans', sans-serif" }}>Men's Empowerment Coach</p>
+              <p className="font-bold mt-4" style={{ fontSize: "18px", color: "#0d1a0d" }}>Imogen Hobbs</p>
+              <p style={{ fontSize: "14px", color: "#666" }}>Men's Empowerment Coach</p>
             </div>
 
             {/* Brad Barnett */}
-            <div className="reveal" style={{ height: "100%" }}>
-              <div className="relative rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16", width: "100%", height: "100%", overflow: "visible" }}>
+            <div>
+              <div style={{ aspectRatio: "9/16", width: "100%", borderRadius: "8px", overflow: "hidden", backgroundColor: "#f5f0e8" }}>
                 <iframe
+                  width="100%"
+                  height="100%"
                   src="https://www.youtube.com/embed/lQc-z73Px4E?autoplay=0&controls=1"
                   title="Brad Barnett testimonial"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
-                  style={{ width: "100%", height: "100%", display: "block" }}
                 />
               </div>
-              <p className="font-display font-bold mt-4" style={{ color: "oklch(0.18 0.05 155)", fontFamily: "'Playfair Display', serif" }}>Brad Barnett</p>
-              <p className="font-body text-sm" style={{ color: "oklch(0.35 0.04 75)", fontFamily: "'DM Sans', sans-serif" }}>Speaker & Storytelling Mentor</p>
+              <p className="font-bold mt-4" style={{ fontSize: "18px", color: "#0d1a0d" }}>Brad Barnett</p>
+              <p style={{ fontSize: "14px", color: "#666" }}>Speaker & Storytelling Mentor</p>
             </div>
 
             {/* Renae Louise */}
-            <div className="reveal" style={{ height: "100%" }}>
-              <div className="relative rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16", width: "100%", height: "100%", overflow: "visible" }}>
+            <div>
+              <div style={{ aspectRatio: "9/16", width: "100%", borderRadius: "8px", overflow: "hidden", backgroundColor: "#f5f0e8" }}>
                 <iframe
+                  width="100%"
+                  height="100%"
                   src="https://www.youtube.com/embed/c7cnXwmshzI?autoplay=0&controls=1"
                   title="Renae Louise testimonial"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
-                  style={{ width: "100%", height: "100%", display: "block" }}
                 />
               </div>
-              <p className="font-display font-bold mt-4" style={{ color: "oklch(0.18 0.05 155)", fontFamily: "'Playfair Display', serif" }}>Renae Louise</p>
-              <p className="font-body text-sm" style={{ color: "oklch(0.35 0.04 75)", fontFamily: "'DM Sans', sans-serif" }}>Coach</p>
+              <p className="font-bold mt-4" style={{ fontSize: "18px", color: "#0d1a0d" }}>Renae Louise</p>
+              <p style={{ fontSize: "14px", color: "#666" }}>Coach</p>
             </div>
           </div>
 

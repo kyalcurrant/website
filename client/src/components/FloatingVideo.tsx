@@ -12,7 +12,8 @@ import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Volume2, VolumeX } from "lucide-react";
 
-const VIDEO_URL = "/manus-storage/kyal-home-video_eb818bed.mp4";
+const YOUTUBE_ID = "AMOxDsPyME0";
+const YOUTUBE_EMBED = `https://www.youtube.com/embed/${YOUTUBE_ID}?autoplay=0&mute=0&controls=1`;
 
 // Bubble dimensions — strict 9:16 ratio
 const BUBBLE_W = 120;
@@ -23,8 +24,7 @@ export default function FloatingVideoWidget() {
   const [dismissed, setDismissed] = useState(false);
   const [showBubble, setShowBubble] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const bubbleVideoRef = useRef<HTMLVideoElement>(null);
+
 
   // Delay bubble appearance by 2 seconds after page load
   useEffect(() => {
@@ -41,22 +41,7 @@ export default function FloatingVideoWidget() {
     return () => window.removeEventListener("keydown", handler);
   }, []);
 
-  // Handle mute/unmute toggle for expanded modal
-  const toggleMute = () => {
-    if (videoRef.current) {
-      videoRef.current.muted = !videoRef.current.muted;
-      setIsMuted(!isMuted);
-    }
-  };
 
-  // Handle mute/unmute toggle for bubble
-  const toggleBubbleMute = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    if (bubbleVideoRef.current) {
-      bubbleVideoRef.current.muted = !bubbleVideoRef.current.muted;
-      setIsMuted(!isMuted);
-    }
-  };
 
   if (dismissed) return null;
 
@@ -127,13 +112,12 @@ export default function FloatingVideoWidget() {
                 role="button"
                 aria-label="Watch Kyal's story"
               >
-                {/* Self-hosted video preview */}
-                <video
-                  ref={bubbleVideoRef}
-                  src={VIDEO_URL}
-                  muted={true}
+                {/* YouTube Embed Thumbnail */}
+                <img
+                  src={`https://img.youtube.com/vi/${YOUTUBE_ID}/hqdefault.jpg`}
+                  alt="Kyal's story"
                   className="w-full h-full object-cover"
-                  style={{ borderRadius: "13px", display: "block" }}
+                  style={{ borderRadius: "13px" }}
                 />
 
                 {/* Play overlay */}
@@ -153,7 +137,10 @@ export default function FloatingVideoWidget() {
 
                 {/* Mute/Unmute button */}
                 <button
-                  onClick={toggleBubbleMute}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setIsMuted(!isMuted);
+                  }}
                   className="absolute bottom-2 right-2 z-10 w-7 h-7 rounded-full flex items-center justify-center transition-all"
                   style={{
                     background: "oklch(0.72 0.12 75 / 0.9)",
@@ -213,20 +200,7 @@ export default function FloatingVideoWidget() {
                 ✕
               </button>
 
-              {/* Mute/Unmute button */}
-              <button
-                onClick={toggleMute}
-                className="absolute bottom-4 right-4 z-10 w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-colors"
-                style={{
-                  background: "oklch(0.72 0.12 75)",
-                  color: "oklch(0.18 0.05 155)",
-                }}
-                aria-label={isMuted ? "Unmute video" : "Mute video"}
-              >
-                {isMuted ? <VolumeX size={16} /> : <Volume2 size={16} />}
-              </button>
-
-              {/* Video player — 9:16 self-hosted video */}
+              {/* Video player — 9:16 YouTube iframe */}
               <div
                 className="relative w-full"
                 style={{
@@ -237,15 +211,14 @@ export default function FloatingVideoWidget() {
                   justifyContent: "center",
                 }}
               >
-                <video
-                  ref={videoRef}
-                  src={VIDEO_URL}
+                <iframe
+                  src={YOUTUBE_EMBED}
                   title="Kyal Neil Currant - Watch his story"
-                  controls
-                  autoPlay
-                  muted={isMuted}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; microphone"
+                  allowFullScreen
                   className="w-full h-full"
-                  style={{ objectFit: "cover", borderRadius: "12px 12px 0 0", display: "block" }}
+                  style={{ objectFit: "contain", borderRadius: "12px 12px 0 0", display: "block" }}
                 />
               </div>
 

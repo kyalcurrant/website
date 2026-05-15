@@ -12,7 +12,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, Volume2, VolumeX } from "lucide-react";
 
 const YOUTUBE_ID = "Ph8bmA0rWHY";
-const YOUTUBE_EMBED = `https://www.youtube.com/embed/${YOUTUBE_ID}?autoplay=0&mute=1`;
+const YOUTUBE_EMBED = `https://www.youtube.com/embed/${YOUTUBE_ID}?autoplay=0&mute=0&controls=1`;
 
 // Bubble dimensions — strict 9:16 ratio
 const BUBBLE_W = 120;
@@ -173,7 +173,9 @@ export default function FloatingVideoWidget() {
               transition={{ type: "spring", stiffness: 280, damping: 26 }}
               className="relative rounded-2xl overflow-hidden w-full"
               style={{
-                maxWidth: 420,
+                maxWidth: "90vw",
+                width: "100%",
+                maxHeight: "90vh",
                 background: "oklch(0.18 0.05 155)",
                 border: "1px solid oklch(0.72 0.12 75 / 0.2)",
                 boxShadow:
@@ -194,31 +196,31 @@ export default function FloatingVideoWidget() {
                 ✕
               </button>
 
-              {/* Video player — 9:16, object-fit: contain so full frame is visible */}
+              {/* Video player — 9:16, with proper sizing for YouTube controls */}
               <div
                 className="relative w-full"
                 style={{
                   aspectRatio: "9/16",
-                  maxHeight: "65vh",
                   background: "#000",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
+                  minHeight: "400px",
                 }}
               >
                 <iframe
                   src={YOUTUBE_EMBED}
                   title="Kyal Neil Currant - Watch his story"
                   frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; microphone"
                   allowFullScreen
                   className="w-full h-full"
-                  style={{ objectFit: "contain" }}
+                  style={{ objectFit: "contain", borderRadius: "12px" }}
                 />
               </div>
 
               {/* Copy + CTA section */}
-              <div className="p-6 md:p-8">
+              <div className="p-4 md:p-6" style={{ maxHeight: "40vh", overflowY: "auto" }}>
                 {/* Brand tag */}
                 <div className="flex items-center gap-2 mb-3">
                   <span
@@ -259,12 +261,12 @@ export default function FloatingVideoWidget() {
                 </p>
 
                 {/* CTA buttons */}
-                <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-2">
                   {/* Primary: Premier Event */}
                   <a
                     href="/premier-event"
                     onClick={() => setExpanded(false)}
-                    className="flex items-center justify-center gap-2 rounded-xl px-5 py-3.5 text-xs font-bold tracking-widest uppercase transition-all duration-200"
+                    className="flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-xs font-bold tracking-widest uppercase transition-all duration-200"
                     style={{
                       background: "linear-gradient(135deg, oklch(0.72 0.12 75), oklch(0.65 0.10 75))",
                       color: "oklch(0.18 0.05 155)",
@@ -296,7 +298,7 @@ export default function FloatingVideoWidget() {
                   <a
                     href="/#retreat"
                     onClick={() => setExpanded(false)}
-                    className="flex items-center justify-center gap-2 rounded-xl px-5 py-3.5 text-xs font-bold tracking-widest uppercase transition-all duration-200"
+                    className="flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-xs font-bold tracking-widest uppercase transition-all duration-200"
                     style={{
                       background: "linear-gradient(135deg, oklch(0.28 0.06 155), oklch(0.22 0.055 155))",
                       color: "oklch(0.96 0.015 75)",
@@ -330,7 +332,7 @@ export default function FloatingVideoWidget() {
                   <a
                     href="/"
                     onClick={() => setExpanded(false)}
-                    className="flex items-center justify-center gap-2 rounded-xl px-5 py-3.5 text-xs font-bold tracking-widest uppercase transition-all duration-200"
+                    className="flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-xs font-bold tracking-widest uppercase transition-all duration-200"
                     style={{
                       background: "transparent",
                       color: "oklch(0.96 0.015 75)",

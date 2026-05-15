@@ -190,9 +190,9 @@ export default function FloatingVideoWidget() {
               transition={{ type: "spring", stiffness: 280, damping: 26 }}
               className="relative rounded-2xl overflow-hidden w-full"
               style={{
-                maxWidth: "90vw",
+                maxWidth: "500px",
                 width: "100%",
-                maxHeight: "90vh",
+                maxHeight: "700px",
                 background: "oklch(0.18 0.05 155)",
                 border: "1px solid oklch(0.72 0.12 75 / 0.2)",
                 boxShadow:
@@ -235,7 +235,6 @@ export default function FloatingVideoWidget() {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  minHeight: "400px",
                 }}
               >
                 <video
@@ -243,14 +242,15 @@ export default function FloatingVideoWidget() {
                   src={VIDEO_URL}
                   title="Kyal Neil Currant - Watch his story"
                   controls
+                  autoPlay
                   muted={isMuted}
                   className="w-full h-full"
-                  style={{ objectFit: "contain", borderRadius: "12px", display: "block" }}
+                  style={{ objectFit: "cover", borderRadius: "12px 12px 0 0", display: "block" }}
                 />
               </div>
 
               {/* Copy + CTA section */}
-              <div className="p-4 md:p-6" style={{ maxHeight: "40vh", overflowY: "auto" }}>
+              <div className="p-4" style={{ maxHeight: "200px", overflowY: "auto" }}>
                 {/* Brand tag */}
                 <div className="flex items-center gap-2 mb-3">
                   <span

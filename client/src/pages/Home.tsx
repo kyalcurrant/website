@@ -361,8 +361,8 @@ export default function Home() {
             <div className="reveal order-2 md:order-1">
               <div className="relative">
                 <img
-                  src="/manus-storage/kyal-speaking-guide_0f9e81d1.webp"
-                  alt="Kyal Neil Currant speaking with microphone"
+                  src="/manus-storage/kyal-guide-portrait_4f3ac10b.webp"
+                  alt="Kyal Neil Currant portrait"
                   className="w-full object-cover rounded-lg"
                   style={{ maxHeight: "600px", objectPosition: "center" }}
                 />

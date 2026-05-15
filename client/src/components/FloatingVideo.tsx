@@ -5,14 +5,14 @@
  * - 3 CTA buttons: Premier Event · The Retreat · Apply Now
  * - Brand: Sacred Earth Premium (Dark Forest Green, Warm Cream, Gold)
  * - Uses Framer Motion for smooth animations
+ * - Self-hosted MP4 video for reliability
  */
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Volume2, VolumeX } from "lucide-react";
 
-const YOUTUBE_ID = "Ph8bmA0rWHY";
-const YOUTUBE_EMBED = `https://www.youtube.com/embed/${YOUTUBE_ID}?autoplay=0&mute=0&controls=1`;
+const VIDEO_URL = "/manus-storage/kyal-home-video_eb818bed.mp4";
 
 // Bubble dimensions — strict 9:16 ratio
 const BUBBLE_W = 120;
@@ -23,6 +23,8 @@ export default function FloatingVideoWidget() {
   const [dismissed, setDismissed] = useState(false);
   const [showBubble, setShowBubble] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const bubbleVideoRef = useRef<HTMLVideoElement>(null);
 
   // Delay bubble appearance by 2 seconds after page load
   useEffect(() => {
@@ -38,6 +40,23 @@ export default function FloatingVideoWidget() {
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
   }, []);
+
+  // Handle mute/unmute toggle for expanded modal
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !videoRef.current.muted;
+      setIsMuted(!isMuted);
+    }
+  };
+
+  // Handle mute/unmute toggle for bubble
+  const toggleBubbleMute = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (bubbleVideoRef.current) {
+      bubbleVideoRef.current.muted = !bubbleVideoRef.current.muted;
+      setIsMuted(!isMuted);
+    }
+  };
 
   if (dismissed) return null;
 
@@ -108,12 +127,13 @@ export default function FloatingVideoWidget() {
                 role="button"
                 aria-label="Watch Kyal's story"
               >
-                {/* YouTube Embed Thumbnail */}
-                <img
-                  src={`https://img.youtube.com/vi/${YOUTUBE_ID}/hqdefault.jpg`}
-                  alt="Kyal's story"
+                {/* Self-hosted video preview */}
+                <video
+                  ref={bubbleVideoRef}
+                  src={VIDEO_URL}
+                  muted={true}
                   className="w-full h-full object-cover"
-                  style={{ borderRadius: "13px" }}
+                  style={{ borderRadius: "13px", display: "block" }}
                 />
 
                 {/* Play overlay */}
@@ -133,10 +153,7 @@ export default function FloatingVideoWidget() {
 
                 {/* Mute/Unmute button */}
                 <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setIsMuted(!isMuted);
-                  }}
+                  onClick={toggleBubbleMute}
                   className="absolute bottom-2 right-2 z-10 w-7 h-7 rounded-full flex items-center justify-center transition-all"
                   style={{
                     background: "oklch(0.72 0.12 75 / 0.9)",
@@ -196,7 +213,20 @@ export default function FloatingVideoWidget() {
                 ✕
               </button>
 
-              {/* Video player — 9:16, with proper sizing for YouTube controls */}
+              {/* Mute/Unmute button */}
+              <button
+                onClick={toggleMute}
+                className="absolute bottom-4 right-4 z-10 w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-colors"
+                style={{
+                  background: "oklch(0.72 0.12 75)",
+                  color: "oklch(0.18 0.05 155)",
+                }}
+                aria-label={isMuted ? "Unmute video" : "Mute video"}
+              >
+                {isMuted ? <VolumeX size={16} /> : <Volume2 size={16} />}
+              </button>
+
+              {/* Video player — 9:16 self-hosted video */}
               <div
                 className="relative w-full"
                 style={{
@@ -208,14 +238,14 @@ export default function FloatingVideoWidget() {
                   minHeight: "400px",
                 }}
               >
-                <iframe
-                  src={YOUTUBE_EMBED}
+                <video
+                  ref={videoRef}
+                  src={VIDEO_URL}
                   title="Kyal Neil Currant - Watch his story"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; microphone"
-                  allowFullScreen
+                  controls
+                  muted={isMuted}
                   className="w-full h-full"
-                  style={{ objectFit: "contain", borderRadius: "12px" }}
+                  style={{ objectFit: "contain", borderRadius: "12px", display: "block" }}
                 />
               </div>
 
@@ -273,24 +303,7 @@ export default function FloatingVideoWidget() {
                       fontFamily: "'DM Sans', sans-serif",
                       boxShadow: "0 4px 20px oklch(0.72 0.12 75 / 0.3)",
                     }}
-                    onMouseEnter={(e) =>
-                      ((e.currentTarget as HTMLAnchorElement).style.opacity = "0.88")
-                    }
-                    onMouseLeave={(e) =>
-                      ((e.currentTarget as HTMLAnchorElement).style.opacity = "1")
-                    }
                   >
-                    <svg
-                      width="15"
-                      height="15"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                    >
-                      <path
-                        d="M8 8a3 3 0 100-6 3 3 0 000 6zm-5 5s-.5-4 5-4 5 4 5 4H3z"
-                        fill="currentColor"
-                      />
-                    </svg>
                     Premier Speaker Event
                   </a>
 
@@ -303,28 +316,9 @@ export default function FloatingVideoWidget() {
                       background: "linear-gradient(135deg, oklch(0.28 0.06 155), oklch(0.22 0.055 155))",
                       color: "oklch(0.96 0.015 75)",
                       fontFamily: "'DM Sans', sans-serif",
-                      boxShadow: "0 4px 20px oklch(0.28 0.06 155 / 0.3)",
+                      border: "1px solid oklch(0.72 0.12 75 / 0.3)",
                     }}
-                    onMouseEnter={(e) =>
-                      ((e.currentTarget as HTMLAnchorElement).style.opacity = "0.88")
-                    }
-                    onMouseLeave={(e) =>
-                      ((e.currentTarget as HTMLAnchorElement).style.opacity = "1")
-                    }
                   >
-                    <svg
-                      width="15"
-                      height="15"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                    >
-                      <path
-                        d="M2 3.5A1.5 1.5 0 013.5 2h9A1.5 1.5 0 0114 3.5v9a1.5 1.5 0 01-1.5 1.5h-9A1.5 1.5 0 012 12.5v-9zM5 1v2M11 1v2M2 6h12"
-                        stroke="currentColor"
-                        strokeWidth="1.4"
-                        strokeLinecap="round"
-                      />
-                    </svg>
                     The Retreat
                   </a>
 
@@ -335,36 +329,11 @@ export default function FloatingVideoWidget() {
                     className="flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-xs font-bold tracking-widest uppercase transition-all duration-200"
                     style={{
                       background: "transparent",
-                      color: "oklch(0.96 0.015 75)",
+                      color: "oklch(0.72 0.12 75)",
                       fontFamily: "'DM Sans', sans-serif",
-                      border: "2px solid oklch(0.72 0.12 75 / 0.3)",
-                    }}
-                    onMouseEnter={(e) => {
-                      (e.currentTarget as HTMLAnchorElement).style.borderColor =
-                        "oklch(0.72 0.12 75 / 0.6)";
-                      (e.currentTarget as HTMLAnchorElement).style.color =
-                        "oklch(0.72 0.12 75)";
-                    }}
-                    onMouseLeave={(e) => {
-                      (e.currentTarget as HTMLAnchorElement).style.borderColor =
-                        "oklch(0.72 0.12 75 / 0.3)";
-                      (e.currentTarget as HTMLAnchorElement).style.color =
-                        "oklch(0.96 0.015 75)";
+                      border: "1px solid oklch(0.72 0.12 75 / 0.4)",
                     }}
                   >
-                    <svg
-                      width="15"
-                      height="15"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                    >
-                      <path
-                        d="M8 1.5l1.8 3.6 4 .6-2.9 2.8.7 4L8 10.4l-3.6 1.9.7-4L2.2 5.7l4-.6L8 1.5z"
-                        stroke="currentColor"
-                        strokeWidth="1.3"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
                     Apply Now
                   </a>
                 </div>

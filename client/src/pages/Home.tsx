@@ -791,7 +791,7 @@ export default function Home() {
                     </h3>
                     <div className="w-8 h-px mx-auto my-4" style={{ background: "oklch(0.72 0.12 75 / 0.5)" }} />
                     <p className="font-body text-xs" style={{ color: "oklch(0.75 0.01 75)", fontFamily: "'DM Sans', sans-serif", lineHeight: "1.6" }}>
-                      How to heal trauma and overcome disability to transform your life
+                      How to Heal Trauma & Overcome Disability... Just Like I Did, to Change Your Life!
                     </p>
                     <p className="section-label mt-4" style={{ color: "oklch(0.72 0.12 75 / 0.7)" }}>Kyal Neil Currant</p>
                   </div>

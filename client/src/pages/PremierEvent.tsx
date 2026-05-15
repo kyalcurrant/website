@@ -123,12 +123,8 @@ export default function PremierEvent() {
               <span className="italic text-[#c9a84c]">Speaker Event</span>
             </h1>
 
-            <p className="text-xl md:text-2xl mb-8 text-[#f5f0e8]/90 font-light">
-              Creating change
-            </p>
-
-            <p className="text-lg md:text-xl mb-8 text-[#c9a84c] font-light italic">
-              1 story. 1 truth. 1 change
+            <p className="text-lg md:text-xl mb-8 text-[#f5f0e8]/90 font-light leading-relaxed">
+              Creating Change. The raw, the ugly, the vulnerable, the powerful. 3 speakers, 1 truth, 1 change.
             </p>
 
             <div className="flex flex-col md:flex-row gap-4">

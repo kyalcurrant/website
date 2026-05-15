@@ -13,9 +13,9 @@ const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663486097900/M4McNZ
 const RETREAT_SCENE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663486097900/M4McNZFuLWN87qi77X2nxu/retreat-scene-BvmqVEMuYTqZ5A3yoqqdqW.webp";
 const LAND_WIDE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663486097900/M4McNZFuLWN87qi77X2nxu/land-wide-7ua9sbYcxvSERt8YaYzVsm.webp";
 const KYAL_1 = "/manus-storage/kyal-1_b328b359.webp";
-const KYAL_2 = "/manus-storage/kyal-2_3f58534f.webp";
+const KYAL_2 = "/manus-storage/kyal-top-cropped_0dddb969.webp";
 const KYAL_3 = "/manus-storage/kyal-3_30e3d200.webp";
-const KYAL_4 = "/manus-storage/kyal-4_5bedcde3.webp";
+const KYAL_4 = "/manus-storage/kyal-speaking-cropped_7e5efa01.webp";
 const KYAL_7 = "/manus-storage/kyal-7_cf76233f.webp";
 
 // ── Scroll-reveal hook ─────────────────────────────────────────────────────

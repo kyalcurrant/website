@@ -189,8 +189,8 @@ export default function PremierEvent() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="order-2 md:order-1">
               <img
-                src="/manus-storage/kyal-guide-portrait_4f3ac10b.webp"
-                alt="Kyal Neil Currant portrait"
+                src="/manus-storage/kyal-speaking-cropped_7e5efa01.webp"
+                alt="Kyal Neil Currant speaking with microphone"
                 className="w-full object-cover rounded-lg"
                 style={{ maxHeight: "500px", objectPosition: "center" }}
               />

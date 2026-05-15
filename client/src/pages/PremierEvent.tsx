@@ -124,7 +124,11 @@ export default function PremierEvent() {
             </h1>
 
             <p className="text-xl md:text-2xl mb-8 text-[#f5f0e8]/90 font-light">
-              Creating change through vulnerability. Where real humans share real stories.
+              Creating change
+            </p>
+
+            <p className="text-lg md:text-xl mb-8 text-[#c9a84c] font-light italic">
+              1 story. 1 truth. 1 change
             </p>
 
             <div className="flex flex-col md:flex-row gap-4">

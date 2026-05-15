@@ -549,7 +549,7 @@ export default function PremierEvent() {
             <div className="reveal">
               <div className="relative overflow-hidden rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16", width: "100%", position: "relative", minHeight: "400px" }}>
                 <iframe
-                  src="https://www.youtube.com/embed/Zi3ToMfVHOM"
+                  src="https://www.youtube.com/embed/Zi3ToMfVHOM?autoplay=0&controls=1"
                   title="Peter Huynh testimonial"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -565,7 +565,7 @@ export default function PremierEvent() {
             <div className="reveal">
               <div className="relative overflow-hidden rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16", width: "100%", position: "relative", minHeight: "400px" }}>
                 <iframe
-                  src="https://www.youtube.com/embed/jrdvCFWWlQU"
+                  src="https://www.youtube.com/embed/jrdvCFWWlQU?autoplay=0&controls=1"
                   title="Maetreyii testimonial"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -581,7 +581,7 @@ export default function PremierEvent() {
             <div className="reveal">
               <div className="relative overflow-hidden rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16", width: "100%", position: "relative", minHeight: "400px" }}>
                 <iframe
-                  src="https://www.youtube.com/embed/4NSErppvPkY"
+                  src="https://www.youtube.com/embed/4NSErppvPkY?autoplay=0&controls=1"
                   title="Nathan Phillips testimonial"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -597,7 +597,7 @@ export default function PremierEvent() {
             <div className="reveal">
               <div className="relative overflow-hidden rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16", width: "100%", position: "relative", minHeight: "400px" }}>
                 <iframe
-                  src="https://www.youtube.com/embed/DB3xu8FWoTc"
+                  src="https://www.youtube.com/embed/DB3xu8FWoTc?autoplay=0&controls=1"
                   title="Jacqui Mync testimonial"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -613,7 +613,7 @@ export default function PremierEvent() {
             <div className="reveal">
               <div className="relative overflow-hidden rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16", width: "100%", position: "relative", minHeight: "400px" }}>
                 <iframe
-                  src="https://www.youtube.com/embed/2C_0SYc67s0"
+                  src="https://www.youtube.com/embed/2C_0SYc67s0?autoplay=0&controls=1"
                   title="Alex Transcend testimonial"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -629,7 +629,7 @@ export default function PremierEvent() {
             <div className="reveal">
               <div className="relative overflow-hidden rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16", width: "100%", position: "relative", minHeight: "400px" }}>
                 <iframe
-                  src="https://www.youtube.com/embed/O7a1v22K4ds"
+                  src="https://www.youtube.com/embed/O7a1v22K4ds?autoplay=0&controls=1"
                   title="Imogen Hobbs testimonial"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -645,7 +645,7 @@ export default function PremierEvent() {
             <div className="reveal">
               <div className="relative overflow-hidden rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16", width: "100%", position: "relative", minHeight: "400px" }}>
                 <iframe
-                  src="https://www.youtube.com/embed/lQc-z73Px4E"
+                  src="https://www.youtube.com/embed/lQc-z73Px4E?autoplay=0&controls=1"
                   title="Brad Barnett testimonial"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -661,7 +661,7 @@ export default function PremierEvent() {
             <div className="reveal">
               <div className="relative overflow-hidden rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16", width: "100%", position: "relative", minHeight: "400px" }}>
                 <iframe
-                  src="https://www.youtube.com/embed/c7cnXwmshzI"
+                  src="https://www.youtube.com/embed/c7cnXwmshzI?autoplay=0&controls=1"
                   title="Renae Louise testimonial"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

@@ -124,7 +124,7 @@ export default function PremierEvent() {
             </h1>
 
             <p className="text-lg md:text-xl mb-8 text-[#f5f0e8]/90 font-light leading-relaxed">
-              Creating Change. The raw, the ugly, the vulnerable, the powerful. 3 speakers, 1 truth, 1 change.
+              Creating Change. The raw, the ugly, the vulnerable, the powerful. 3 speakers, 1 truth, 1 story.
             </p>
 
             <div className="flex flex-col md:flex-row gap-4">
@@ -199,7 +199,7 @@ export default function PremierEvent() {
                 </p>
 
                 <p>
-                  He has spoken across 14+ countries virtually and trained with world-class leaders including Ryan Tuckwood (Australia's #1 Sales Coach), Cody McAuliffe (Creator of The Holographic™ Method), and Darren Stephens (#1 International Bestselling Author & Entrepreneur).
+                  He has spoken across 14+ countries virtually and trained with world class leaders such as Cody McAuliffe, Ryan Tuckwood, Darren Stephens, Natalie Patterson and more, bringing a global perspective to his work.
                 </p>
 
                 <p>

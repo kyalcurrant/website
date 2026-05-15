@@ -195,8 +195,8 @@ export default function PremierEvent() {
                 style={{ maxHeight: "500px", objectPosition: "center" }}
               />
               {/* Overlay credentials box */}
-              <div className="absolute bottom-0 left-0 right-0 bg-[#0d1a0d] p-6 rounded-b-lg" style={{ background: "rgba(13, 26, 13, 0.95)" }}>
-                <div className="space-y-4 text-[#f5f0e8]">
+              <div className="absolute bottom-0 left-0 right-0 bg-[#0d1a0d] p-4 rounded-b-lg" style={{ background: "rgba(13, 26, 13, 0.75)", backdropFilter: "blur(4px)" }}>
+                <div className="space-y-2 text-[#f5f0e8]">
                   <div className="flex items-start gap-3">
                     <Sparkles className="w-5 h-5 text-[#c9a84c] flex-shrink-0 mt-0.5" />
                     <div>

@@ -811,7 +811,7 @@ export default function Home() {
                   lineHeight: 1.2,
                 }}
               >
-                Disabled Delusion
+                Disabled Delusion — How to Heal Trauma & Overcome Disability... Just Like I Did, to Change Your Life!
               </h2>
               <p className="font-body mb-5" style={{ color: "oklch(0.35 0.04 75)", lineHeight: "1.8", fontFamily: "'DM Sans', sans-serif" }}>
                 The story of how a kid born with a disability learned that the greatest limitation was never physical. It was the story he'd been told — and the one he kept telling himself.
@@ -865,7 +865,7 @@ export default function Home() {
               },
               {
                 level: "Foundation",
-                title: "Disabled Delusion",
+                title: "Disabled Delusion — How to Heal Trauma & Overcome Disability... Just Like I Did, to Change Your Life!",
                 price: "$29",
                 desc: "The book. The story. The framework. Everything you need to understand why you're stuck and what to do about it.",
                 cta: "Get Notified",

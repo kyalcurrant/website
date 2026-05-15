@@ -520,6 +520,178 @@ export default function PremierEvent() {
         </div>
       </section>
 
+      {/* TESTIMONIALS — Social Proof from Past Attendees */}
+      <section style={{ background: "oklch(0.96 0.015 75)", padding: "7rem 0" }}>
+        <div className="container">
+          <div className="text-center mb-16">
+            <p className="section-label mb-4">PEOPLE WHO SHOWED UP</p>
+            <h2
+              className="font-display"
+              style={{
+                fontFamily: "'Playfair Display', serif",
+                fontSize: "clamp(2rem, 3.5vw, 2.8rem)",
+                color: "oklch(0.18 0.05 155)",
+                marginBottom: "1rem",
+                lineHeight: 1.2,
+              }}
+            >
+              They Attended.<br />
+              Everything Shifted.
+            </h2>
+            <p className="font-body" style={{ color: "oklch(0.35 0.04 75)", lineHeight: "1.8", fontFamily: "'DM Sans', sans-serif", maxWidth: "600px", margin: "0 auto" }}>
+              These are real people who walked into the room uncertain, and walked out transformed. Watch what they have to say.
+            </p>
+          </div>
+
+          {/* Video Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Peter Huynh */}
+            <div className="reveal">
+              <div className="relative overflow-hidden rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16" }}>
+                <iframe
+                  src="https://www.youtube.com/embed/Zi3ToMfVHOM"
+                  title="Peter Huynh testimonial"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              </div>
+              <p className="font-display font-bold mt-4" style={{ color: "oklch(0.18 0.05 155)", fontFamily: "'Playfair Display', serif" }}>Peter Huynh</p>
+              <p className="font-body text-sm" style={{ color: "oklch(0.35 0.04 75)", fontFamily: "'DM Sans', sans-serif" }}>Client Acquisitions</p>
+            </div>
+
+            {/* Maetreyii */}
+            <div className="reveal">
+              <div className="relative overflow-hidden rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16" }}>
+                <iframe
+                  src="https://www.youtube.com/embed/jrdvCFWWlQU"
+                  title="Maetreyii testimonial"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              </div>
+              <p className="font-display font-bold mt-4" style={{ color: "oklch(0.18 0.05 155)", fontFamily: "'Playfair Display', serif" }}>Maetreyii</p>
+              <p className="font-body text-sm" style={{ color: "oklch(0.35 0.04 75)", fontFamily: "'DM Sans', sans-serif" }}>Sound Healer</p>
+            </div>
+
+            {/* Nathan Phillips */}
+            <div className="reveal">
+              <div className="relative overflow-hidden rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16" }}>
+                <iframe
+                  src="https://www.youtube.com/embed/4NSErppvPkY"
+                  title="Nathan Phillips testimonial"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              </div>
+              <p className="font-display font-bold mt-4" style={{ color: "oklch(0.18 0.05 155)", fontFamily: "'Playfair Display', serif" }}>Nathan Phillips</p>
+              <p className="font-body text-sm" style={{ color: "oklch(0.35 0.04 75)", fontFamily: "'DM Sans', sans-serif" }}>Event Attendee</p>
+            </div>
+
+            {/* Jacqui Mync */}
+            <div className="reveal">
+              <div className="relative overflow-hidden rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16" }}>
+                <iframe
+                  src="https://www.youtube.com/embed/DB3xu8FWoTc"
+                  title="Jacqui Mync testimonial"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              </div>
+              <p className="font-display font-bold mt-4" style={{ color: "oklch(0.18 0.05 155)", fontFamily: "'Playfair Display', serif" }}>Jacqui Mync</p>
+              <p className="font-body text-sm" style={{ color: "oklch(0.35 0.04 75)", fontFamily: "'DM Sans', sans-serif" }}>Fertility Coach</p>
+            </div>
+
+            {/* Alex Transcend */}
+            <div className="reveal">
+              <div className="relative overflow-hidden rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16" }}>
+                <iframe
+                  src="https://www.youtube.com/embed/2C_0SYc67s0"
+                  title="Alex Transcend testimonial"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              </div>
+              <p className="font-display font-bold mt-4" style={{ color: "oklch(0.18 0.05 155)", fontFamily: "'Playfair Display', serif" }}>Alex Transcend</p>
+              <p className="font-body text-sm" style={{ color: "oklch(0.35 0.04 75)", fontFamily: "'DM Sans', sans-serif" }}>Identity Coach & Speaker</p>
+            </div>
+
+            {/* Imogen Hobbs */}
+            <div className="reveal">
+              <div className="relative overflow-hidden rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16" }}>
+                <iframe
+                  src="https://www.youtube.com/embed/O7a1v22K4ds"
+                  title="Imogen Hobbs testimonial"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              </div>
+              <p className="font-display font-bold mt-4" style={{ color: "oklch(0.18 0.05 155)", fontFamily: "'Playfair Display', serif" }}>Imogen Hobbs</p>
+              <p className="font-body text-sm" style={{ color: "oklch(0.35 0.04 75)", fontFamily: "'DM Sans', sans-serif" }}>Men's Empowerment Coach</p>
+            </div>
+
+            {/* Brad Barnett */}
+            <div className="reveal">
+              <div className="relative overflow-hidden rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16" }}>
+                <iframe
+                  src="https://www.youtube.com/embed/lQc-z73Px4E"
+                  title="Brad Barnett testimonial"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              </div>
+              <p className="font-display font-bold mt-4" style={{ color: "oklch(0.18 0.05 155)", fontFamily: "'Playfair Display', serif" }}>Brad Barnett</p>
+              <p className="font-body text-sm" style={{ color: "oklch(0.35 0.04 75)", fontFamily: "'DM Sans', sans-serif" }}>Speaker & Storytelling Mentor</p>
+            </div>
+
+            {/* Renae Louise */}
+            <div className="reveal">
+              <div className="relative overflow-hidden rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16" }}>
+                <iframe
+                  src="https://www.youtube.com/embed/c7cnXwmshzI"
+                  title="Renae Louise testimonial"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              </div>
+              <p className="font-display font-bold mt-4" style={{ color: "oklch(0.18 0.05 155)", fontFamily: "'Playfair Display', serif" }}>Renae Louise</p>
+              <p className="font-body text-sm" style={{ color: "oklch(0.35 0.04 75)", fontFamily: "'DM Sans', sans-serif" }}>Coach</p>
+            </div>
+          </div>
+
+          {/* CTA */}
+          <div className="text-center mt-16">
+            <p className="font-body mb-6" style={{ color: "oklch(0.35 0.04 75)", fontFamily: "'DM Sans', sans-serif" }}>
+              Ready to be next?
+            </p>
+            <a
+              href="https://www.eventbrite.com.au/e/the-premier-speaker-event-tickets-1988736396096"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-10 py-4 rounded font-semibold text-lg transition"
+              style={{ background: "oklch(0.18 0.05 155)", color: "oklch(0.72 0.12 75)", borderColor: "oklch(0.72 0.12 75)", border: "2px solid" }}
+            >
+              Secure Your Spot — From $97
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* FOOTER */}
       <footer className="bg-[#0d1a0d] border-t border-[#c9a84c]/20 py-12">
         <div className="container">

@@ -547,14 +547,14 @@ export default function PremierEvent() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Peter Huynh */}
             <div className="reveal">
-              <div className="relative overflow-hidden rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16", width: "100%" }}>
+              <div className="relative overflow-hidden rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16", width: "100%", position: "relative" }}>
                 <iframe
                   src="https://www.youtube.com/embed/Zi3ToMfVHOM"
                   title="Peter Huynh testimonial"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
-                  style={{ width: "100%", height: "100%", display: "block" }}
+                  style={{ width: "100%", height: "100%", display: "block", position: "absolute", top: 0, left: 0, zIndex: 10 }}
                 />
               </div>
               <p className="font-display font-bold mt-4" style={{ color: "oklch(0.18 0.05 155)", fontFamily: "'Playfair Display', serif" }}>Peter Huynh</p>
@@ -563,14 +563,14 @@ export default function PremierEvent() {
 
             {/* Maetreyii */}
             <div className="reveal">
-              <div className="relative overflow-hidden rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16", width: "100%" }}>
+              <div className="relative overflow-hidden rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16", width: "100%", position: "relative" }}>
                 <iframe
                   src="https://www.youtube.com/embed/jrdvCFWWlQU"
                   title="Maetreyii testimonial"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
-                  style={{ width: "100%", height: "100%", display: "block" }}
+                  style={{ width: "100%", height: "100%", display: "block", position: "absolute", top: 0, left: 0, zIndex: 10 }}
                 />
               </div>
               <p className="font-display font-bold mt-4" style={{ color: "oklch(0.18 0.05 155)", fontFamily: "'Playfair Display', serif" }}>Maetreyii</p>
@@ -579,14 +579,14 @@ export default function PremierEvent() {
 
             {/* Nathan Phillips */}
             <div className="reveal">
-              <div className="relative overflow-hidden rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16", width: "100%" }}>
+              <div className="relative overflow-hidden rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16", width: "100%", position: "relative" }}>
                 <iframe
                   src="https://www.youtube.com/embed/4NSErppvPkY"
                   title="Nathan Phillips testimonial"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
-                  style={{ width: "100%", height: "100%", display: "block" }}
+                  style={{ width: "100%", height: "100%", display: "block", position: "absolute", top: 0, left: 0, zIndex: 10 }}
                 />
               </div>
               <p className="font-display font-bold mt-4" style={{ color: "oklch(0.18 0.05 155)", fontFamily: "'Playfair Display', serif" }}>Nathan Phillips</p>
@@ -595,14 +595,14 @@ export default function PremierEvent() {
 
             {/* Jacqui Mync */}
             <div className="reveal">
-              <div className="relative overflow-hidden rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16", width: "100%" }}>
+              <div className="relative overflow-hidden rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16", width: "100%", position: "relative" }}>
                 <iframe
                   src="https://www.youtube.com/embed/DB3xu8FWoTc"
                   title="Jacqui Mync testimonial"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
-                  style={{ width: "100%", height: "100%", display: "block" }}
+                  style={{ width: "100%", height: "100%", display: "block", position: "absolute", top: 0, left: 0, zIndex: 10 }}
                 />
               </div>
               <p className="font-display font-bold mt-4" style={{ color: "oklch(0.18 0.05 155)", fontFamily: "'Playfair Display', serif" }}>Jacqui Mync</p>
@@ -611,14 +611,14 @@ export default function PremierEvent() {
 
             {/* Alex Transcend */}
             <div className="reveal">
-              <div className="relative overflow-hidden rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16", width: "100%" }}>
+              <div className="relative overflow-hidden rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16", width: "100%", position: "relative" }}>
                 <iframe
                   src="https://www.youtube.com/embed/2C_0SYc67s0"
                   title="Alex Transcend testimonial"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
-                  style={{ width: "100%", height: "100%", display: "block" }}
+                  style={{ width: "100%", height: "100%", display: "block", position: "absolute", top: 0, left: 0, zIndex: 10 }}
                 />
               </div>
               <p className="font-display font-bold mt-4" style={{ color: "oklch(0.18 0.05 155)", fontFamily: "'Playfair Display', serif" }}>Alex Transcend</p>
@@ -627,14 +627,14 @@ export default function PremierEvent() {
 
             {/* Imogen Hobbs */}
             <div className="reveal">
-              <div className="relative overflow-hidden rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16", width: "100%" }}>
+              <div className="relative overflow-hidden rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16", width: "100%", position: "relative" }}>
                 <iframe
                   src="https://www.youtube.com/embed/O7a1v22K4ds"
                   title="Imogen Hobbs testimonial"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
-                  style={{ width: "100%", height: "100%", display: "block" }}
+                  style={{ width: "100%", height: "100%", display: "block", position: "absolute", top: 0, left: 0, zIndex: 10 }}
                 />
               </div>
               <p className="font-display font-bold mt-4" style={{ color: "oklch(0.18 0.05 155)", fontFamily: "'Playfair Display', serif" }}>Imogen Hobbs</p>
@@ -643,14 +643,14 @@ export default function PremierEvent() {
 
             {/* Brad Barnett */}
             <div className="reveal">
-              <div className="relative overflow-hidden rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16", width: "100%" }}>
+              <div className="relative overflow-hidden rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16", width: "100%", position: "relative" }}>
                 <iframe
                   src="https://www.youtube.com/embed/lQc-z73Px4E"
                   title="Brad Barnett testimonial"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
-                  style={{ width: "100%", height: "100%", display: "block" }}
+                  style={{ width: "100%", height: "100%", display: "block", position: "absolute", top: 0, left: 0, zIndex: 10 }}
                 />
               </div>
               <p className="font-display font-bold mt-4" style={{ color: "oklch(0.18 0.05 155)", fontFamily: "'Playfair Display', serif" }}>Brad Barnett</p>
@@ -659,14 +659,14 @@ export default function PremierEvent() {
 
             {/* Renae Louise */}
             <div className="reveal">
-              <div className="relative overflow-hidden rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16", width: "100%" }}>
+              <div className="relative overflow-hidden rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16", width: "100%", position: "relative" }}>
                 <iframe
                   src="https://www.youtube.com/embed/c7cnXwmshzI"
                   title="Renae Louise testimonial"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
-                  style={{ width: "100%", height: "100%", display: "block" }}
+                  style={{ width: "100%", height: "100%", display: "block", position: "absolute", top: 0, left: 0, zIndex: 10 }}
                 />
               </div>
               <p className="font-display font-bold mt-4" style={{ color: "oklch(0.18 0.05 155)", fontFamily: "'Playfair Display', serif" }}>Renae Louise</p>

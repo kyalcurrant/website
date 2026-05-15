@@ -547,7 +547,7 @@ export default function PremierEvent() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Peter Huynh */}
             <div className="reveal">
-              <div className="relative overflow-hidden rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16", width: "100%", position: "relative" }}>
+              <div className="relative overflow-hidden rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16", width: "100%", position: "relative", minHeight: "400px" }}>
                 <iframe
                   src="https://www.youtube.com/embed/Zi3ToMfVHOM"
                   title="Peter Huynh testimonial"
@@ -563,7 +563,7 @@ export default function PremierEvent() {
 
             {/* Maetreyii */}
             <div className="reveal">
-              <div className="relative overflow-hidden rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16", width: "100%", position: "relative" }}>
+              <div className="relative overflow-hidden rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16", width: "100%", position: "relative", minHeight: "400px" }}>
                 <iframe
                   src="https://www.youtube.com/embed/jrdvCFWWlQU"
                   title="Maetreyii testimonial"
@@ -579,7 +579,7 @@ export default function PremierEvent() {
 
             {/* Nathan Phillips */}
             <div className="reveal">
-              <div className="relative overflow-hidden rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16", width: "100%", position: "relative" }}>
+              <div className="relative overflow-hidden rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16", width: "100%", position: "relative", minHeight: "400px" }}>
                 <iframe
                   src="https://www.youtube.com/embed/4NSErppvPkY"
                   title="Nathan Phillips testimonial"
@@ -595,7 +595,7 @@ export default function PremierEvent() {
 
             {/* Jacqui Mync */}
             <div className="reveal">
-              <div className="relative overflow-hidden rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16", width: "100%", position: "relative" }}>
+              <div className="relative overflow-hidden rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16", width: "100%", position: "relative", minHeight: "400px" }}>
                 <iframe
                   src="https://www.youtube.com/embed/DB3xu8FWoTc"
                   title="Jacqui Mync testimonial"
@@ -611,7 +611,7 @@ export default function PremierEvent() {
 
             {/* Alex Transcend */}
             <div className="reveal">
-              <div className="relative overflow-hidden rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16", width: "100%", position: "relative" }}>
+              <div className="relative overflow-hidden rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16", width: "100%", position: "relative", minHeight: "400px" }}>
                 <iframe
                   src="https://www.youtube.com/embed/2C_0SYc67s0"
                   title="Alex Transcend testimonial"
@@ -627,7 +627,7 @@ export default function PremierEvent() {
 
             {/* Imogen Hobbs */}
             <div className="reveal">
-              <div className="relative overflow-hidden rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16", width: "100%", position: "relative" }}>
+              <div className="relative overflow-hidden rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16", width: "100%", position: "relative", minHeight: "400px" }}>
                 <iframe
                   src="https://www.youtube.com/embed/O7a1v22K4ds"
                   title="Imogen Hobbs testimonial"
@@ -643,7 +643,7 @@ export default function PremierEvent() {
 
             {/* Brad Barnett */}
             <div className="reveal">
-              <div className="relative overflow-hidden rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16", width: "100%", position: "relative" }}>
+              <div className="relative overflow-hidden rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16", width: "100%", position: "relative", minHeight: "400px" }}>
                 <iframe
                   src="https://www.youtube.com/embed/lQc-z73Px4E"
                   title="Brad Barnett testimonial"
@@ -659,7 +659,7 @@ export default function PremierEvent() {
 
             {/* Renae Louise */}
             <div className="reveal">
-              <div className="relative overflow-hidden rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16", width: "100%", position: "relative" }}>
+              <div className="relative overflow-hidden rounded-lg" style={{ background: "oklch(0.92 0.004 286.32)", aspectRatio: "9/16", width: "100%", position: "relative", minHeight: "400px" }}>
                 <iframe
                   src="https://www.youtube.com/embed/c7cnXwmshzI"
                   title="Renae Louise testimonial"

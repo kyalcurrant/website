@@ -341,7 +341,7 @@ export default function Home() {
                 lineHeight: 1.5,
               }}
             >
-              "You are not holding energy that hasn't been expressed. You are not broken. You are holding energy that hasn't been expressed."
+              "You are not broken. You are holding onto energy that hasn't been expressed."
             </p>
             <p className="section-label mt-5" style={{ color: "oklch(0.72 0.12 75 / 0.7)" }}>— Kyal Neil Currant</p>
           </div>

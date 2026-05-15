@@ -1007,10 +1007,10 @@ export default function Home() {
             </div>
             <div className="reveal">
               <img
-                src={KYAL_4}
-                alt="Kyal Neil Currant speaking"
-                className="w-full object-cover"
-                style={{ maxHeight: "480px", objectPosition: "top" }}
+                src="/manus-storage/kyal-speaking_66144436.png"
+                alt="Kyal Neil Currant speaking on stage"
+                className="w-full object-cover rounded-lg"
+                style={{ maxHeight: "480px", objectPosition: "center" }}
               />
             </div>
           </div>

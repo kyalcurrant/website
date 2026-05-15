@@ -551,23 +551,6 @@ export default function PremierEvent() {
 
           {/* Video Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Peter Huynh */}
-            <div>
-              <div style={{ aspectRatio: "9/16", width: "100%", borderRadius: "8px", overflow: "hidden", backgroundColor: "#f5f0e8" }}>
-                <iframe
-                  width="100%"
-                  height="100%"
-                  src="https://www.youtube.com/embed/Zi3ToMfVHOM?autoplay=0&controls=1"
-                  title="Peter Huynh testimonial"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
-              <p className="font-bold mt-4" style={{ fontSize: "18px", color: "#0d1a0d" }}>Peter Huynh</p>
-              <p style={{ fontSize: "14px", color: "#666" }}>Client Acquisitions</p>
-            </div>
-
             {/* Maetreyii */}
             <div>
               <div style={{ aspectRatio: "9/16", width: "100%", borderRadius: "8px", overflow: "hidden", backgroundColor: "#f5f0e8" }}>
@@ -670,22 +653,7 @@ export default function PremierEvent() {
               <p style={{ fontSize: "14px", color: "#666" }}>Speaker & Storytelling Mentor</p>
             </div>
 
-            {/* Renae Louise */}
-            <div>
-              <div style={{ aspectRatio: "9/16", width: "100%", borderRadius: "8px", overflow: "hidden", backgroundColor: "#f5f0e8" }}>
-                <iframe
-                  width="100%"
-                  height="100%"
-                  src="https://www.youtube.com/embed/c7cnXwmshzI?autoplay=0&controls=1"
-                  title="Renae Louise testimonial"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
-              <p className="font-bold mt-4" style={{ fontSize: "18px", color: "#0d1a0d" }}>Renae Louise</p>
-              <p style={{ fontSize: "14px", color: "#666" }}>Coach</p>
-            </div>
+
           </div>
 
           {/* CTA */}

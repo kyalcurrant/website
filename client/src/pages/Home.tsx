@@ -361,10 +361,10 @@ export default function Home() {
             <div className="reveal order-2 md:order-1">
               <div className="relative">
                 <img
-                  src={KYAL_1}
+                  src="/manus-storage/kyal-guide-portrait_c636191f.png"
                   alt="Kyal Neil Currant"
-                  className="w-full object-cover"
-                  style={{ maxHeight: "600px", objectPosition: "top" }}
+                  className="w-full object-cover rounded-lg"
+                  style={{ maxHeight: "600px", objectPosition: "center" }}
                 />
                 {/* Credential badge */}
                 <div

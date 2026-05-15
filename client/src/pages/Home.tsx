@@ -537,7 +537,6 @@ export default function Home() {
                   ["Somatic nervous system practices", "Value $800"],
                   ["Sales psychology & energetic alignment", "Value $1,200"],
                   ["Land-based ceremonies & connection", "Value $600"],
-                  ["Camping & communal meals included", "Value $400"],
                   ["Small group (max 7 people)", "Priceless"],
                   ["Post-retreat integration support", "Value $500"],
                 ].map(([item, val]) => (

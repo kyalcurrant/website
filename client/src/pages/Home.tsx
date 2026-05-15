@@ -155,6 +155,7 @@ export default function Home() {
           <div className="hidden md:flex items-center gap-8">
             {[
               { label: "About", href: "#about" },
+              { label: "The Premier Speaker Event", href: "/premier-event" },
               { label: "The Retreat", href: "#retreat" },
               { label: "The Book", href: "#book" },
               { label: "Podcast", href: "/podcast" },
@@ -191,6 +192,7 @@ export default function Home() {
           <div className="md:hidden px-6 pb-6 flex flex-col gap-4" style={{ background: "oklch(0.18 0.05 155)" }}>
             {[
               { label: "About", href: "#about" },
+              { label: "The Premier Speaker Event", href: "/premier-event" },
               { label: "The Retreat", href: "#retreat" },
               { label: "The Book", href: "#book" },
               { label: "Podcast", href: "/podcast" },

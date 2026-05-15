@@ -686,7 +686,7 @@ export default function PremierEvent() {
               className="inline-block px-10 py-4 rounded font-semibold text-lg transition"
               style={{ background: "oklch(0.18 0.05 155)", color: "oklch(0.72 0.12 75)", borderColor: "oklch(0.72 0.12 75)", border: "2px solid" }}
             >
-              Secure Your Spot — From $97
+              Secure Your Spot — From $47
             </a>
           </div>
         </div>

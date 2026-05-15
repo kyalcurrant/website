@@ -857,7 +857,7 @@ export default function Home() {
               {
                 level: "Entry",
                 title: "Live Events & Talks",
-                price: "From $97",
+                price: "From $47",
                 desc: "Experience Kyal's energy and methodology live. The starting point for many who go on to do the deeper work.",
                 cta: "Find an Event",
                 href: "#",

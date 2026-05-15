@@ -533,7 +533,7 @@ export default function Testimonials() {
                 variant="outline"
                 className="border-[#f5f0e8]/30 text-[#f5f0e8] hover:bg-[#f5f0e8]/10 font-semibold text-base px-10 py-4 rounded-none h-auto bg-transparent"
               >
-                Attend a Speaker Event — From $97
+                Attend a Speaker Event — From $47
               </Button>
             </Link>
           </div>

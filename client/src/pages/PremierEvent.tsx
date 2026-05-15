@@ -186,16 +186,42 @@ export default function PremierEvent() {
       {/* THE GUIDE SECTION */}
       <section className="py-20 md:py-32 bg-[#f5f0e8] text-[#0d1a0d]">
         <div className="container">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="order-2 md:order-1">
+          <div className="grid md:grid-cols-2 gap-12 items-start">
+            <div className="order-2 md:order-1 relative">
               <img
                 src="/manus-storage/kyal-speaking-cropped_7e5efa01.webp"
                 alt="Kyal Neil Currant speaking with microphone"
                 className="w-full object-cover rounded-lg"
                 style={{ maxHeight: "500px", objectPosition: "center" }}
               />
+              {/* Overlay credentials box */}
+              <div className="absolute bottom-0 left-0 right-0 bg-[#0d1a0d] p-6 rounded-b-lg" style={{ background: "rgba(13, 26, 13, 0.95)" }}>
+                <div className="space-y-4 text-[#f5f0e8]">
+                  <div className="flex items-start gap-3">
+                    <Sparkles className="w-5 h-5 text-[#c9a84c] flex-shrink-0 mt-0.5" />
+                    <div>
+                      <h3 className="font-semibold text-[#c9a84c] text-sm mb-1">Spoken in 14+ Countries Virtually</h3>
+                      <p className="text-xs">Bringing global perspective and lived experience to every stage.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Heart className="w-5 h-5 text-[#c9a84c] flex-shrink-0 mt-0.5" />
+                    <div>
+                      <h3 className="font-semibold text-[#c9a84c] text-sm mb-1">Trauma-Informed Facilitator</h3>
+                      <p className="text-xs">Creates safe, held spaces where real transformation happens.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Zap className="w-5 h-5 text-[#c9a84c] flex-shrink-0 mt-0.5" />
+                    <div>
+                      <h3 className="font-semibold text-[#c9a84c] text-sm mb-1">Nervous System Expert</h3>
+                      <p className="text-xs">Bridges somatic awareness with authentic leadership and presence.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="order-1 md:order-2">
+            <div className="order-1 md:order-2 mt-8 md:mt-0">
               <div className="w-12 h-px bg-[#c9a84c] mb-6" />
               <h2 className="text-4xl md:text-5xl font-bold mb-8">
                 Meet Your <span className="italic text-[#c9a84c]">Guide</span>
@@ -217,34 +243,6 @@ export default function PremierEvent() {
                 <p className="text-[#c9a84c] font-semibold">
                   He has been exactly where you are. And he found a way through.
                 </p>
-              </div>
-            </div>
-
-            <div className="bg-[#0d1a0d] p-8 rounded">
-              <div className="space-y-6 text-[#f5f0e8]">
-                <div className="flex items-start gap-4">
-                  <Sparkles className="w-6 h-6 text-[#c9a84c] flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="font-semibold text-[#c9a84c] mb-2">Spoken in 14+ Countries Virtually</h3>
-                    <p className="text-sm">Bringing global perspective and lived experience to every stage.</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <Heart className="w-6 h-6 text-[#c9a84c] flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="font-semibold text-[#c9a84c] mb-2">Trauma-Informed Facilitator</h3>
-                    <p className="text-sm">Creates safe, held spaces where real transformation happens.</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <Zap className="w-6 h-6 text-[#c9a84c] flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="font-semibold text-[#c9a84c] mb-2">Nervous System Expert</h3>
-                    <p className="text-sm">Bridges somatic awareness with authentic leadership and presence.</p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

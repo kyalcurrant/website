@@ -10,6 +10,7 @@ import { useState } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { X, Play, Quote } from "lucide-react";
+import Header from "@/components/Header";
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
@@ -310,7 +311,6 @@ export default function Testimonials() {
   const [activeVideo, setActiveVideo] = useState<typeof VIDEO_TESTIMONIALS[0] | null>(null);
   const [activeFilter, setActiveFilter] = useState<"All" | "Coaching" | "Speaker Event">("All");
   const [lightboxImg, setLightboxImg] = useState<string | null>(null);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const filteredVideos = activeFilter === "All"
     ? VIDEO_TESTIMONIALS
@@ -318,77 +318,7 @@ export default function Testimonials() {
 
   return (
     <div className="min-h-screen bg-[#0d1a0d] text-[#f5f0e8]" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-
-      {/* ── NAV ── */}
-      <nav className="fixed top-0 left-0 right-0 z-40 bg-[#0d1a0d]/95 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Link href="/">
-            <span className="font-['Playfair_Display'] text-xl font-bold text-[#f5f0e8] cursor-pointer hover:text-[#c9a84c] transition-colors">
-              Kyal Neil Currant
-            </span>
-          </Link>
-          <div className="hidden md:flex items-center gap-8">
-            {[
-              { label: "About", href: "/#about" },
-              { label: "The Retreat", href: "/#retreat" },
-              { label: "The Book", href: "/#book" },
-              { label: "Podcast", href: "/podcast" },
-              { label: "Testimonials", href: "/testimonials" },
-            ].map((item) => (
-              <Link key={item.label} href={item.href}>
-                <span className={`text-sm font-medium transition-colors cursor-pointer ${
-                  item.href === "/testimonials"
-                    ? "text-[#c9a84c]"
-                    : "text-[#f5f0e8]/70 hover:text-[#f5f0e8]"
-                }`}>
-                  {item.label}
-                </span>
-              </Link>
-            ))}
-            <Link href="/#retreat">
-              <Button className="bg-[#c9a84c] hover:bg-[#b8943d] text-[#0d1a0d] font-semibold text-sm px-5 py-2 rounded-none">
-                Apply Now
-              </Button>
-            </Link>
-          </div>
-          <button
-            className="md:hidden text-[#f5f0e8] p-2"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            <div className="space-y-1.5">
-              <span className="block w-6 h-0.5 bg-current" />
-              <span className="block w-6 h-0.5 bg-current" />
-              <span className="block w-6 h-0.5 bg-current" />
-            </div>
-          </button>
-        </div>
-        {mobileMenuOpen && (
-          <div className="md:hidden bg-[#0d1a0d] border-t border-white/10 px-6 py-4 space-y-4">
-            {[
-              { label: "Home", href: "/" },
-              { label: "About", href: "/#about" },
-              { label: "The Retreat", href: "/#retreat" },
-              { label: "The Book", href: "/#book" },
-              { label: "Podcast", href: "/podcast" },
-              { label: "Testimonials", href: "/testimonials" },
-            ].map((item) => (
-              <Link key={item.label} href={item.href}>
-                <span
-                  className="block text-sm text-[#f5f0e8]/80 hover:text-[#c9a84c] transition-colors cursor-pointer"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.label}
-                </span>
-              </Link>
-            ))}
-            <Link href="/#retreat">
-              <Button className="w-full bg-[#c9a84c] hover:bg-[#b8943d] text-[#0d1a0d] font-semibold rounded-none">
-                Apply Now
-              </Button>
-            </Link>
-          </div>
-        )}
-      </nav>
+      <Header />
 
       {/* ── HERO: THE PROBLEM ── */}
       <section className="pt-32 pb-20 px-6 max-w-4xl mx-auto text-center">

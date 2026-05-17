@@ -22,11 +22,10 @@ import { Card } from "@/components/ui/card";
 import { ChevronDown, Users, Clock, MapPin, Sparkles, Heart, Zap } from "lucide-react";
 import { useState } from "react";
 import { useLocation } from "wouter";
+import Header from "@/components/Header";
 
 export default function PremierEvent() {
   const [, setLocation] = useLocation();
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   const eventPhotos = [
     "/manus-storage/premier-event-1_28202b11.webp",
     "/manus-storage/premier-event-2_d2f3a542.webp",
@@ -35,66 +34,7 @@ export default function PremierEvent() {
 
   return (
     <div className="min-h-screen bg-[#0d1a0d] text-[#f5f0e8]">
-      {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-[#0d1a0d]/95 backdrop-blur border-b border-[#c9a84c]/20">
-        <div className="container flex items-center justify-between py-4">
-          <div className="text-xl font-bold tracking-tight">
-            <span className="text-[#c9a84c]">Kyal Neil</span> Currant
-          </div>
-
-          {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-8">
-            <button onClick={() => setLocation("/")} className="hover:text-[#c9a84c] transition">
-              Home
-            </button>
-            <button onClick={() => setLocation("/podcast")} className="hover:text-[#c9a84c] transition">
-              Podcast
-            </button>
-            <button onClick={() => setLocation("/testimonials")} className="hover:text-[#c9a84c] transition">
-              Testimonials
-            </button>
-            <a
-              href="https://www.eventbrite.com.au/e/the-premier-speaker-event-tickets-1988736396096"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[#c9a84c] text-[#0d1a0d] px-6 py-2 rounded hover:bg-[#8a6f3a] transition font-medium"
-            >
-              Register Now
-            </a>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-[#c9a84c]"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            ☰
-          </button>
-        </div>
-
-        {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <div className="md:hidden bg-[#0d1a0d] border-t border-[#c9a84c]/20 p-4 space-y-4">
-            <button onClick={() => setLocation("/")} className="block w-full text-left hover:text-[#c9a84c]">
-              Home
-            </button>
-            <button onClick={() => setLocation("/podcast")} className="block w-full text-left hover:text-[#c9a84c]">
-              Podcast
-            </button>
-            <button onClick={() => setLocation("/testimonials")} className="block w-full text-left hover:text-[#c9a84c]">
-              Testimonials
-            </button>
-            <a
-              href="https://www.eventbrite.com.au/e/the-premier-speaker-event-tickets-1988736396096"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full bg-[#c9a84c] text-[#0d1a0d] px-6 py-2 rounded hover:bg-[#8a6f3a] transition font-medium text-center"
-            >
-              Register Now
-            </a>
-          </div>
-        )}
-      </nav>
+      <Header />
 
       {/* HERO SECTION */}
       <section className="relative py-20 md:py-32 overflow-hidden">

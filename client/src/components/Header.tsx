@@ -31,14 +31,23 @@ export default function Header({ scrolled = false }: HeaderProps) {
       <div className="container flex items-center justify-between py-5">
         <a
           href="/"
-          className="font-display text-lg tracking-wide"
-          style={{
-            color: "oklch(0.96 0.015 75)",
-            fontFamily: "'Playfair Display', serif",
-            textDecoration: "none",
-          }}
+          className="flex items-center gap-3"
+          style={{ textDecoration: "none" }}
         >
-          Kyal Neil Currant
+          <img
+            src="/manus-storage/favicon_ba4a4cda.png"
+            alt="KNC Logo"
+            className="w-8 h-8 md:w-10 md:h-10"
+          />
+          <span
+            className="font-display text-lg tracking-wide"
+            style={{
+              color: "oklch(0.96 0.015 75)",
+              fontFamily: "'Playfair Display', serif",
+            }}
+          >
+            Kyal Neil Currant
+          </span>
         </a>
 
         {/* Desktop nav */}

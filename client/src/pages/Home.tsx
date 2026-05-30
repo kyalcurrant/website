@@ -212,7 +212,7 @@ export default function Home() {
       >
         <div className="container">
           <div className="max-w-2xl mx-auto text-center reveal">
-            <p className="section-label mb-5">The Real Problem</p>
+
             <h2
               className="font-display"
               style={{

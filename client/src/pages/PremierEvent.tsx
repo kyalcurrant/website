@@ -163,9 +163,7 @@ export default function PremierEvent() {
             </div>
             <div className="order-1 md:order-2 mt-8 md:mt-0">
               <div className="w-12 h-px bg-[#c9a84c] mb-6" />
-              <h2 className="text-4xl md:text-5xl font-bold mb-8">
-                Meet Your <span className="italic text-[#c9a84c]">Guide</span>
-              </h2>
+
 
               <div className="space-y-6 text-lg">
                 <p>

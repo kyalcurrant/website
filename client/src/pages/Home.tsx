@@ -319,7 +319,7 @@ export default function Home() {
 
             {/* Copy */}
             <div className="reveal order-1 md:order-2">
-              <p className="section-label mb-5">Meet Your Guide</p>
+
               <h2
                 className="font-display"
                 style={{

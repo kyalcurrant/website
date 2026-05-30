@@ -336,7 +336,7 @@ export default function Testimonials() {
       <section className="py-16 bg-[#f5f0e8]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
-            <p className="text-[#c9a84c] text-xs tracking-[0.25em] uppercase mb-3">The Guide</p>
+
             <h2 className="font-['Playfair_Display'] text-4xl md:text-5xl font-bold text-[#1a2e1a]">
               What happens in the work
             </h2>

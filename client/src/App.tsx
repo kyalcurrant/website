@@ -7,6 +7,7 @@ import FloatingVideo from "./components/FloatingVideo";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import PremierEvent from "./pages/PremierEvent";
+import Workshop from "./pages/Workshop";
 import Podcast from "./pages/Podcast";
 import Testimonials from "./pages/Testimonials";
 
@@ -16,6 +17,7 @@ function Router() {
     <Switch>
       <Route path={"/"} component={Home} />
       <Route path={"/premier-event"} component={PremierEvent} />
+      <Route path={"/workshop"} component={Workshop} />
       <Route path={"/podcast"} component={Podcast} />
       <Route path={"/testimonials"} component={Testimonials} />
       <Route path={"/404"} component={NotFound} />

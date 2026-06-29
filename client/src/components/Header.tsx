@@ -11,9 +11,8 @@ export default function Header({ scrolled = false }: HeaderProps) {
 
   const navItems = [
     { label: "About", href: "/#about" },
-    { label: "The Premier Speaker Event", href: "/premier-event" },
-    { label: "The Retreat", href: "/#retreat" },
-    { label: "The Book", href: "/#book" },
+    { label: "The Soulful Speaker", href: "/#offer" },
+    { label: "Pre-Speaker Workshop", href: "/workshop" },
     { label: "Podcast", href: "/podcast" },
     { label: "Testimonials", href: "/testimonials" },
   ];
@@ -74,11 +73,11 @@ export default function Header({ scrolled = false }: HeaderProps) {
             </a>
           ))}
           <a
-            href="/#retreat"
+            href="/workshop"
             className="btn-gold"
             style={{ padding: "0.6rem 1.5rem", fontSize: "0.75rem" }}
           >
-            Apply Now
+            Start Here
           </a>
         </div>
 
@@ -120,12 +119,12 @@ export default function Header({ scrolled = false }: HeaderProps) {
             </a>
           ))}
           <a
-            href="/#retreat"
+            href="/workshop"
             onClick={() => setMobileMenuOpen(false)}
             className="btn-gold text-center"
             style={{ padding: "0.6rem 1.5rem", fontSize: "0.75rem" }}
           >
-            Apply Now
+            Start Here
           </a>
         </div>
       )}

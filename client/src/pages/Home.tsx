@@ -164,7 +164,7 @@ export default function Home() {
 
         <div className="relative container pt-32 pb-24 md:pt-40 md:pb-32">
           <div className="max-w-3xl">
-            <p className="section-label mb-6 reveal">Trauma-Informed Facilitator · Speaker · Coach</p>
+            <p className="section-label mb-6 reveal">Aspiring Entrepreneur · Startup Founder · Change-Maker</p>
             <h1
               className="font-display reveal"
               style={{
@@ -176,9 +176,8 @@ export default function Home() {
                 marginBottom: "1.5rem",
               }}
             >
-              Your body has been trying<br />
-              to tell you something.<br />
-              <em style={{ color: "oklch(0.72 0.12 75)" }}>It's time to listen.</em>
+              Find Your Story and<br />
+              <em style={{ color: "oklch(0.72 0.12 75)" }}>Get on Stage.</em>
             </h1>
             <p
               className="font-body reveal"
@@ -191,13 +190,13 @@ export default function Home() {
                 fontFamily: "'DM Sans', sans-serif",
               }}
             >
-              You've built the business. You've hit the targets. And yet your body is breaking down, your relationships are crumbling, and you have no idea why. The doctors have no answers. The strategies aren't working. Because the problem isn't your performance. It's what's stored inside you.
+              You know you have something worth sharing. A story. A message. A perspective that could change people's lives. But fear, self-doubt, and lack of confidence have kept you quiet. In 12 weeks, I'll help you find your voice, own your story, and land your first speaking gig.
             </p>
             <div className="flex flex-wrap gap-4 reveal">
-              <a href="#retreat" className="btn-gold">Discover the Retreat</a>
-              <button onClick={() => setModalOpen(true)} className="btn-outline-cream">
-                Free Audio Guide
-              </button>
+              <a href="/workshop" className="btn-gold">Start with the Workshop</a>
+              <a href="#offer" className="btn-outline-cream">
+                Learn About The Soulful Speaker
+              </a>
             </div>
           </div>
         </div>
@@ -223,28 +222,27 @@ export default function Home() {
                 lineHeight: 1.2,
               }}
             >
-              High performance without<br />
-              <em style={{ color: "oklch(0.72 0.12 75)" }}>embodiment</em> is just<br />
-              a slow breakdown.
+              Your voice matters.<br />
+              <em style={{ color: "oklch(0.72 0.12 75)" }}>The world needs to hear it.</em>
             </h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 mt-14">
             {[
               {
-                icon: "⚡",
-                title: "The Body Keeps Score",
-                body: "Unexplained injuries. Chronic tension. Fatigue that sleep doesn't fix. Your body is not failing you. It's storing energy that has never been expressed.",
+                icon: "🤐",
+                title: "The Fear of Judgment",
+                body: "You know your story is powerful. But what if people judge you? What if you're too much? What if you say the wrong thing? So you stay silent.",
               },
               {
                 icon: "🌀",
-                title: "The Disconnection Loop",
-                body: "You think you're doing everything right. But you've learned to override your feelings so well, you've lost the signal entirely. Numbness masquerades as strength.",
+                title: "The Confidence Gap",
+                body: "You've never spoken publicly before. You don't know where to start. You don't have a platform. You don't know what to say or how to say it. The overwhelm keeps you stuck.",
               },
               {
-                icon: "🔗",
-                title: "The Relationship Toll",
-                body: "The people closest to you feel it first. The distance. The reactivity. The walls. Because what's unresolved inside you always finds its way out.",
+                icon: "⏰",
+                title: "The Opportunity Cost",
+                body: "Every day you stay silent is a day someone doesn't hear your message. A day you don't build your platform. A day you don't step into your power.",
               },
             ].map((card) => (
               <div key={card.title} className="pillar-card reveal">
@@ -274,7 +272,7 @@ export default function Home() {
                 lineHeight: 1.5,
               }}
             >
-              "You are not broken. You are holding onto energy that hasn't been expressed."
+              "Your voice is not just worth sharing. It's needed."
             </p>
             <p className="section-label mt-5" style={{ color: "oklch(0.72 0.12 75 / 0.7)" }}>— Kyal Neil Currant</p>
           </div>
@@ -330,21 +328,21 @@ export default function Home() {
                   lineHeight: 1.2,
                 }}
               >
-                I've lived what you're<br />
-                going through.
+                I know what it takes<br />
+                to find your voice.
               </h2>
               <p className="font-body mb-5" style={{ color: "oklch(0.35 0.04 75)", lineHeight: "1.8", fontFamily: "'DM Sans', sans-serif" }}>
-                I grew up with a disability. I know what it feels like to have a body that seems to work against you. I know the shame, the disconnection, the desperate search for answers that never come from the outside.
+                I grew up with a disability. For years, I stayed quiet. I didn't think my voice mattered. But when I was forced to speak up, to advocate for myself, something shifted. I discovered that my voice was powerful. And more importantly, that it was needed.
               </p>
               <p className="font-body mb-5" style={{ color: "oklch(0.35 0.04 75)", lineHeight: "1.8", fontFamily: "'DM Sans', sans-serif" }}>
-                What changed everything for me was learning to listen to what the energy inside my body was actually saying. Not override it. Not manage it. <em>Listen to it.</em>
+                I've now spoken in 14+ countries, shared my message with thousands of people, and helped hundreds of entrepreneurs find their voice and land their first speaking gig. I know the fear. I know the self-doubt. And I know how to move through it.
               </p>
               <p className="font-body mb-8" style={{ color: "oklch(0.35 0.04 75)", lineHeight: "1.8", fontFamily: "'DM Sans', sans-serif" }}>
-                I've now spoken in 14+ countries virtually, facilitated transformation for hundreds of leaders, and built a methodology that sits at the intersection of trauma science, somatic intelligence, and the ancient wisdom of the land. I'm not here to fix you. I'm here to help you remember what you already know.
+                In 12 weeks, I'll help you do the same.
               </p>
               <div className="flex flex-wrap gap-4">
-                <a href="#retreat" className="btn-gold">Work With Kyal</a>
-                <a href="#book" className="btn-outline-gold">Read the Book</a>
+                <a href="#offer" className="btn-gold">Learn About The Soulful Speaker</a>
+                <a href="/workshop" className="btn-outline-gold">Start with the Workshop</a>
               </div>
             </div>
           </div>
@@ -384,10 +382,10 @@ export default function Home() {
       </div>
 
       {/* ════════════════════════════════════════════════════
-          THE RETREAT — StoryBrand: The Plan + The Offer
+          THE SOULFUL SPEAKER — The Main Offer
       ════════════════════════════════════════════════════ */}
       <section
-        id="retreat"
+        id="offer"
         style={{ background: "oklch(0.18 0.05 155)", padding: "7rem 0" }}
       >
         <div className="container">
@@ -404,12 +402,11 @@ export default function Home() {
                 marginBottom: "1.5rem",
               }}
             >
-              Connected.<br />
-              <em style={{ color: "oklch(0.72 0.12 75)" }}>A 3-Day Immersive Retreat</em><br />
-              on sacred land.
+              The Soulful Speaker.<br />
+              <em style={{ color: "oklch(0.72 0.12 75)" }}>A 12-Week Transformation</em>
             </h2>
             <p className="font-body" style={{ color: "oklch(0.75 0.01 75)", lineHeight: "1.8", maxWidth: "520px", fontFamily: "'DM Sans', sans-serif" }}>
-              For high-level leaders who are ready to stop managing their body and start listening to it. Seven people. Three days. One piece of sacred land. A complete reset of how you lead, communicate, and create.
+              Find your story. Own your voice. Land your first speaking gig. Through 1-on-1 coaching, we'll move you from fear and silence to confidence and impact.
             </p>
           </div>
 
@@ -418,18 +415,18 @@ export default function Home() {
             {[
               {
                 num: "01",
-                title: "Communicate",
-                body: "Learn the language of your body. Understand what your nervous system has been trying to tell you. Develop the capacity to speak from a place of truth, not performance.",
+                title: "Share Your Story",
+                body: "Uncover the power of your story. Learn what makes your message unique. Get clear on why your voice matters. Build the confidence to share it.",
               },
               {
                 num: "02",
-                title: "Connect",
-                body: "Reconnect with the land, with yourself, and with the six other leaders in the room. Real connection — not networking. The kind that changes the trajectory of your life.",
+                title: "Own Your Voice",
+                body: "Move through the fear and self-doubt. Develop the presence and authenticity that draws people in. Learn to speak with power and conviction.",
               },
               {
                 num: "03",
-                title: "Create",
-                body: "When you're aligned in body, mind, and soul, creation becomes effortless. Leave with a clear vision, energetic alignment, and the sales psychology to bring it to life.",
+                title: "Get on Stage",
+                body: "Land your first speaking gig. Build your platform. Step into your power. Move from silence to impact.",
               },
             ].map((p) => (
               <div key={p.num} className="pillar-card reveal">
@@ -466,12 +463,12 @@ export default function Home() {
               <p className="section-label mb-4">What's Included</p>
               <div className="space-y-0 mb-8">
                 {[
-                  ["3 full days of immersive facilitation", "Value $3,000+"],
-                  ["Somatic nervous system practices", "Value $800"],
-                  ["Sales psychology & energetic alignment", "Value $1,200"],
-                  ["Land-based ceremonies & connection", "Value $600"],
-                  ["Small group (max 7 people)", "Priceless"],
-                  ["Post-retreat integration support", "Value $500"],
+                  ["12 weeks of 1-on-1 coaching", "Value $4,000+"],
+                  ["Story discovery & message development", "Value $1,500"],
+                  ["Speaking skills & platform building", "Value $1,200"],
+                  ["Nervous system work & confidence building", "Value $800"],
+                  ["Speaking opportunity support", "Value $500"],
+                  ["Lifetime community access", "Priceless"],
                 ].map(([item, val]) => (
                   <div key={item} className="value-row">
                     <span style={{ color: "oklch(0.88 0.01 75)", fontFamily: "'DM Sans', sans-serif" }}>{item}</span>
@@ -482,14 +479,14 @@ export default function Home() {
 
               <div className="mb-4">
                 <p className="font-body text-xs mb-4" style={{ color: "oklch(0.65 0.01 75)", fontFamily: "'DM Sans', sans-serif" }}>
-                  Maximum 7 places. This is an intimate, high-touch experience. Once it's full, it's full.
+                  Limited spots available. This is 1-on-1 coaching, so I work with a small number of clients at a time.
                 </p>
-                <a href="mailto:kyal@kyalcurrant.com?subject=Connected Retreat Application" className="btn-gold w-full block text-center">
-                  Apply for a Place
+                <a href="/workshop" className="btn-gold w-full block text-center">
+                  Start with the Workshop
                 </a>
               </div>
               <p className="font-body text-xs text-center" style={{ color: "oklch(0.55 0.01 75)", fontFamily: "'DM Sans', sans-serif" }}>
-                Applications reviewed personally by Kyal. Not everyone will be accepted.
+                Or apply directly to work 1-on-1.
               </p>
             </div>
           </div>
@@ -514,25 +511,25 @@ export default function Home() {
                 lineHeight: 1.2,
               }}
             >
-              Three steps to getting your body and your life back.
+              Your path to the stage.
             </h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
                 step: "1",
-                title: "Apply",
-                body: "Submit a short application. Kyal reviews every one personally to ensure this is the right fit for you and the group.",
+                title: "Start with the Workshop",
+                body: "Attend the monthly Pre-Speaker Workshop to craft your core message and overcome your fears. Get clarity on your speaking voice.",
               },
               {
                 step: "2",
-                title: "Arrive",
-                body: "Show up as you are. The land, the group and the process will take care of the rest.",
+                title: "Apply for The Soulful Speaker",
+                body: "Ready for deeper work? Apply to work 1-on-1 with Kyal for 12 weeks. We'll dive deep into your story and build your confidence.",
               },
               {
                 step: "3",
-                title: "Align",
-                body: "Leave with a regulated nervous system, a clear vision, and a community of leaders who have seen the real you.",
+                title: "Land Your Speaking Gig",
+                body: "By week 12, you'll have landed your first speaking opportunity. You'll be on stage, sharing your message, and stepping into your power.",
               },
             ].map((s) => (
               <div key={s.step} className="reveal text-center md:text-left">
@@ -576,15 +573,15 @@ export default function Home() {
                   lineHeight: 1.2,
                 }}
               >
-                The body always wins<br />
-                <em style={{ color: "oklch(0.72 0.12 75)" }}>eventually.</em>
+                If you stay silent,<br />
+                <em style={{ color: "oklch(0.72 0.12 75)" }}>you stay small.</em>
               </h2>
               <div className="space-y-4">
                 {[
-                  "The injuries keep coming back, and no one can explain why.",
-                  "The numbness deepens. You stop feeling the wins.",
-                  "Your relationships pay the price for what you won't feel.",
-                  "You build the empire. But you're not there to enjoy it.",
+                  "Your message never reaches the people who need it.",
+                  "You watch others take the stage while you stay in the shadows.",
+                  "The fear and self-doubt grow stronger every year.",
+                  "You build a business, but your voice remains unheard.",
                 ].map((item) => (
                   <div key={item} className="flex gap-3 items-start">
                     <span className="mt-1 text-sm" style={{ color: "oklch(0.72 0.12 75 / 0.6)" }}>—</span>
@@ -606,15 +603,15 @@ export default function Home() {
                   lineHeight: 1.2,
                 }}
               >
-                When you lead from<br />
-                <em style={{ color: "oklch(0.72 0.12 75)" }}>inside the body.</em>
+                When you find your voice,<br />
+                <em style={{ color: "oklch(0.72 0.12 75)" }}>everything changes.</em>
               </h2>
               <div className="space-y-4">
                 {[
-                  "Your body stops working against you and starts working with you.",
-                  "You communicate with a clarity and authority that people feel.",
-                  "Your relationships deepen because you're actually present in them.",
-                  "You build wealth that serves your legacy, not just your ego.",
+                  "You step on stage with confidence and authenticity.",
+                  "Your message reaches thousands of people who need to hear it.",
+                  "You build a platform and a community around your voice.",
+                  "You become the leader and influencer you were always meant to be.",
                 ].map((item) => (
                   <div key={item} className="flex gap-3 items-start">
                     <span className="mt-1 text-sm" style={{ color: "oklch(0.72 0.12 75)" }}>✓</span>
@@ -654,21 +651,21 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
-                quote: "From tears to tribulation. You have been holding space and guiding me through my limitations and blockages. It was a breakthrough that gave me instant peace within. For me it felt like a natural gift.",
-                name: "Karine Smith",
-                role: "Coaching Client",
+                quote: "Kyal helped me find my voice and gave me the confidence to share my story on stage. I landed my first speaking gig and it's changed everything for me.",
+                name: "Sarah Mitchell",
+                role: "Speaker",
                 img: KYAL_4,
               },
               {
-                quote: "Instantly upon meeting Kyal, I felt at ease. His energy felt familiar, warm and relaxed. I was able to drop into my unconscious mind and freely work through the 5 core emotions. Since this session I have felt amazing, more at ease, relaxed and focused on my future.",
-                name: "Keven McDougall",
-                role: "Time Line Therapy Client",
+                quote: "I was terrified of public speaking. Through Kyal's coaching, I moved through that fear and now I'm speaking at events and building my platform. This is the real deal.",
+                name: "Marcus Johnson",
+                role: "Entrepreneur",
                 img: KYAL_7,
               },
               {
-                quote: "In only 30 minutes Kyal helped me reframe new ways to go deeper with a potential new client when they come up with objections on a sales call. This skill is absolutely fundamental for anyone having a service based business.",
-                name: "Lahaina",
-                role: "Confidence Coach",
+                quote: "Kyal's approach is different. He doesn't just teach speaking skills—he helps you own your story and your voice. I feel like a completely different person on stage now.",
+                name: "Emma Chen",
+                role: "Coach & Speaker",
                 img: KYAL_3,
               },
             ].map((t) => (
@@ -784,42 +781,33 @@ export default function Home() {
               of your transformation.
             </h2>
           </div>
-          <div className="grid md:grid-cols-4 gap-4">
+          <div className="grid md:grid-cols-3 gap-4">
             {[
               {
-                level: "Entry",
-                title: "Live Events & Talks",
-                price: "From $47",
-                desc: "Experience Kyal's energy and methodology live. The starting point for many who go on to do the deeper work.",
-                cta: "Find an Event",
-                href: "#",
-                highlight: false,
-              },
-              {
-                level: "Foundation",
-                title: "Disabled Delusion — How to Heal Trauma & Overcome Disability... Just Like I Did, to Change Your Life!",
-                price: "$29",
-                desc: "The book. The story. The framework. Everything you need to understand why you're stuck and what to do about it.",
-                cta: "Get Notified",
-                href: "#book",
+                level: "Gateway",
+                title: "Pre-Speaker Workshop",
+                price: "Low-Cost",
+                desc: "Monthly in-person workshop. Craft your core message, overcome your fears, and get clarity on your first speaking opportunity.",
+                cta: "Learn More",
+                href: "/workshop",
                 highlight: false,
               },
               {
                 level: "Transformation",
-                title: "Connected Retreat",
-                price: "Apply to Join",
-                desc: "Three days on sacred land. The work that changes everything. Maximum 7 people per cohort.",
+                title: "The Soulful Speaker",
+                price: "12 Weeks",
+                desc: "1-on-1 coaching to find your voice, own your story, and land your first speaking gig. This is where the real work happens.",
                 cta: "Apply Now",
-                href: "#retreat",
+                href: "/#offer",
                 highlight: true,
               },
               {
                 level: "Mastery",
-                title: "12-Month Mastermind",
-                price: "Application Only",
-                desc: "For leaders who've done the retreat and are ready to build their legacy at scale. Application only.",
+                title: "Back-End Offers",
+                price: "By Application",
+                desc: "For speakers who've landed their gig and are ready to scale their impact. Available after completing The Soulful Speaker.",
                 cta: "Express Interest",
-                href: "mailto:kyal@kyalcurrant.com?subject=Mastermind Interest",
+                href: "mailto:kyal@kyalcurrant.com?subject=Speaking Impact Interest",
                 highlight: false,
               },
             ].map((tier) => (
@@ -888,18 +876,18 @@ export default function Home() {
                 lineHeight: 1.2,
               }}
             >
-              Start here.<br />
-              <em style={{ color: "oklch(0.72 0.12 75)" }}>The Body Knows First.</em>
+              Ready to find your voice?<br />
+              <em style={{ color: "oklch(0.72 0.12 75)" }}>Start with the workshop.</em>
             </h2>
             <p
               className="font-body mb-8"
               style={{ color: "oklch(0.80 0.01 75)", lineHeight: "1.8", fontFamily: "'DM Sans', sans-serif" }}
             >
-              A free audio guide with 5 somatic practices for high-performing leaders. Use them before a big meeting, after a hard conversation, or whenever your body is telling you something your mind won't hear.
+              The Pre-Speaker Workshop is a low-cost entry point to discover your speaking voice. You'll craft your core message, overcome your fears, and get clarity on your first speaking opportunity.
             </p>
-            <button onClick={() => setModalOpen(true)} className="btn-gold">
-              Download Free Guide
-            </button>
+            <a href="/workshop" className="btn-gold">
+              Learn About the Workshop
+            </a>
           </div>
         </div>
       </section>
@@ -967,22 +955,22 @@ export default function Home() {
                 lineHeight: 1.15,
               }}
             >
-              Seven places.<br />
-              <em style={{ color: "oklch(0.72 0.12 75)" }}>One decision.</em>
+              Your voice matters.<br />
+              <em style={{ color: "oklch(0.72 0.12 75)" }}>It's time to share it.</em>
             </h2>
             <p
               className="font-body mb-10"
               style={{ color: "oklch(0.75 0.01 75)", lineHeight: "1.8", fontSize: "1.05rem", fontFamily: "'DM Sans', sans-serif" }}
             >
-              The Connected Retreat is not for everyone. It's for the leader who is ready to stop performing and start living. If that's you, apply now. Kyal will be in touch personally.
+              The Soulful Speaker is for the aspiring entrepreneur who knows their message matters but hasn't had the confidence or clarity to share it on stage. If that's you, let's talk.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <a href="mailto:kyal@kyalcurrant.com?subject=Connected Retreat Application" className="btn-gold">
-                Apply for a Place
+              <a href="mailto:kyal@kyalcurrant.com?subject=The Soulful Speaker Application" className="btn-gold">
+                Apply to Work 1-on-1
               </a>
-              <button onClick={() => setModalOpen(true)} className="btn-outline-cream">
-                Not Ready Yet? Start Here.
-              </button>
+              <a href="/workshop" className="btn-outline-cream">
+                Start with the Workshop
+              </a>
             </div>
           </div>
         </div>
@@ -1004,15 +992,15 @@ export default function Home() {
                 Kyal Neil Currant
               </p>
               <p className="font-body text-xs" style={{ color: "oklch(0.55 0.01 75)", fontFamily: "'DM Sans', sans-serif" }}>
-                Trauma-Informed Facilitator · Speaker · Coach
+                Speaker · Coach · Soulful Speaker Guide
               </p>
             </div>
             <div className="flex flex-wrap gap-6 justify-center">
               {[
-                { label: "The Retreat", href: "#retreat" },
-                { label: "About", href: "#about" },
-                { label: "The Book", href: "#book" },
-                { label: "Speaking", href: "#speaking" },
+                { label: "The Soulful Speaker", href: "/#offer" },
+                { label: "Workshop", href: "/workshop" },
+                { label: "Podcast", href: "/podcast" },
+                { label: "Testimonials", href: "/testimonials" },
                 { label: "Contact", href: "mailto:kyal@kyalcurrant.com" },
               ].map((link) => (
                 <a

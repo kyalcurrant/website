@@ -448,11 +448,11 @@ export default function Home() {
             className="reveal grid md:grid-cols-2 gap-0"
             style={{ border: "1px solid oklch(0.72 0.12 75 / 0.3)" }}
           >
-            {/* Left — Speaker on stage image */}
+            {/* Left — Kyal speaking at event */}
             <div className="relative min-h-[320px] md:min-h-0">
               <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663486097900/M4McNZFuLWN87qi77X2nxu/soulful-speaker-stage-moment-9HMiqf3xdxc5fViTzZVdbw.webp"
-                alt="Speaker on stage sharing their message with audience"
+                src="/manus-storage/kyal_8bdc1fef.jpg"
+                alt="Kyal speaking to an engaged audience at an event"
                 className="absolute inset-0 w-full h-full object-cover"
               />
               <div className="absolute inset-0" style={{ background: "oklch(0.12 0.04 155 / 0.2)" }} />

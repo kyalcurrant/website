@@ -164,7 +164,7 @@ export default function Home() {
 
         <div className="relative container pt-32 pb-24 md:pt-40 md:pb-32">
           <div className="max-w-3xl">
-            <p className="section-label mb-6 reveal">Aspiring Entrepreneur · Startup Founder · Change-Maker</p>
+
             <h1
               className="font-display reveal"
               style={{
@@ -460,7 +460,7 @@ export default function Home() {
 
             {/* Right — Offer details */}
             <div className="p-8 md:p-10" style={{ background: "oklch(0.22 0.055 155)" }}>
-              <p className="section-label mb-4">What's Included</p>
+  
               <div className="space-y-0 mb-8">
                 {[
                   "12 weeks of 1-on-1 coaching",
@@ -493,7 +493,7 @@ export default function Home() {
       </section>
 
       {/* ════════════════════════════════════════════════════
-          THE PLAN — StoryBrand: 3-Step Plan
+          THE JOURNEY
       ════════════════════════════════════════════════════ */}
       <section
         style={{ background: "oklch(0.92 0.02 75)", padding: "6rem 0" }}
@@ -685,78 +685,12 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-              </div>            ))}\n          </div>\n          <div className="text-center mt-12 reveal">\n            <a href="/testimonials" className="btn-gold" style={{ padding: "0.75rem 2rem", fontSize: "0.875rem" }}>\n              See All Video Testimonials\n            </a>\n          </div>\n        </div>\n      </section>\n\n      {/* ════════════════════════════════════════════════════\n          THE BOOK  ════════════════════════════════════════════════════ */}
-      <section
-        id="book"
-        style={{ background: "oklch(0.96 0.015 75)", padding: "7rem 0" }}
-      >
-        <div className="container">
-          <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
-            {/* Book visual */}
-            <div className="reveal">
-              <div
-                className="relative p-10 flex items-center justify-center"
-                style={{
-                  background: "oklch(0.18 0.05 155)",
-                  minHeight: "380px",
-                }}
-              >
-                <div className="text-center">
-                  <div
-                    className="inline-block px-8 py-10 mb-4"
-                    style={{
-                      background: "oklch(0.28 0.06 155)",
-                      border: "1px solid oklch(0.72 0.12 75 / 0.4)",
-                      maxWidth: "240px",
-                    }}
-                  >
-                    <p className="section-label mb-3">Coming Soon</p>
-                    <h3
-                      className="font-display text-3xl font-bold mb-2"
-                      style={{ color: "oklch(0.72 0.12 75)", fontFamily: "'Playfair Display', serif", lineHeight: 1.2 }}
-                    >
-                      Disabled<br />Delusion
-                    </h3>
-                    <div className="w-8 h-px mx-auto my-4" style={{ background: "oklch(0.72 0.12 75 / 0.5)" }} />
-                    <p className="font-body text-xs" style={{ color: "oklch(0.75 0.01 75)", fontFamily: "'DM Sans', sans-serif", lineHeight: "1.6" }}>
-                      How to Heal Trauma & Overcome Disability... Just Like I Did, to Change Your Life!
-                    </p>
-                    <p className="section-label mt-4" style={{ color: "oklch(0.72 0.12 75 / 0.7)" }}>Kyal Neil Currant</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* Copy */}
-            <div className="reveal">
-              <p className="section-label mb-5">The Book</p>
-              <h2
-                className="font-display"
-                style={{
-                  fontFamily: "'Playfair Display', serif",
-                  fontSize: "clamp(2rem, 3.5vw, 2.8rem)",
-                  color: "oklch(0.18 0.05 155)",
-                  marginBottom: "1.5rem",
-                  lineHeight: 1.2,
-                }}
-              >
-                Disabled Delusion — How to Heal Trauma & Overcome Disability... Just Like I Did, to Change Your Life!
-              </h2>
-              <p className="font-body mb-5" style={{ color: "oklch(0.35 0.04 75)", lineHeight: "1.8", fontFamily: "'DM Sans', sans-serif" }}>
-                The story of how a kid born with a disability learned that the greatest limitation was never physical. It was the story he'd been told — and the one he kept telling himself.
-              </p>
-              <p className="font-body mb-8" style={{ color: "oklch(0.35 0.04 75)", lineHeight: "1.8", fontFamily: "'DM Sans', sans-serif" }}>
-                This book is for anyone who has ever felt like their body, their past, or their circumstances were the reason they couldn't have the life they wanted. Kyal's story will change that belief forever.
-              </p>
-              <button
-                onClick={() => setModalOpen(true)}
-                className="btn-gold"
-              >
-                Get Notified at Launch
-              </button>
-            </div>
+              </div>            ))}\n          </div>\n          <div className="text-center mt-12 reveal">\n             <a href="/testimonials" className="btn-gold" style={{ padding: "0.75rem 2rem", fontSize: "0.875rem" }}>
+              See all video testimonials of people who have experienced Kyal's work.
+            </a>
           </div>
-        </div>
-      </section>
+        </div>\n      </section>\n\n      {/* ════════════════════════════════════════════════════\n          THE BOOK  ════════════════════════════════════════════════════ */}
+
 
       {/* ════════════════════════════════════════════════════
           VALUE LADDER / ASCENSION
@@ -766,7 +700,7 @@ export default function Home() {
       >
         <div className="container">
           <div className="max-w-xl mx-auto text-center mb-14 reveal">
-            <p className="section-label mb-4">The Journey</p>
+
             <h2
               className="font-display"
               style={{
@@ -801,7 +735,7 @@ export default function Home() {
                 highlight: true,
               },
               {
-                level: "Mastery",
+                level: "Paid to Speak",
                 title: "Back-End Offers",
                 price: "By Application",
                 desc: "For speakers who've landed their gig and are ready to scale their impact. Available after completing The Soulful Speaker.",
@@ -865,7 +799,7 @@ export default function Home() {
         <div className="absolute inset-0" style={{ background: "oklch(0.12 0.04 155 / 0.82)" }} />
         <div className="relative container">
           <div className="max-w-xl mx-auto text-center reveal">
-            <p className="section-label mb-5">Free Resource</p>
+
             <h2
               className="font-display mb-5"
               style={{
@@ -900,7 +834,7 @@ export default function Home() {
         <div className="container">
           <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="reveal">
-              <p className="section-label mb-5">Speaking</p>
+  
               <h2
                 className="font-display"
                 style={{
@@ -944,7 +878,7 @@ export default function Home() {
       >
         <div className="container">
           <div className="max-w-2xl mx-auto text-center reveal">
-            <p className="section-label mb-6">The Decision</p>
+
             <h2
               className="font-display mb-6"
               style={{
@@ -990,9 +924,7 @@ export default function Home() {
               >
                 Kyal Neil Currant
               </p>
-              <p className="font-body text-xs" style={{ color: "oklch(0.55 0.01 75)", fontFamily: "'DM Sans', sans-serif" }}>
-                Speaker · Coach · Soulful Speaker Guide
-              </p>
+
             </div>
             <div className="flex flex-wrap gap-6 justify-center">
               {[

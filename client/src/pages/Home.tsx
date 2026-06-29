@@ -203,7 +203,7 @@ export default function Home() {
       </section>
 
       {/* ════════════════════════════════════════════════════
-          PROBLEM — StoryBrand: Name the Villain
+          THE CHALLENGE
       ════════════════════════════════════════════════════ */}
       <section
         id="problem"
@@ -280,7 +280,7 @@ export default function Home() {
       </section>
 
       {/* ════════════════════════════════════════════════════
-          GUIDE — StoryBrand: Meet the Guide
+          ABOUT KYAL
       ════════════════════════════════════════════════════ */}
       <section
         id="about"
@@ -335,7 +335,7 @@ export default function Home() {
                 I grew up with a disability. For years, I stayed quiet. I didn't think my voice mattered. But when I was forced to speak up, to advocate for myself, something shifted. I discovered that my voice was powerful. And more importantly, that it was needed.
               </p>
               <p className="font-body mb-5" style={{ color: "oklch(0.35 0.04 75)", lineHeight: "1.8", fontFamily: "'DM Sans', sans-serif" }}>
-                I've now spoken in 14+ countries, shared my message with thousands of people, and helped hundreds of entrepreneurs find their voice and land their first speaking gig. I know the fear. I know the self-doubt. And I know how to move through it.
+                I've now spoken in 14+ countries virtually, shared my message with hundreds of people, and helped entrepreneurs find and own their voice. I know the fear. I know the self-doubt. And I know how to move through it.
               </p>
               <p className="font-body mb-8" style={{ color: "oklch(0.35 0.04 75)", lineHeight: "1.8", fontFamily: "'DM Sans', sans-serif" }}>
                 In 12 weeks, I'll help you do the same.
@@ -364,7 +364,7 @@ export default function Home() {
         <div className="absolute inset-0" style={{ background: "oklch(0.12 0.04 155 / 0.45)" }} />
         <div className="relative h-full flex items-center justify-center text-center px-6">
           <div>
-            <p className="section-label mb-4" style={{ color: "oklch(0.72 0.12 75)" }}>Sacred Land</p>
+            <p className="section-label mb-4" style={{ color: "oklch(0.72 0.12 75)" }}>The Hidden Truth</p>
             <h2
               className="font-display"
               style={{
@@ -375,7 +375,7 @@ export default function Home() {
                 maxWidth: "700px",
               }}
             >
-              "The land speaks. The question is whether you're still enough to hear it."
+              "Your body speaks. The question is whether you're still enough to hear it."
             </h2>
           </div>
         </div>
@@ -448,14 +448,14 @@ export default function Home() {
             className="reveal grid md:grid-cols-2 gap-0"
             style={{ border: "1px solid oklch(0.72 0.12 75 / 0.3)" }}
           >
-            {/* Left — Retreat image */}
+            {/* Left — Speaker on stage image */}
             <div className="relative min-h-[320px] md:min-h-0">
               <img
-                src={RETREAT_SCENE}
-                alt="Connected Retreat campfire circle"
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663486097900/M4McNZFuLWN87qi77X2nxu/soulful-speaker-stage-moment-9HMiqf3xdxc5fViTzZVdbw.webp"
+                alt="Speaker on stage sharing their message with audience"
                 className="absolute inset-0 w-full h-full object-cover"
               />
-              <div className="absolute inset-0" style={{ background: "oklch(0.12 0.04 155 / 0.4)" }} />
+              <div className="absolute inset-0" style={{ background: "oklch(0.12 0.04 155 / 0.2)" }} />
             </div>
 
             {/* Right — Offer details */}
@@ -463,16 +463,15 @@ export default function Home() {
               <p className="section-label mb-4">What's Included</p>
               <div className="space-y-0 mb-8">
                 {[
-                  ["12 weeks of 1-on-1 coaching", "Value $4,000+"],
-                  ["Story discovery & message development", "Value $1,500"],
-                  ["Speaking skills & platform building", "Value $1,200"],
-                  ["Nervous system work & confidence building", "Value $800"],
-                  ["Speaking opportunity support", "Value $500"],
-                  ["Lifetime community access", "Priceless"],
-                ].map(([item, val]) => (
+                  "12 weeks of 1-on-1 coaching",
+                  "Story discovery & message development",
+                  "Speaking skills & platform building",
+                  "Nervous system work & confidence building",
+                  "Speaking opportunity support",
+                  "Lifetime community access",
+                ].map((item) => (
                   <div key={item} className="value-row">
-                    <span style={{ color: "oklch(0.88 0.01 75)", fontFamily: "'DM Sans', sans-serif" }}>{item}</span>
-                    <span className="val-price">{val}</span>
+                    <span style={{ color: "oklch(0.88 0.01 75)", fontFamily: "'DM Sans', sans-serif" }}>✓ {item}</span>
                   </div>
                 ))}
               </div>

@@ -391,7 +391,7 @@ export default function Home() {
         <div className="container">
           {/* Header */}
           <div className="max-w-2xl reveal mb-16">
-            <p className="section-label mb-5">The Offer</p>
+
             <h2
               className="font-display"
               style={{
@@ -500,7 +500,7 @@ export default function Home() {
       >
         <div className="container">
           <div className="max-w-xl mx-auto text-center mb-14 reveal">
-            <p className="section-label mb-4">How It Works</p>
+
             <h2
               className="font-display"
               style={{

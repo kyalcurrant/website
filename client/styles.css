@@ -83,7 +83,9 @@ section { padding: clamp(64px, 10vw, 118px) 0; }
 .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 16px 0; transition: background 0.3s, box-shadow 0.3s; }
 .nav.scrolled { background: rgba(20,42,33,0.94); backdrop-filter: blur(10px); box-shadow: 0 1px 0 rgba(201,168,76,0.18); }
 .nav__inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-.nav__brand { font: 600 19px/1 var(--display); color: var(--cream); text-decoration: none; }
+.nav__brand { text-decoration: none; display: flex; align-items: center; }
+.nav__logo { height: 44px; width: auto; display: block; }
+.foot__logo { height: 52px; width: auto; display: block; margin-bottom: 6px; }
 .nav__links { display: flex; gap: 26px; align-items: center; }
 .nav__links a:not(.btn) { font: 500 13.5px/1 var(--body); letter-spacing: 0.05em; color: rgba(245,240,232,0.85); text-decoration: none; transition: color 0.15s; }
 .nav__links a:not(.btn):hover, .nav__links a[aria-current] { color: var(--gold); }

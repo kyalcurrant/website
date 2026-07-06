@@ -11,8 +11,8 @@ import Workshop from "./pages/Workshop";
 import Podcast from "./pages/Podcast";
 import Testimonials from "./pages/Testimonials";
 
-
 function Router() {
+  // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
       <Route path={"/"} component={Home} />

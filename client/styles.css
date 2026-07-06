@@ -103,9 +103,17 @@ section { padding: clamp(64px, 10vw, 118px) 0; }
   width: 100%;
   max-width: 420px;
   height: auto;
-  border-radius: 12px;
-  filter: drop-shadow(0 8px 48px rgba(201,168,76,0.22));
+  border-radius: 0;
   object-fit: cover;
+  /* Fade edges into the hero background — keep centre fully opaque */
+  -webkit-mask-image:
+    linear-gradient(to right,  transparent 0%, black 14%, black 86%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, black 16%, black 90%, transparent 100%);
+  mask-image:
+    linear-gradient(to right,  transparent 0%, black 14%, black 86%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, black 16%, black 90%, transparent 100%);
+  -webkit-mask-composite: intersect;
+  mask-composite: intersect;
 }
 @media (max-width: 860px) {
   .hero__split { grid-template-columns: 1fr; }

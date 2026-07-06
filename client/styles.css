@@ -99,11 +99,20 @@ section { padding: clamp(64px, 10vw, 118px) 0; }
 .hero__copy { max-width: 600px; }
 .hero__anim { display: flex; align-items: center; justify-content: center; }
 .hero__anim-img { width: 100%; max-width: 420px; height: auto; filter: drop-shadow(0 0 40px rgba(201,168,76,0.18)); }
+.hero__anim-video {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  border-radius: 12px;
+  filter: drop-shadow(0 8px 48px rgba(201,168,76,0.22));
+  object-fit: cover;
+}
 @media (max-width: 860px) {
   .hero__split { grid-template-columns: 1fr; }
   .hero__copy { max-width: 100%; }
   .hero__anim { order: 2; max-width: 320px; margin: 0 auto; }
   .hero__anim-img { max-width: 280px; }
+  .hero__anim-video { max-width: 280px; }
 }
 
 /* Cards */

@@ -139,6 +139,10 @@ section { padding: clamp(64px, 10vw, 118px) 0; }
 .on-cream { background: var(--cream); color: var(--ink-cream); }
 .on-cream h2, .on-cream h3 { color: var(--forest); }
 .on-cream p { color: var(--muted-cream); }
+/* Cards inside on-cream sections keep their own dark-background text colors */
+.on-cream .card h3 { color: var(--cream); }
+.on-cream .card p { color: var(--cream); opacity: 0.85; }
+.on-cream .card .num { color: var(--gold); }
 
 .split { display: grid; grid-template-columns: 0.95fr 1.25fr; gap: clamp(32px, 6vw, 80px); align-items: center; }
 .portrait { aspect-ratio: 4/5; background: linear-gradient(165deg, var(--forest-raised), var(--forest-deep)); border: 1px solid var(--gold-soft); display: grid; place-items: center; color: var(--muted-dark); font-size: 13px; text-align: center; padding: 20px; }

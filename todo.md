@@ -15,7 +15,7 @@
 - [x] Add .nav__logo and .foot__logo CSS styles in styles.css
 
 ## Pending
-- [ ] Fix podcast.html and testimonials.html workshop links (still point to index.html#workshop instead of workshop.html)
+- [x] Fix podcast.html and testimonials.html workshop links (still point to index.html#workshop instead of workshop.html)
 - [ ] Add live booking/registration form for the workshop (Typeform/Calendly embed)
 - [ ] Add Google Analytics 4 tracking
 - [ ] Add FAQ section

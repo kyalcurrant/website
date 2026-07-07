@@ -1,5 +1,6 @@
 import express from "express";
 import { createServer } from "http";
+import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -18,7 +19,28 @@ async function startServer() {
 
   app.use(express.static(staticPath));
 
-  // Handle client-side routing - serve index.html for all routes
+  // Serve multi-page HTML files by route
+  const staticHtmlPages = ["workshop", "podcast", "testimonials"];
+  staticHtmlPages.forEach((page) => {
+    app.get(`/${page}`, (_req, res) => {
+      const filePath = path.join(staticPath, `${page}.html`);
+      if (fs.existsSync(filePath)) {
+        res.sendFile(filePath);
+      } else {
+        res.sendFile(path.join(staticPath, "index.html"));
+      }
+    });
+    app.get(`/${page}.html`, (_req, res) => {
+      const filePath = path.join(staticPath, `${page}.html`);
+      if (fs.existsSync(filePath)) {
+        res.sendFile(filePath);
+      } else {
+        res.sendFile(path.join(staticPath, "index.html"));
+      }
+    });
+  });
+
+  // Fall through to index.html for everything else
   app.get("*", (_req, res) => {
     res.sendFile(path.join(staticPath, "index.html"));
   });

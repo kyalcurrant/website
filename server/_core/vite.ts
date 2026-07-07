@@ -79,6 +79,27 @@ export function serveStatic(app: Express) {
 
   app.use(express.static(distPath));
 
+  // Serve multi-page HTML files by route (e.g. /workshop -> workshop.html)
+  const staticHtmlPages = ["workshop", "podcast", "testimonials"];
+  staticHtmlPages.forEach((page) => {
+    app.get(`/${page}`, (_req, res) => {
+      const filePath = path.resolve(distPath, `${page}.html`);
+      if (fs.existsSync(filePath)) {
+        res.sendFile(filePath);
+      } else {
+        res.sendFile(path.resolve(distPath, "index.html"));
+      }
+    });
+    app.get(`/${page}.html`, (_req, res) => {
+      const filePath = path.resolve(distPath, `${page}.html`);
+      if (fs.existsSync(filePath)) {
+        res.sendFile(filePath);
+      } else {
+        res.sendFile(path.resolve(distPath, "index.html"));
+      }
+    });
+  });
+
   // fall through to index.html if the file doesn't exist
   app.use("*", (_req, res) => {
     res.sendFile(path.resolve(distPath, "index.html"));

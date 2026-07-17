@@ -11,3 +11,45 @@ var io = new IntersectionObserver(function (entries) {
   });
 }, { threshold: 0.12 });
 document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+
+// Mobile hamburger menu
+(function () {
+  var toggle = document.getElementById('navToggle');
+  var links = document.getElementById('navLinks');
+  if (!toggle || !links) return;
+
+  // Create overlay
+  var overlay = document.createElement('div');
+  overlay.className = 'nav__overlay';
+  document.body.appendChild(overlay);
+
+  function openMenu() {
+    links.classList.add('open');
+    overlay.classList.add('open');
+    toggle.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    links.classList.remove('open');
+    overlay.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  toggle.addEventListener('click', function () {
+    if (toggle.getAttribute('aria-expanded') === 'true') { closeMenu(); } else { openMenu(); }
+  });
+
+  overlay.addEventListener('click', closeMenu);
+
+  // Close on link click (for same-page anchors)
+  links.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', closeMenu);
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeMenu();
+  });
+}());

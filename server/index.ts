@@ -20,7 +20,7 @@ async function startServer() {
   app.use(express.static(staticPath));
 
   // Serve multi-page HTML files by route
-  const staticHtmlPages = ["workshop", "podcast", "testimonials"];
+  const staticHtmlPages = ["workshop", "podcast", "testimonials", "own-your-story"];
   staticHtmlPages.forEach((page) => {
     app.get(`/${page}`, (_req, res) => {
       const filePath = path.join(staticPath, `${page}.html`);

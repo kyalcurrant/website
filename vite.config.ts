@@ -173,6 +173,7 @@ export default defineConfig({
         workshop: path.resolve(import.meta.dirname, "client", "workshop.html"),
         podcast: path.resolve(import.meta.dirname, "client", "podcast.html"),
         testimonials: path.resolve(import.meta.dirname, "client", "testimonials.html"),
+        ownYourStory: path.resolve(import.meta.dirname, "client", "own-your-story.html"),
       },
     },
   },

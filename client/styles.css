@@ -104,8 +104,8 @@ section { padding: clamp(64px, 10vw, 118px) 0; }
 
 @media (max-width: 960px) {
   .nav__hamburger { display: flex; }
-  .nav__links { display: none; flex-direction: column; align-items: flex-start; gap: 0; position: fixed; top: 0; right: 0; bottom: 0; width: min(80vw, 300px); background: var(--forest-deep); padding: 80px 28px 40px; z-index: 200; transform: translateX(100%); transition: transform 0.3s cubic-bezier(0.4,0,0.2,1); box-shadow: -4px 0 24px oklch(0 0 0 / 0.4); }
-  .nav__links.open { display: flex; transform: translateX(0); }
+  .nav__links { display: flex; flex-direction: column; align-items: flex-start; gap: 0; position: fixed; top: 0; right: 0; bottom: 0; width: min(80vw, 300px); background: var(--forest-deep); padding: 80px 28px 40px; z-index: 200; transform: translateX(100%); transition: transform 0.3s cubic-bezier(0.4,0,0.2,1); box-shadow: -4px 0 24px oklch(0 0 0 / 0.4); visibility: hidden; pointer-events: none; }
+  .nav__links.open { transform: translateX(0); visibility: visible; pointer-events: auto; }
   .nav__links a:not(.btn) { display: block; font-size: 15px; padding: 14px 0; border-bottom: 1px solid oklch(1 0 0 / 0.08); width: 100%; color: var(--cream); }
   .nav__links .btn { margin-top: 20px; width: 100%; text-align: center; }
 }

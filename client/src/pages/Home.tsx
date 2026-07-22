@@ -451,7 +451,7 @@ export default function Home() {
             {/* Left — Kyal speaking at event */}
             <div className="relative min-h-[320px] md:min-h-0">
               <img
-                src="/manus-storage/kyal_8bdc1fef.jpg"
+                src="whats_included.jpg"
                 alt="Kyal speaking to an engaged audience at an event"
                 className="absolute inset-0 w-full h-full object-cover"
               />

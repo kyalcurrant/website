@@ -204,7 +204,7 @@ export default function Workshop() {
 
           <div className="text-center reveal">
             <a
-              href="mailto:kyal@kyalcurrant.com?subject=The Premier Speaker Event Inquiry"
+              href="https://www.eventbrite.com.au/e/the-premier-speaker-event-brisbane-tickets-1994753070130?aff=oddtdtcreator" target="_blank" rel="noopener"
               className="btn-gold"
               style={{ padding: "1rem 2.5rem", fontSize: "1rem" }}
             >

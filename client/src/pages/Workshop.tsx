@@ -11,7 +11,7 @@ export default function Workshop() {
       <Header />
 
       {/* ════════════════════════════════════════════════════
-          HERO — Pre-Speaker Workshop
+          HERO — The Premier Speaker Event™
       ════════════════════════════════════════════════════ */}
       <section
         className="relative min-h-screen flex items-center"
@@ -28,7 +28,7 @@ export default function Workshop() {
 
         <div className="relative container pt-32 pb-24 md:pt-40 md:pb-32">
           <div className="max-w-3xl">
-            <p className="section-label mb-6 reveal">Monthly Workshop</p>
+            <p className="section-label mb-6 reveal">Real Humans · Real Stories</p>
             <h1
               className="font-display reveal"
               style={{
@@ -40,27 +40,39 @@ export default function Workshop() {
                 marginBottom: "1.5rem",
               }}
             >
-              Craft Your Message<br />
-              and<br />
-              <em style={{ color: "oklch(0.72 0.12 75)" }}>Land the Stage.</em>
+              The Premier Speaker Event™
             </h1>
             <p
               className="font-body reveal"
               style={{
                 fontSize: "1.15rem",
                 color: "oklch(0.88 0.01 75)",
-                maxWidth: "560px",
+                maxWidth: "600px",
                 lineHeight: "1.75",
-                marginBottom: "2.5rem",
+                marginBottom: "1.5rem",
                 fontFamily: "'DM Sans', sans-serif",
               }}
             >
-              A low-cost entry point to discover your speaking voice. In this interactive workshop, you'll craft your core message, overcome your fears, and get clarity on your first speaking opportunity.
+              Do you struggle in love, relationships or business? Are you searching for clarity, direction, or deeper connection? Are you ready to create real change in your life?
+            </p>
+            <p
+              className="font-body reveal"
+              style={{
+                fontSize: "1.05rem",
+                color: "oklch(0.75 0.01 75)",
+                maxWidth: "600px",
+                lineHeight: "1.75",
+                marginBottom: "2.5rem",
+                fontFamily: "'DM Sans', sans-serif",
+                opacity: 0.9,
+              }}
+            >
+              Then you are invited to The Premier Speaker Event™, an evening where real humans share real stories. A space where nothing is off topic, full expression is welcomed, and there are no labels, no expectations, and no attachments to who you should be.
             </p>
             <div className="flex flex-wrap gap-4 reveal">
-              <a href="#details" className="btn-gold">Learn More</a>
-              <a href="#apply" className="btn-outline-cream">
-                Apply Now
+              <a href="#apply" className="btn-gold">Reserve Your Seat — From $15</a>
+              <a href="/#offer" className="btn-outline-cream">
+                Learn About The Soulful Speaker
               </a>
             </div>
           </div>
@@ -68,64 +80,45 @@ export default function Workshop() {
       </section>
 
       {/* ════════════════════════════════════════════════════
-          WORKSHOP DETAILS
+          THE EVENT EXPERIENCE
       ════════════════════════════════════════════════════ */}
       <section
         id="details"
         style={{ background: "oklch(0.96 0.015 75)", padding: "7rem 0" }}
       >
         <div className="container">
-          <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
-            {/* Image */}
-            <div className="reveal order-2 md:order-1">
-              <img
-                src={WORKSHOP_DETAIL}
-                alt="Pre-Speaker Workshop"
-                className="w-full object-cover rounded-lg"
-                style={{ maxHeight: "500px", objectPosition: "center" }}
-              />
-            </div>
-
-            {/* Copy */}
-            <div className="reveal order-1 md:order-2">
-              <h2
-                className="font-display"
-                style={{
-                  fontFamily: "'Playfair Display', serif",
-                  fontSize: "clamp(2rem, 3.5vw, 2.8rem)",
-                  color: "oklch(0.18 0.05 155)",
-                  marginBottom: "1.5rem",
-                  lineHeight: 1.2,
-                }}
-              >
-                Find Your Voice<br />
-                in One Day.
-              </h2>
-              <p className="font-body mb-5" style={{ color: "oklch(0.35 0.04 75)", lineHeight: "1.8", fontFamily: "'DM Sans', sans-serif" }}>
-                This workshop is designed for aspiring speakers who want to get clarity on their message and overcome the fear of public speaking. Whether you're completely new to speaking or you've been thinking about it for years, this is your starting point.
-              </p>
-              <p className="font-body mb-5" style={{ color: "oklch(0.35 0.04 75)", lineHeight: "1.8", fontFamily: "'DM Sans', sans-serif" }}>
-                You'll leave with a clear understanding of your core message, a plan for your first speaking opportunity, and the confidence to take the next step.
-              </p>
-              <p className="font-body mb-8" style={{ color: "oklch(0.35 0.04 75)", lineHeight: "1.8", fontFamily: "'DM Sans', sans-serif" }}>
-                This is the perfect gateway into The Soulful Speaker 12-week program.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <a href="#apply" className="btn-gold">Apply for the Workshop</a>
-              </div>
-            </div>
+          <div className="max-w-3xl mx-auto text-center reveal">
+            <h2
+              className="font-display"
+              style={{
+                fontFamily: "'Playfair Display', serif",
+                fontSize: "clamp(2rem, 3.5vw, 2.8rem)",
+                color: "oklch(0.18 0.05 155)",
+                marginBottom: "1.5rem",
+                lineHeight: 1.2,
+              }}
+            >
+              Step into authenticity.
+            </h2>
+            <p className="font-body mb-8" style={{ color: "oklch(0.35 0.04 75)", fontSize: "1.1rem", lineHeight: "1.8", fontFamily: "'DM Sans', sans-serif" }}>
+              Each speaker shares their lived experience and their journey of transformation, showing what becomes possible when you step into authenticity. Witnessing others speak from a place of honesty shifts something in you too. You reflect on your own story. You reconnect with your voice. You begin to see new possibilities for your life.
+            </p>
+            <p className="font-body font-bold" style={{ color: "oklch(0.18 0.05 155)", fontSize: "1.1rem", lineHeight: "1.8", fontFamily: "'DM Sans', sans-serif" }}>
+              Come as you are. Leave with clarity, inspiration, powerful connections, and the courage to create change.
+            </p>
           </div>
         </div>
       </section>
 
       {/* ════════════════════════════════════════════════════
-          WHAT'S INCLUDED
+          PRE-SPEAKER WORKSHOP
       ════════════════════════════════════════════════════ */}
       <section
         style={{ background: "oklch(0.18 0.05 155)", padding: "7rem 0" }}
       >
         <div className="container">
-          <div className="max-w-2xl mx-auto text-center mb-14 reveal">
+          <div className="max-w-2xl reveal mb-14">
+            <p className="section-label mb-4">Optional Add-on</p>
             <h2
               className="font-display"
               style={{
@@ -133,133 +126,96 @@ export default function Workshop() {
                 fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
                 color: "oklch(0.96 0.015 75)",
                 lineHeight: 1.2,
+                marginBottom: "1.5rem",
               }}
             >
-              What You'll Get
+              Add the Pre Speaker Workshop
             </h2>
+            <p className="font-body" style={{ color: "oklch(0.88 0.01 75)", lineHeight: "1.8", fontFamily: "'DM Sans', sans-serif" }}>
+              Before the main stage, join an optional pre speaker workshop: <strong>Craft Your Message and Land the Stage</strong>. This is a hands on session for entrepreneurs, coaches, and leaders who are ready to step into their own voice.
+            </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-            {[
-              {
-                icon: "📖",
-                title: "Craft Your Story",
-                body: "Discover the core message that makes your voice unique. Learn what story to tell and why it matters.",
-              },
-              {
-                icon: "🎤",
-                title: "Speaking Skills",
-                body: "Learn the fundamentals of public speaking. Overcome nervousness and develop presence on stage.",
-              },
-              {
-                icon: "🎯",
-                title: "Your First Opportunity",
-                body: "Leave with a concrete plan for landing your first speaking gig. Know exactly where to start.",
-              },
-              {
-                icon: "🤝",
-                title: "Community",
-                body: "Connect with other aspiring speakers. Build relationships with people on the same journey.",
-              },
-            ].map((item) => (
-              <div key={item.title} className="pillar-card reveal">
-                <div className="text-4xl mb-4">{item.icon}</div>
-                <h3
-                  className="font-display text-xl mb-3"
-                  style={{ color: "oklch(0.72 0.12 75)", fontFamily: "'Playfair Display', serif" }}
-                >
-                  {item.title}
-                </h3>
-                <p className="font-body text-sm" style={{ color: "oklch(0.75 0.01 75)", lineHeight: "1.75", fontFamily: "'DM Sans', sans-serif" }}>
-                  {item.body}
-                </p>
+          <div className="grid md:grid-cols-2 gap-12 items-start">
+            <div className="reveal">
+              <h3 className="font-display text-xl mb-6" style={{ color: "oklch(0.72 0.12 75)", fontFamily: "'Playfair Display', serif" }}>
+                In this workshop you will:
+              </h3>
+              <div className="space-y-4">
+                {[
+                  "Create a simple one page speaker document for future engagements",
+                  "Craft a clear message from your own lived experience",
+                  "Align your energy so you can speak from vulnerability with confidence",
+                  "Build a confident elevator pitch and social pitch",
+                  "Learn how to position yourself for speaking opportunities",
+                ].map((item) => (
+                  <div key={item} className="flex gap-3 items-start">
+                    <span style={{ color: "oklch(0.72 0.12 75)", fontWeight: "bold" }}>✓</span>
+                    <p className="font-body text-sm" style={{ color: "oklch(0.75 0.01 75)", lineHeight: "1.6", fontFamily: "'DM Sans', sans-serif" }}>
+                      {item}
+                    </p>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+            <div className="reveal p-8 rounded-lg" style={{ background: "oklch(0.22 0.055 155)", border: "1px solid oklch(0.72 0.12 75 / 0.3)" }}>
+              <h3 className="font-display text-xl mb-4" style={{ color: "oklch(0.72 0.12 75)", fontFamily: "'Playfair Display', serif" }}>
+                The Outcome
+              </h3>
+              <p className="font-body" style={{ color: "oklch(0.88 0.01 75)", lineHeight: "1.7", fontFamily: "'DM Sans', sans-serif" }}>
+                You will leave the workshop with a practical framework and your own speaker assets, ready to bring into the evening event and beyond.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* ════════════════════════════════════════════════════
-          WORKSHOP DETAILS BOX
+          RESERVE SEAT
       ════════════════════════════════════════════════════ */}
       <section
         id="apply"
-        style={{ background: "oklch(0.22 0.055 155)", padding: "7rem 0" }}
+        style={{ background: "oklch(0.96 0.015 75)", padding: "7rem 0" }}
       >
-        <div className="container max-w-2xl">
-          <div className="reveal text-center mb-12">
+        <div className="container max-w-2xl text-center">
+          <div className="reveal mb-12">
+            <p className="section-label mb-4" style={{ color: "oklch(0.18 0.05 155)" }}>Ready to Step Into Your Voice?</p>
             <h2
               className="font-display mb-4"
               style={{
                 fontFamily: "'Playfair Display', serif",
                 fontSize: "clamp(2rem, 3.5vw, 2.8rem)",
-                color: "oklch(0.96 0.015 75)",
+                color: "oklch(0.18 0.05 155)",
                 lineHeight: 1.2,
               }}
             >
-              Workshop Details
+              Reserve your seat.
             </h2>
+            <p className="font-body" style={{ color: "oklch(0.35 0.04 75)", lineHeight: "1.8", fontFamily: "'DM Sans', sans-serif" }}>
+              The Premier Speaker Event™ and Workshop are held monthly in Gold Coast. Spaces are limited to ensure an intimate, supportive experience.
+            </p>
           </div>
 
-          <div className="reveal space-y-6 mb-8">
-            {[
-              { label: "Format", value: "In-person workshop" },
-              { label: "Location", value: "Currumbin, Gold Coast, QLD" },
-              { label: "Duration", value: "Full day (8 hours)" },
-              { label: "When", value: "Monthly — dates available on application" },
-              { label: "Group Size", value: "Small group (max 12 people)" },
-              { label: "Investment", value: "Low-cost entry point" },
-            ].map(({ label, value }) => (
-              <div key={label} className="flex justify-between items-start pb-4" style={{ borderBottom: "1px solid oklch(0.72 0.12 75 / 0.2)" }}>
-                <p className="font-body font-semibold" style={{ color: "oklch(0.72 0.12 75)", fontFamily: "'DM Sans', sans-serif" }}>
-                  {label}
-                </p>
-                <p className="font-body text-right" style={{ color: "oklch(0.88 0.01 75)", fontFamily: "'DM Sans', sans-serif" }}>
-                  {value}
-                </p>
-              </div>
-            ))}
+          <div className="reveal p-6 mb-8 rounded-lg" style={{ background: "oklch(0.18 0.05 155)", border: "1px solid oklch(0.72 0.12 75 / 0.3)" }}>
+            <p className="font-body text-sm" style={{ color: "oklch(0.96 0.015 75)", fontFamily: "'DM Sans', sans-serif" }}>
+              Next events: July 23rd, August 20th, September 24th · Gold Coast · From $15 (Early Bird)
+            </p>
           </div>
 
           <div className="text-center reveal">
             <a
-              href="mailto:kyal@kyalcurrant.com?subject=Pre-Speaker Workshop Application"
+              href="mailto:kyal@kyalcurrant.com?subject=The Premier Speaker Event Inquiry"
               className="btn-gold"
               style={{ padding: "1rem 2.5rem", fontSize: "1rem" }}
             >
-              Apply for the Workshop
+              Reserve Your Seat — From $15
             </a>
-            <p className="font-body text-xs mt-4" style={{ color: "oklch(0.65 0.01 75)", fontFamily: "'DM Sans', sans-serif" }}>
-              Limited spots available. Applications reviewed personally by Kyal.
-            </p>
+            <div className="mt-6">
+              <a href="/#offer" className="text-sm font-semibold" style={{ color: "oklch(0.18 0.05 155)", textDecoration: "underline" }}>
+                Ready for Deeper Work?
+              </a>
+            </div>
           </div>
-        </div>
-      </section>
-
-      {/* ════════════════════════════════════════════════════
-          NEXT STEP
-      ════════════════════════════════════════════════════ */}
-      <section
-        style={{ background: "oklch(0.18 0.05 155)", padding: "7rem 0" }}
-      >
-        <div className="container max-w-2xl text-center reveal">
-          <h2
-            className="font-display mb-6"
-            style={{
-              fontFamily: "'Playfair Display', serif",
-              fontSize: "clamp(2rem, 3.5vw, 2.8rem)",
-              color: "oklch(0.96 0.015 75)",
-              lineHeight: 1.2,
-            }}
-          >
-            Ready for Deeper Work?
-          </h2>
-          <p className="font-body mb-8" style={{ color: "oklch(0.88 0.01 75)", lineHeight: "1.8", fontFamily: "'DM Sans', sans-serif" }}>
-            After the workshop, many people move into The Soulful Speaker 12-week program for deeper transformation and support landing their speaking gig.
-          </p>
-          <a href="/#offer" className="btn-gold">
-            Learn About The Soulful Speaker
-          </a>
         </div>
       </section>
 

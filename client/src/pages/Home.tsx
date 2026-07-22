@@ -193,7 +193,7 @@ export default function Home() {
               You know you have something worth sharing. A story. A message. A perspective that could change people's lives. But fear, self-doubt, and lack of confidence have kept you quiet. In 12 weeks, I'll help you find your voice, own your story, and land your first speaking gig.
             </p>
             <div className="flex flex-wrap gap-4 reveal">
-              <a href="/workshop" className="btn-gold">Start with the Workshop</a>
+              <a href="/workshop" className="btn-gold">The Premier Speaker Event™</a>
               <a href="#offer" className="btn-outline-cream">
                 Learn About The Soulful Speaker
               </a>
@@ -342,7 +342,7 @@ export default function Home() {
               </p>
               <div className="flex flex-wrap gap-4">
                 <a href="#offer" className="btn-gold">Learn About The Soulful Speaker</a>
-                <a href="/workshop" className="btn-outline-gold">Start with the Workshop</a>
+                <a href="/workshop" className="btn-outline-gold">The Premier Speaker Event™</a>
               </div>
             </div>
           </div>
@@ -481,7 +481,7 @@ export default function Home() {
                   Limited spots available. This is 1-on-1 coaching, so I work with a small number of clients at a time.
                 </p>
                 <a href="/workshop" className="btn-gold w-full block text-center">
-                  Start with the Workshop
+                  The Premier Speaker Event™
                 </a>
               </div>
               <p className="font-body text-xs text-center" style={{ color: "oklch(0.55 0.01 75)", fontFamily: "'DM Sans', sans-serif" }}>
@@ -517,8 +517,8 @@ export default function Home() {
             {[
               {
                 step: "1",
-                title: "Start with the Workshop",
-                body: "Attend the monthly Pre-Speaker Workshop to craft your core message and overcome your fears. Get clarity on your speaking voice.",
+                title: "The Premier Speaker Event™",
+                body: "Attend the monthly The Premier Speaker Event™ to craft your core message and overcome your fears. Get clarity on your speaking voice.",
               },
               {
                 step: "2",
@@ -718,7 +718,7 @@ export default function Home() {
             {[
               {
                 level: "Gateway",
-                title: "Pre-Speaker Workshop",
+                title: "The Premier Speaker Event™",
                 price: "Low-Cost",
                 desc: "Monthly in-person workshop. Craft your core message, overcome your fears, and get clarity on your first speaking opportunity.",
                 cta: "Learn More",
@@ -816,10 +816,10 @@ export default function Home() {
               className="font-body mb-8"
               style={{ color: "oklch(0.80 0.01 75)", lineHeight: "1.8", fontFamily: "'DM Sans', sans-serif" }}
             >
-              The Pre-Speaker Workshop is a low-cost entry point to discover your speaking voice. You'll craft your core message, overcome your fears, and get clarity on your first speaking opportunity.
+              The The Premier Speaker Event™ is a low-cost entry point to discover your speaking voice. You'll craft your core message, overcome your fears, and get clarity on your first speaking opportunity.
             </p>
             <a href="/workshop" className="btn-gold">
-              Learn About the Workshop
+              The Premier Speaker Event™
             </a>
           </div>
         </div>
@@ -902,7 +902,7 @@ export default function Home() {
                 Apply to Work 1-on-1
               </a>
               <a href="/workshop" className="btn-outline-cream">
-                Start with the Workshop
+                The Premier Speaker Event™
               </a>
             </div>
           </div>
@@ -929,7 +929,7 @@ export default function Home() {
             <div className="flex flex-wrap gap-6 justify-center">
               {[
                 { label: "The Soulful Speaker", href: "/#offer" },
-                { label: "Workshop", href: "/workshop" },
+                { label: "The Premier Speaker Event™", href: "/workshop" },
                 { label: "Podcast", href: "/podcast" },
                 { label: "Testimonials", href: "/testimonials" },
                 { label: "Contact", href: "mailto:kyal@kyalcurrant.com" },

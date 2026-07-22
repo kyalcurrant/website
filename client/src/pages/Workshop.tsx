@@ -198,7 +198,7 @@ export default function Workshop() {
 
           <div className="reveal p-6 mb-8 rounded-lg" style={{ background: "rgba(201,168,76,0.18)", border: "1px solid oklch(0.72 0.12 75 / 0.3)" }}>
             <p className="font-body text-sm" style={{ color: "#000", fontWeight: "600", fontFamily: "'DM Sans', sans-serif" }}>
-              Next events: July 23rd, August 20th, September 24th · Gold Coast · From $15 (Early Bird)
+              Next events: July 23rd, August 20th, September 24th · From $15 (Early Bird)
             </p>
           </div>
 

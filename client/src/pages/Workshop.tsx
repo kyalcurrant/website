@@ -192,12 +192,12 @@ export default function Workshop() {
               Reserve your seat.
             </h2>
             <p className="font-body" style={{ color: "oklch(0.35 0.04 75)", lineHeight: "1.8", fontFamily: "'DM Sans', sans-serif" }}>
-              The Premier Speaker Event™ and Workshop are held monthly in Gold Coast. Spaces are limited to ensure an intimate, supportive experience.
+              The Premier Speaker Event™ and Workshop are held monthly. Spaces are limited to ensure an intimate, supportive experience.
             </p>
           </div>
 
-          <div className="reveal p-6 mb-8 rounded-lg" style={{ background: "oklch(0.18 0.05 155)", border: "1px solid oklch(0.72 0.12 75 / 0.3)" }}>
-            <p className="font-body text-sm" style={{ color: "oklch(0.96 0.015 75)", fontFamily: "'DM Sans', sans-serif" }}>
+          <div className="reveal p-6 mb-8 rounded-lg" style={{ background: "rgba(201,168,76,0.18)", border: "1px solid oklch(0.72 0.12 75 / 0.3)" }}>
+            <p className="font-body text-sm" style={{ color: "#000", fontWeight: "600", fontFamily: "'DM Sans', sans-serif" }}>
               Next events: July 23rd, August 20th, September 24th · Gold Coast · From $15 (Early Bird)
             </p>
           </div>

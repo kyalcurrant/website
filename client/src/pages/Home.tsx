@@ -816,7 +816,7 @@ export default function Home() {
               className="font-body mb-8"
               style={{ color: "oklch(0.80 0.01 75)", lineHeight: "1.8", fontFamily: "'DM Sans', sans-serif" }}
             >
-              The The Premier Speaker Event™ is a low-cost entry point to discover your speaking voice. You'll craft your core message, overcome your fears, and get clarity on your first speaking opportunity.
+              The Premier Speaker Event™ and Workshop are held monthly. Spaces are limited to ensure an intimate, supportive experience.
             </p>
             <a href="/workshop" className="btn-gold">
               The Premier Speaker Event™

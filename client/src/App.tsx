@@ -17,7 +17,9 @@ function Router() {
     <Switch>
       <Route path={"/"} component={Home} />
       <Route path={"/premier-event"} component={PremierEvent} />
+      <Route path={"/premierspeakerevent"} component={PremierEvent} />
       <Route path={"/workshop"} component={Workshop} />
+      <Route path={"/pre-speaker-workshop"} component={Workshop} />
       <Route path={"/podcast"} component={Podcast} />
       <Route path={"/testimonials"} component={Testimonials} />
       <Route path={"/404"} component={NotFound} />

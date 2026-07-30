@@ -1,6 +1,5 @@
 import express from "express";
 import { createServer } from "http";
-import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -19,31 +18,7 @@ async function startServer() {
 
   app.use(express.static(staticPath));
 
-  // Serve multi-page HTML files by route
-  const staticHtmlPages = ["podcast", "testimonials", "own-your-story"];
-  staticHtmlPages.forEach((page) => {
-    app.get(`/${page}`, (_req, res) => {
-      const filePath = path.join(staticPath, `${page}.html`);
-      if (fs.existsSync(filePath)) {
-        res.sendFile(filePath);
-      } else {
-        res.sendFile(path.join(staticPath, "index.html"));
-      }
-    });
-    app.get(`/${page}.html`, (_req, res) => {
-      const filePath = path.join(staticPath, `${page}.html`);
-      if (fs.existsSync(filePath)) {
-        res.sendFile(filePath);
-      } else {
-        res.sendFile(path.join(staticPath, "index.html"));
-      }
-    });
-  });
-
-  // /premierspeakerevent routes serve the React app (same as /workshop)
-  // This is handled by the fallthrough to index.html below
-
-  // Fall through to index.html for everything else (including /premierspeakerevent and /workshop)
+  // Handle client-side routing - serve index.html for all routes
   app.get("*", (_req, res) => {
     res.sendFile(path.join(staticPath, "index.html"));
   });

@@ -1,0 +1,44 @@
+{
+  "build_command": "pnpm run build",
+  "capabilities": [
+    "db",
+    "server",
+    "user"
+  ],
+  "dev_command": "pnpm run dev",
+  "env_vars": {
+    "DATABASE_URL": "mysql://261EtBsuhHfiU2C.12d5967fa349:coP5TsoS3ts8x5v95LCB@gateway05.us-east-1.prod.aws.tidbcloud.com:4000/M4McNZFuLWN87qi77X2nxu?ssl={\"rejectUnauthorized\":true}"
+  },
+  "experiments": [
+    "no_db_push"
+  ],
+  "git_remote": {
+    "repo_url": "s3://vida-prod-gitrepo/webdev-git/310519663486097900/M4McNZFuLWN87qi77X2nxu",
+    "access_key_id": "ASIAZV3A2ECZC7LJJGBM",
+    "secret_access_key": "CAbGVCiiYl4rlS/01FlQBm+hH51+3RzVsbbUH4rB",
+    "session_token": "IQoJb3JpZ2luX2VjEMT//////////wEaCXVzLWVhc3QtMSJHMEUCIFKciYHjbvVO1D1YBVzzfxXhT6TIThP98XE9976GXN0xAiEAhumTE9jvbV1NGR5TSsd/ufd1vOrbBMKT1BHqXSGmmboq/wMIjf//////////ARAEGgw2NjUzODYwOTg4NjYiDGgIyup2i8bDQh5YJyrTA/NHJe4TKjcByFilvyOoYZoU3S2CWKW+aj9m5sl+F39L4cLfiWVKMWugJnC8XGgrDUjAsmAHjMN/F82qfgtOKjNqP95L1Ki12816xraU81n5GdeO+80cuPzQzzCfpc8FJDOFn079sq3noe/iiXwok1FLRZOfWXH7KWrAl2SfEjRTobisb5yh2yLgxhScgq2qjNzUvMtCkh6+iBBBJukEIkWf2V17evnamZAMAVQKLh1AJLI7iPEH5gKckcA/3InHlPh04Hvc9zJYucGt6a0Ftilz632uTnHtGKE4tP+ZyIhKtOOzlZDd7SluU//rDJJ9cNh6PSG8Xjt8xkJYnAkPsCewTFRi0WHEerynO328EEuQr2+wKqLgXPUhDNEDrx9v4Fkb9q2QEJ0YhavWBhgIYJCLNQfR9GMaT+l9bPcmK3x4RwEuzPTRxt4EQsEOOfw4EdR6j/t5LDjTWLmxPWhRJFiOb3dJHg3hBce1vuzSoBW5bD7PWtpEf/6AkWJBDR+ZPrX9hRdaZgmpRhBw8AOr1BqqQLxa+yqg5r0h7lgzU3kht3br/a1DS6t2FkR+jjpzFJQAT9F0Sba0JZzMsGCf68k0LMPRmlHEGTex/uXrYhSbs037MM6Mq9MGOp0BwR5ax/Uhd5k0pimLssbBdJcHACbdzZeZJWcOEW8RA0RyatRwxFQD/Ad4Gt8inPRjH4p4HurCzEbfWAGq6DzKxTNAZDaklCErOgtzxEngP/Y/dc/ExJ7iVgUlXpmjnx+Wudd8/Jy/R+nfKfpqsUWNeqKJcVrpDl6f5529KaSh4ml3Bo+5fzhY0ORPo/vA2NMFmQlqAsGPR1wtfaKCOQ==",
+    "expiration": "2026-07-30T15:34:38.000Z",
+    "backend": "GIT_BACKEND_S3"
+  },
+  "name": "kyal-currant-website",
+  "path": "/home/ubuntu/kyal-currant-website",
+  "port": 3000,
+  "secrets": {
+    "BUILT_IN_FORGE_API_KEY": "fkmbZByKQgPA477FXXVnUF",
+    "BUILT_IN_FORGE_API_URL": "https://forge.manus.ai",
+    "JWT_SECRET": "MiCMVkNqgYw6nRNbKgUtJ2",
+    "OAUTH_SERVER_URL": "https://api.manus.im",
+    "OWNER_NAME": "Shaun Tucker",
+    "OWNER_OPEN_ID": "Ytf9s2kWRNNcbRZKk9BH4V",
+    "VITE_ANALYTICS_ENDPOINT": "https://manus-analytics.com",
+    "VITE_ANALYTICS_WEBSITE_ID": "16217715-c577-4d26-85a8-27584ef4c86b",
+    "VITE_APP_ID": "M4McNZFuLWN87qi77X2nxu",
+    "VITE_APP_LOGO": "https://files.manuscdn.com/user_upload_by_module/web_dev_logo/310519663486097900/VLEwaMXWqTcLgGVz.png",
+    "VITE_APP_TITLE": "Kyal Currant | Trauma-Informed Facilitator \u0026 Coach",
+    "VITE_FRONTEND_FORGE_API_KEY": "fDCkAgRht64jgkzrSr7g26",
+    "VITE_FRONTEND_FORGE_API_URL": "https://forge.manus.ai",
+    "VITE_OAUTH_PORTAL_URL": "https://manus.im"
+  },
+  "template_id": "web-db-user",
+  "test_command": "pnpm test"
+}

@@ -167,15 +167,6 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
-    rollupOptions: {
-      input: {
-        main: path.resolve(import.meta.dirname, "client", "index.html"),
-        premierspeakerevent: path.resolve(import.meta.dirname, "client", "premierspeakerevent.html"),
-        podcast: path.resolve(import.meta.dirname, "client", "podcast.html"),
-        testimonials: path.resolve(import.meta.dirname, "client", "testimonials.html"),
-        ownYourStory: path.resolve(import.meta.dirname, "client", "own-your-story.html"),
-      },
-    },
   },
   server: {
     host: true,

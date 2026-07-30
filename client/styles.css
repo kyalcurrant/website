@@ -251,3 +251,38 @@ footer { background: var(--forest-deep); border-top: 1px solid rgba(201,168,76,0
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
 }
+
+
+/* ─── OFFER PAGE HERO ─── */
+.offer-hero { min-height: 92svh; display: flex; align-items: center; position: relative; background: linear-gradient(rgba(20,42,33,0.55), var(--forest)), url('https://d2xsxph8kpxj0f.cloudfront.net/310519663486097900/M4McNZFuLWN87qi77X2nxu/hero-bg-9UmPLQHarHzy248Fjoxc7w.webp'), var(--forest-deep); background-size: cover; background-position: center; padding-top: 110px; padding-bottom: 60px; }
+
+.offer-hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+
+.offer-hero__copy { max-width: 520px; }
+
+.offer-hero__tagline { font-size: 1.1rem; line-height: 1.6; color: var(--cream); margin-top: 16px; margin-bottom: 28px; }
+
+.offer-hero__ctas { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 28px; }
+
+.offer-hero__visual { display: flex; align-items: center; justify-content: center; }
+
+.offer-hero__video { width: 100%; height: auto; border-radius: 6px; box-shadow: 0 12px 56px rgba(0,0,0,0.55), 0 0 0 1px rgba(201,168,76,0.18); display: block; }
+
+@media (max-width: 960px) { 
+  .offer-hero__inner { grid-template-columns: 1fr; }
+}
+
+/* ─── OFFER SECTIONS ─── */
+.offer-section { padding: 64px 0; }
+
+.offer-section--dark { background: var(--forest-raised); }
+
+.offer-section--raised { background: var(--forest); }
+
+.offer-section__inner { max-width: 720px; margin: 0 auto; }
+
+.offer-section__inner--narrow { max-width: 640px; }
+
+.offer-body { font-size: 1.05rem; line-height: 1.8; color: var(--cream); }
+
+.center { text-align: center; }

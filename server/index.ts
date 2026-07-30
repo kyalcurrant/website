@@ -20,7 +20,15 @@ async function startServer() {
   app.use(express.static(staticPath));
 
   // Serve multi-page HTML files by route
-  const staticHtmlPages = ["workshop", "podcast", "testimonials", "own-your-story"];
+  const staticHtmlPages = ["premierspeakerevent", "podcast", "testimonials", "own-your-story"];
+  
+  // Legacy route: /workshop redirects to /premierspeakerevent
+  app.get("/workshop", (_req, res) => {
+    res.redirect(301, "/premierspeakerevent");
+  });
+  app.get("/workshop.html", (_req, res) => {
+    res.redirect(301, "/premierspeakerevent.html");
+  });
   staticHtmlPages.forEach((page) => {
     app.get(`/${page}`, (_req, res) => {
       const filePath = path.join(staticPath, `${page}.html`);
@@ -38,6 +46,16 @@ async function startServer() {
         res.sendFile(path.join(staticPath, "index.html"));
       }
     });
+  });
+  
+  // Also handle /premierspeakerevent (without .html) as an alias
+  app.get("/premierspeakerevent", (_req, res) => {
+    const filePath = path.join(staticPath, "premierspeakerevent.html");
+    if (fs.existsSync(filePath)) {
+      res.sendFile(filePath);
+    } else {
+      res.sendFile(path.join(staticPath, "index.html"));
+    }
   });
 
   // Fall through to index.html for everything else

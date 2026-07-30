@@ -381,6 +381,16 @@ footer { background: var(--forest-deep); border-top: 1px solid rgba(201,168,76,0
 .offer-cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 .offer-fine-print { margin: 28px 0 0; font-size: 13px; letter-spacing: 0.03em; color: rgba(245,240,232,0.55); }
 
+/* Legal pages (privacy, terms) */
+.legal { max-width: 760px; margin: 0 auto; }
+.legal .updated { font-size: 13px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted-cream); margin: 0 0 8px; }
+.legal h2 { font-size: 1.4rem; color: var(--forest); margin: 42px 0 14px; }
+.legal p, .legal li { line-height: 1.8; color: var(--muted-cream); }
+.legal ul { margin: 12px 0; padding-left: 24px; }
+.legal li { margin-bottom: 10px; }
+.legal a { color: var(--forest); text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 3px; }
+.legal a:hover { color: var(--gold); }
+
 /* Offer page footer variant (footer.foot with foot__inner markup) */
 footer.foot { display: block; }
 .foot__inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }

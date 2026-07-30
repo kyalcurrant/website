@@ -174,6 +174,8 @@ export default defineConfig({
         premierspeakerevent: path.resolve(import.meta.dirname, "client/premierspeakerevent.html"),
         "be-that-speaker": path.resolve(import.meta.dirname, "client/be-that-speaker.html"),
         "client-wins": path.resolve(import.meta.dirname, "client/client-wins.html"),
+        privacy: path.resolve(import.meta.dirname, "client/privacy.html"),
+        terms: path.resolve(import.meta.dirname, "client/terms.html"),
       },
     },
   },

@@ -16,7 +16,13 @@ async function startServer() {
       ? path.resolve(__dirname, "public")
       : path.resolve(__dirname, "..", "dist", "public");
 
-  // extensions: ["html"] lets clean URLs like /workshop serve workshop.html
+  // The workshop page was retired — its content lives on the Premier Speaker
+  // Event page now. Redirect old links (search results, socials) permanently.
+  app.get(["/workshop", "/workshop.html"], (_req, res) => {
+    res.redirect(301, "/premierspeakerevent");
+  });
+
+  // extensions: ["html"] lets clean URLs like /podcast serve podcast.html
   app.use(express.static(staticPath, { extensions: ["html"] }));
 
   // ── Podcast feed proxy ────────────────────────────────────────────────

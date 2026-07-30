@@ -170,7 +170,6 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: path.resolve(import.meta.dirname, "client/index.html"),
-        workshop: path.resolve(import.meta.dirname, "client/workshop.html"),
         podcast: path.resolve(import.meta.dirname, "client/podcast.html"),
         premierspeakerevent: path.resolve(import.meta.dirname, "client/premierspeakerevent.html"),
         "be-that-speaker": path.resolve(import.meta.dirname, "client/be-that-speaker.html"),

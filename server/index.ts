@@ -19,6 +19,68 @@ async function startServer() {
   // extensions: ["html"] lets clean URLs like /workshop serve workshop.html
   app.use(express.static(staticPath, { extensions: ["html"] }));
 
+  // ── Podcast feed proxy ────────────────────────────────────────────────
+  // The To Be Podcast RSS feed (Spotify for Podcasters / Anchor). Proxied
+  // server-side because anchor.fm sends no CORS headers, then cached so we
+  // don't hit the feed on every page view.
+  const PODCAST_FEED_URL = "https://anchor.fm/s/eee2180c/podcast/rss";
+  const PODCAST_CACHE_TTL_MS = 15 * 60 * 1000;
+  let podcastCache: { data: unknown; fetchedAt: number } | null = null;
+
+  const pick = (block: string, re: RegExp): string => {
+    const m = block.match(re);
+    return m ? m[1].trim() : "";
+  };
+  const cleanText = (s: string): string =>
+    s
+      .replace(/^<!\[CDATA\[/, "")
+      .replace(/\]\]>$/, "")
+      .replace(/<[^>]+>/g, "")
+      .replace(/&amp;/g, "&")
+      .replace(/&lt;/g, "<")
+      .replace(/&gt;/g, ">")
+      .replace(/&quot;/g, '"')
+      .replace(/&#39;/g, "'")
+      .trim();
+
+  function parsePodcastFeed(xml: string) {
+    const channelImage = pick(xml, /<itunes:image href="([^"]+)"/);
+    const episodes = [...xml.matchAll(/<item>([\s\S]*?)<\/item>/g)]
+      .map((m) => m[1])
+      .map((b) => ({
+        title: cleanText(pick(b, /<title>([\s\S]*?)<\/title>/)),
+        description: cleanText(pick(b, /<description>([\s\S]*?)<\/description>/)).slice(0, 300),
+        pubDate: pick(b, /<pubDate>([\s\S]*?)<\/pubDate>/),
+        duration: pick(b, /<itunes:duration>([\s\S]*?)<\/itunes:duration>/),
+        audioUrl: pick(b, /<enclosure[^>]*url="([^"]+)"/),
+        image: pick(b, /<itunes:image href="([^"]+)"/) || channelImage,
+      }))
+      .filter((e) => e.audioUrl);
+    return { image: channelImage, count: episodes.length, episodes };
+  }
+
+  app.get("/api/podcast-episodes", async (_req, res) => {
+    try {
+      if (podcastCache && Date.now() - podcastCache.fetchedAt < PODCAST_CACHE_TTL_MS) {
+        res.set("Cache-Control", "public, max-age=900");
+        return res.json(podcastCache.data);
+      }
+      const resp = await fetch(PODCAST_FEED_URL, {
+        headers: { "User-Agent": "kyalncurrant.com website" },
+      });
+      if (!resp.ok) throw new Error(`Feed responded ${resp.status}`);
+      const data = parsePodcastFeed(await resp.text());
+      if (!data.episodes.length) throw new Error("Feed parsed to zero episodes");
+      podcastCache = { data, fetchedAt: Date.now() };
+      res.set("Cache-Control", "public, max-age=900");
+      res.json(data);
+    } catch (error) {
+      console.error("Podcast feed error:", error);
+      if (podcastCache) return res.json(podcastCache.data);
+      res.status(502).json({ error: "Podcast feed unavailable" });
+    }
+  });
+
   // Proxy /manus-storage requests to the Manus storage service
   app.get("/manus-storage/:key", async (req, res) => {
     try {

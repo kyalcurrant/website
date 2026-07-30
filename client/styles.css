@@ -234,6 +234,27 @@ section { padding: clamp(64px, 10vw, 118px) 0; }
 
 .featured { border: 1px solid var(--gold-soft); background: var(--forest-raised); padding: clamp(26px, 4vw, 44px); margin-top: 52px; }
 
+/* Podcast player */
+.player { display: grid; grid-template-columns: 200px 1fr; gap: clamp(24px, 3.5vw, 40px); align-items: center; border: 1px solid var(--gold-soft); background: var(--forest-raised); padding: clamp(26px, 4vw, 44px); margin-top: 52px; }
+.player__art { width: 100%; aspect-ratio: 1; object-fit: cover; border: 1px solid var(--gold-soft); display: block; }
+.player__meta { font-size: 14px; color: rgba(245,240,232,0.6); margin: 12px 0 24px; }
+.player__controls { display: flex; align-items: center; gap: 18px; }
+.player__play { width: 56px; height: 56px; flex-shrink: 0; border-radius: 50%; border: 1px solid var(--gold); background: transparent; color: var(--gold); cursor: pointer; display: grid; place-items: center; transition: background 0.2s, color 0.2s, box-shadow 0.2s; }
+.player__play:hover { background: var(--gold); color: var(--forest-deep); box-shadow: 0 0 24px rgba(201,168,76,0.35); }
+.player__play svg { width: 20px; height: 20px; fill: currentColor; }
+.player__seek { flex: 1; appearance: none; -webkit-appearance: none; height: 4px; border-radius: 2px; background: rgba(201,168,76,0.25); accent-color: var(--gold); cursor: pointer; }
+.player__seek::-webkit-slider-thumb { -webkit-appearance: none; width: 14px; height: 14px; border-radius: 50%; background: var(--gold); border: none; }
+.player__seek::-moz-range-thumb { width: 14px; height: 14px; border-radius: 50%; background: var(--gold); border: none; }
+.player__time { font: 500 13px/1 var(--body); color: rgba(245,240,232,0.6); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.player__status { font-size: 14px; color: rgba(245,240,232,0.6); }
+@media (max-width: 720px) { .player { grid-template-columns: 1fr; } .player__art { max-width: 220px; } }
+
+/* Episode rows: play affordance + active state (rows are buttons when the player is live) */
+button.ep { width: 100%; text-align: left; background: none; border: 0; border-bottom: 1px solid rgba(201,168,76,0.14); font: inherit; cursor: pointer; }
+.ep--active { background: rgba(201,168,76,0.08); }
+.ep--active .n { color: var(--gold); }
+.ep .dur { display: block; font-size: 11.5px; color: rgba(245,240,232,0.35); margin-top: 4px; text-align: right; }
+
 /* Footer */
 footer { background: var(--forest-deep); border-top: 1px solid rgba(201,168,76,0.15); padding: 44px 0; }
 .foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }

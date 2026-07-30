@@ -55,44 +55,54 @@
   </div>
 </header>
 
-<!-- Featured episode -->
+<!-- Player: populated from /api/podcast-episodes (Anchor RSS proxy) -->
 <section class="grain" style="padding-top:clamp(40px,6vw,72px);">
   <div class="wrap">
-    <div class="featured reveal">
-      <p class="label">Now Playing — Ep. 01</p>
-      <h2 class="h-md">Reclaiming Your Mojo: From Stuck to Self-Empowered</h2>
-      <p class="lede" style="margin:14px 0 0;">with Loz Antonenko · 5 Dec 2025 — What it really means to reclaim your energy, your drive, and your sense of self when life has knocked you flat.</p>
-      <!-- TODO: embed the Spotify player for ep 01 here -->
+    <div class="player reveal" id="player">
+      <img class="player__art" id="playerArt" src="" alt="" hidden>
+      <div>
+        <p class="label" id="playerLabel">The Player</p>
+        <h2 class="h-md" id="playerTitle">Loading episodes…</h2>
+        <p class="player__meta" id="playerMeta"></p>
+        <div class="player__controls" id="playerControls" hidden>
+          <button class="player__play" id="playerPlay" aria-label="Play">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+          </button>
+          <input class="player__seek" id="playerSeek" type="range" min="0" max="100" step="0.1" value="0" aria-label="Seek">
+          <span class="player__time" id="playerTime">0:00 / 0:00</span>
+        </div>
+        <p class="player__status" id="playerStatus">If the player doesn't load, listen on <a href="https://podcasters.spotify.com/pod/show/the-to-be-podcast" style="color:var(--gold);">Spotify</a>.</p>
+      </div>
     </div>
 
     <div class="reveal" style="margin-top:72px;">
       <p class="label">All Episodes</p>
-      <h2 class="h-lg">21 conversations worth having.</h2>
+      <h2 class="h-lg" id="epCount">21 conversations worth having.</h2>
     </div>
 
-    <div class="episodes reveal">
-      <!-- TODO: point each row at the real episode URL -->
-      <a class="ep" href="#"><span class="n">01</span><span><strong>Reclaiming Your Mojo: From Stuck to Self-Empowered</strong><span>with Loz Antonenko</span></span><span class="date">5 Dec 2025</span></a>
-      <a class="ep" href="#"><span class="n">02</span><span><strong>The Fire Bender: Turning Darkness Into Light</strong><span>with Brad Barnett</span></span><span class="date">5 Sep 2025</span></a>
-      <a class="ep" href="#"><span class="n">03</span><span><strong>Finding Self Beyond the Binary: His Story</strong><span>with Alex Transcend</span></span><span class="date">20 Aug 2025</span></a>
-      <a class="ep" href="#"><span class="n">04</span><span><strong>Redefining Strength: From Refugee to Brotherhood</strong><span>with Eric Em</span></span><span class="date">2 Aug 2025</span></a>
-      <a class="ep" href="#"><span class="n">05</span><span><strong>From Depression to Divine: The Journey Back to Self</strong><span>with Loridana Montalto</span></span><span class="date">21 Jul 2025</span></a>
-      <a class="ep" href="#"><span class="n">06</span><span><strong>Breaking the Cycle: From Bulimia to Inner Freedom</strong><span>with Claire Phillips</span></span><span class="date">3 Jul 2025</span></a>
-      <a class="ep" href="#"><span class="n">07</span><span><strong>Rebuilding the Man: From Risk to Responsibility</strong><span>with Mitchell Lowe</span></span><span class="date">19 Jun 2025</span></a>
-      <a class="ep" href="#"><span class="n">08</span><span><strong>From Hammer to Healing: Inner Child Transformation</strong><span>with Brendan Lucas</span></span><span class="date">1 Jun 2025</span></a>
-      <a class="ep" href="#"><span class="n">09</span><span><strong>Healing Beyond the Bars: A Journey to Inner Peace</strong><span>with Ty Brazel</span></span><span class="date">18 May 2025</span></a>
-      <a class="ep" href="#"><span class="n">10</span><span><strong>Fear to Freedom: Redefining Success on Your Terms</strong><span>with Maggie Tilley</span></span><span class="date">20 Mar 2025</span></a>
-      <a class="ep" href="#"><span class="n">11</span><span><strong>OCD to Opportunity: Finding Purpose Through Art and Nature</strong><span>with Lydia Davies</span></span><span class="date">30 Nov 2024</span></a>
-      <a class="ep" href="#"><span class="n">12</span><span><strong>Conformity to Clarity: Embracing Authenticity and Purpose</strong><span>with Sarah van Eck</span></span><span class="date">2 Nov 2024</span></a>
-      <a class="ep" href="#"><span class="n">13</span><span><strong>Despair to Purpose: Embracing the Light Within</strong><span>with Brodie Klotz</span></span><span class="date">3 May 2024</span></a>
-      <a class="ep" href="#"><span class="n">14</span><span><strong>Struggles to Innovation: Building Resilience Through Weight Loss</strong><span>with Phil Hedges</span></span><span class="date">30 Mar 2024</span></a>
-      <a class="ep" href="#"><span class="n">15</span><span><strong>Surviving to Thriving: Embracing Strength Through Being Abused</strong><span>with Tasha Nicholas</span></span><span class="date">13 Mar 2024</span></a>
-      <a class="ep" href="#"><span class="n">16</span><span><strong>Struggle to Strength: Embracing Fatherhood with CMT</strong><span>with Ashton Cole</span></span><span class="date">23 Feb 2024</span></a>
-      <a class="ep" href="#"><span class="n">17</span><span><strong>Overcoming 11-Year Drug Addiction to Finding Acceptance</strong><span>with Ryan McCarthy</span></span><span class="date">12 Feb 2024</span></a>
-      <a class="ep" href="#"><span class="n">18</span><span><strong>Disability to Adaptability: Navigating Life with Charcot-Marie-Tooth</strong><span>with Kyle Will</span></span><span class="date">7 Jan 2024</span></a>
-      <a class="ep" href="#"><span class="n">19</span><span><strong>Suicide Attempt to Mental Fitness: Brad's Journey of Resilience</strong><span>with Brad Wright</span></span><span class="date">1 Jan 2024</span></a>
-      <a class="ep" href="#"><span class="n">20</span><span><strong>Overcoming Cocaine Addiction to Motherhood Magic</strong><span>with Gemmah Carr</span></span><span class="date">22 Dec 2023</span></a>
-      <a class="ep" href="#"><span class="n">21</span><span><strong>Who is the Host?</strong><span>with Kyal Neil Currant</span></span><span class="date">18 Dec 2023</span></a>
+    <div class="episodes reveal" id="episodeList">
+      <!-- Static fallback list — replaced by the live feed when the player loads -->
+      <a class="ep" href="https://podcasters.spotify.com/pod/show/the-to-be-podcast"><span class="n">01</span><span><strong>Reclaiming Your Mojo: From Stuck to Self-Empowered</strong><span>with Loz Antonenko</span></span><span class="date">5 Dec 2025</span></a>
+      <a class="ep" href="https://podcasters.spotify.com/pod/show/the-to-be-podcast"><span class="n">02</span><span><strong>The Fire Bender: Turning Darkness Into Light</strong><span>with Brad Barnett</span></span><span class="date">5 Sep 2025</span></a>
+      <a class="ep" href="https://podcasters.spotify.com/pod/show/the-to-be-podcast"><span class="n">03</span><span><strong>Finding Self Beyond the Binary: His Story</strong><span>with Alex Transcend</span></span><span class="date">20 Aug 2025</span></a>
+      <a class="ep" href="https://podcasters.spotify.com/pod/show/the-to-be-podcast"><span class="n">04</span><span><strong>Redefining Strength: From Refugee to Brotherhood</strong><span>with Eric Em</span></span><span class="date">2 Aug 2025</span></a>
+      <a class="ep" href="https://podcasters.spotify.com/pod/show/the-to-be-podcast"><span class="n">05</span><span><strong>From Depression to Divine: The Journey Back to Self</strong><span>with Loridana Montalto</span></span><span class="date">21 Jul 2025</span></a>
+      <a class="ep" href="https://podcasters.spotify.com/pod/show/the-to-be-podcast"><span class="n">06</span><span><strong>Breaking the Cycle: From Bulimia to Inner Freedom</strong><span>with Claire Phillips</span></span><span class="date">3 Jul 2025</span></a>
+      <a class="ep" href="https://podcasters.spotify.com/pod/show/the-to-be-podcast"><span class="n">07</span><span><strong>Rebuilding the Man: From Risk to Responsibility</strong><span>with Mitchell Lowe</span></span><span class="date">19 Jun 2025</span></a>
+      <a class="ep" href="https://podcasters.spotify.com/pod/show/the-to-be-podcast"><span class="n">08</span><span><strong>From Hammer to Healing: Inner Child Transformation</strong><span>with Brendan Lucas</span></span><span class="date">1 Jun 2025</span></a>
+      <a class="ep" href="https://podcasters.spotify.com/pod/show/the-to-be-podcast"><span class="n">09</span><span><strong>Healing Beyond the Bars: A Journey to Inner Peace</strong><span>with Ty Brazel</span></span><span class="date">18 May 2025</span></a>
+      <a class="ep" href="https://podcasters.spotify.com/pod/show/the-to-be-podcast"><span class="n">10</span><span><strong>Fear to Freedom: Redefining Success on Your Terms</strong><span>with Maggie Tilley</span></span><span class="date">20 Mar 2025</span></a>
+      <a class="ep" href="https://podcasters.spotify.com/pod/show/the-to-be-podcast"><span class="n">11</span><span><strong>OCD to Opportunity: Finding Purpose Through Art and Nature</strong><span>with Lydia Davies</span></span><span class="date">30 Nov 2024</span></a>
+      <a class="ep" href="https://podcasters.spotify.com/pod/show/the-to-be-podcast"><span class="n">12</span><span><strong>Conformity to Clarity: Embracing Authenticity and Purpose</strong><span>with Sarah van Eck</span></span><span class="date">2 Nov 2024</span></a>
+      <a class="ep" href="https://podcasters.spotify.com/pod/show/the-to-be-podcast"><span class="n">13</span><span><strong>Despair to Purpose: Embracing the Light Within</strong><span>with Brodie Klotz</span></span><span class="date">3 May 2024</span></a>
+      <a class="ep" href="https://podcasters.spotify.com/pod/show/the-to-be-podcast"><span class="n">14</span><span><strong>Struggles to Innovation: Building Resilience Through Weight Loss</strong><span>with Phil Hedges</span></span><span class="date">30 Mar 2024</span></a>
+      <a class="ep" href="https://podcasters.spotify.com/pod/show/the-to-be-podcast"><span class="n">15</span><span><strong>Surviving to Thriving: Embracing Strength Through Being Abused</strong><span>with Tasha Nicholas</span></span><span class="date">13 Mar 2024</span></a>
+      <a class="ep" href="https://podcasters.spotify.com/pod/show/the-to-be-podcast"><span class="n">16</span><span><strong>Struggle to Strength: Embracing Fatherhood with CMT</strong><span>with Ashton Cole</span></span><span class="date">23 Feb 2024</span></a>
+      <a class="ep" href="https://podcasters.spotify.com/pod/show/the-to-be-podcast"><span class="n">17</span><span><strong>Overcoming 11-Year Drug Addiction to Finding Acceptance</strong><span>with Ryan McCarthy</span></span><span class="date">12 Feb 2024</span></a>
+      <a class="ep" href="https://podcasters.spotify.com/pod/show/the-to-be-podcast"><span class="n">18</span><span><strong>Disability to Adaptability: Navigating Life with Charcot-Marie-Tooth</strong><span>with Kyle Will</span></span><span class="date">7 Jan 2024</span></a>
+      <a class="ep" href="https://podcasters.spotify.com/pod/show/the-to-be-podcast"><span class="n">19</span><span><strong>Suicide Attempt to Mental Fitness: Brad's Journey of Resilience</strong><span>with Brad Wright</span></span><span class="date">1 Jan 2024</span></a>
+      <a class="ep" href="https://podcasters.spotify.com/pod/show/the-to-be-podcast"><span class="n">20</span><span><strong>Overcoming Cocaine Addiction to Motherhood Magic</strong><span>with Gemmah Carr</span></span><span class="date">22 Dec 2023</span></a>
+      <a class="ep" href="https://podcasters.spotify.com/pod/show/the-to-be-podcast"><span class="n">21</span><span><strong>Who is the Host?</strong><span>with Kyal Neil Currant</span></span><span class="date">18 Dec 2023</span></a>
     </div>
   </div>
 </section>
@@ -134,5 +144,150 @@
 </footer>
 
 <script src="site.js"></script>
+<script>
+// Native podcast player fed by /api/podcast-episodes (server-side RSS proxy).
+// New episodes published to Spotify for Podcasters appear here automatically.
+(function () {
+  var listEl = document.getElementById('episodeList');
+  var art = document.getElementById('playerArt');
+  var label = document.getElementById('playerLabel');
+  var title = document.getElementById('playerTitle');
+  var meta = document.getElementById('playerMeta');
+  var controls = document.getElementById('playerControls');
+  var playBtn = document.getElementById('playerPlay');
+  var seek = document.getElementById('playerSeek');
+  var timeEl = document.getElementById('playerTime');
+  var statusEl = document.getElementById('playerStatus');
+  var countEl = document.getElementById('epCount');
+  if (!listEl || !playBtn) return;
+
+  var PLAY_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
+  var PAUSE_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>';
+
+  var audio = new Audio();
+  audio.preload = 'none';
+  var episodes = [];
+  var current = -1;
+
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
+
+  function splitTitle(t) {
+    var i = t.lastIndexOf(' - ');
+    return i > 0 ? { name: t.slice(0, i), guest: t.slice(i + 3) } : { name: t, guest: '' };
+  }
+
+  function fmtDate(d) {
+    var dt = new Date(d);
+    if (isNaN(dt)) return '';
+    return dt.toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' });
+  }
+
+  // "00:35:11" or seconds -> "35 min"
+  function fmtDurLabel(dur) {
+    if (!dur) return '';
+    var secs = /^\d+$/.test(dur)
+      ? parseInt(dur, 10)
+      : dur.split(':').reduce(function (a, v) { return a * 60 + parseInt(v, 10); }, 0);
+    if (!secs) return '';
+    return Math.max(1, Math.round(secs / 60)) + ' min';
+  }
+
+  function fmtClock(secs) {
+    if (!isFinite(secs)) return '0:00';
+    secs = Math.floor(secs);
+    var h = Math.floor(secs / 3600), m = Math.floor((secs % 3600) / 60), s = secs % 60;
+    return (h ? h + ':' + pad(m) : m) + ':' + pad(s);
+  }
+
+  function load(i, autoplay) {
+    current = i;
+    var ep = episodes[i];
+    var t = splitTitle(ep.title);
+    if (ep.image) { art.src = ep.image; art.alt = t.name; art.hidden = false; }
+    label.textContent = (autoplay ? 'Now Playing' : 'Latest Episode') + ' — Ep. ' + pad(i + 1);
+    title.textContent = t.name;
+    meta.textContent = (t.guest ? 'with ' + t.guest + ' · ' : '') + fmtDate(ep.pubDate) +
+      (ep.duration ? ' · ' + fmtDurLabel(ep.duration) : '');
+    audio.src = ep.audioUrl;
+    seek.value = 0;
+    timeEl.textContent = '0:00 / 0:00';
+    var rows = listEl.children;
+    for (var r = 0; r < rows.length; r++) rows[r].classList.toggle('ep--active', r === i);
+    if (autoplay) audio.play();
+  }
+
+  function render(data) {
+    episodes = data.episodes;
+    if (countEl) countEl.textContent = episodes.length + ' conversations worth having.';
+    listEl.innerHTML = '';
+    episodes.forEach(function (ep, i) {
+      var t = splitTitle(ep.title);
+      var row = document.createElement('button');
+      row.type = 'button';
+      row.className = 'ep';
+      var num = document.createElement('span');
+      num.className = 'n';
+      num.textContent = pad(i + 1);
+      var mid = document.createElement('span');
+      var strong = document.createElement('strong');
+      strong.textContent = t.name;
+      var guest = document.createElement('span');
+      guest.textContent = t.guest ? 'with ' + t.guest : '';
+      mid.appendChild(strong);
+      mid.appendChild(guest);
+      var date = document.createElement('span');
+      date.className = 'date';
+      date.textContent = fmtDate(ep.pubDate);
+      var dur = document.createElement('span');
+      dur.className = 'dur';
+      dur.textContent = fmtDurLabel(ep.duration);
+      date.appendChild(dur);
+      row.appendChild(num);
+      row.appendChild(mid);
+      row.appendChild(date);
+      row.addEventListener('click', function () {
+        if (current === i) { toggle(); } else { load(i, true); }
+      });
+      listEl.appendChild(row);
+    });
+    controls.hidden = false;
+    statusEl.hidden = true;
+    load(0, false);
+  }
+
+  function toggle() {
+    if (audio.paused) { audio.play(); } else { audio.pause(); }
+  }
+
+  playBtn.addEventListener('click', toggle);
+  audio.addEventListener('play', function () {
+    playBtn.innerHTML = PAUSE_ICON;
+    playBtn.setAttribute('aria-label', 'Pause');
+    label.textContent = 'Now Playing — Ep. ' + pad(current + 1);
+  });
+  audio.addEventListener('pause', function () {
+    playBtn.innerHTML = PLAY_ICON;
+    playBtn.setAttribute('aria-label', 'Play');
+  });
+  audio.addEventListener('timeupdate', function () {
+    if (audio.duration) seek.value = (audio.currentTime / audio.duration) * 100;
+    timeEl.textContent = fmtClock(audio.currentTime) + ' / ' + fmtClock(audio.duration);
+  });
+  audio.addEventListener('ended', function () {
+    if (current + 1 < episodes.length) load(current + 1, true);
+  });
+  seek.addEventListener('input', function () {
+    if (audio.duration) audio.currentTime = (seek.value / 100) * audio.duration;
+  });
+
+  fetch('/api/podcast-episodes')
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(render)
+    .catch(function () {
+      title.textContent = 'The To Be Podcast';
+      statusEl.hidden = false;
+    });
+})();
+</script>
 </body>
 </html>

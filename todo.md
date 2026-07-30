@@ -16,7 +16,13 @@
 
 ## Pending
 - [x] Fix podcast.html and testimonials.html workshop links (still point to index.html#workshop instead of workshop.html)
-- [ ] Add live booking/registration form for the workshop (Typeform/Calendly embed)
-- [ ] Add Google Analytics 4 tracking
-- [ ] Add FAQ section
-- [ ] Publish the site live
+- [x] Fix broken host portrait on premierspeakerevent.html (missing kyal-7 webp → kyal.jpg)
+- [x] Remove dead offer-page.css link from be-that-speaker.html (styles already in styles.css)
+- [x] Fix email typo kyal@kyalncurrant.com → kyal@kyalcurrant.com on be-that-speaker.html
+- [x] Fix stale canonical/og URLs (testimonials → client-wins, own-your-story → be-that-speaker)
+- [x] Create og-image.jpg (1200x630) and add og:image to all pages
+- [x] Server: clean extensionless URLs (/workshop) + real 404s for missing assets
+- [ ] Add live booking/registration form for the workshop (Typeform/Calendly embed) — needs booking link from Kyal
+- [ ] Add Google Analytics 4 tracking — needs GA4 measurement ID
+- [ ] Add FAQ section — needs FAQ content
+- [ ] Publish the site live on Railway + point kyalcurrant.com at it

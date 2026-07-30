@@ -16,7 +16,8 @@ async function startServer() {
       ? path.resolve(__dirname, "public")
       : path.resolve(__dirname, "..", "dist", "public");
 
-  app.use(express.static(staticPath));
+  // extensions: ["html"] lets clean URLs like /workshop serve workshop.html
+  app.use(express.static(staticPath, { extensions: ["html"] }));
 
   // Proxy /manus-storage requests to the Manus storage service
   app.get("/manus-storage/:key", async (req, res) => {
@@ -62,9 +63,14 @@ async function startServer() {
     }
   });
 
-  // Handle client-side routing - serve index.html for all routes
-  app.get("*", (_req, res) => {
-    res.sendFile(path.join(staticPath, "index.html"));
+  // Fall back to index.html for unknown page routes; 404 missing assets
+  // (css/js/images) so broken references fail loudly instead of returning HTML
+  app.get("*", (req, res) => {
+    if (req.accepts("html") && !path.extname(req.path)) {
+      res.sendFile(path.join(staticPath, "index.html"));
+    } else {
+      res.status(404).end();
+    }
   });
 
   const port = process.env.PORT || 3000;

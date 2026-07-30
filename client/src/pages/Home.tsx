@@ -518,7 +518,7 @@ export default function Home() {
               {
                 step: "1",
                 title: "Start with the Workshop",
-                body: "Attend the monthly The Premier Speaker Event™ to craft your core message and overcome your fears. Get clarity on your speaking voice.",
+                body: "Attend the monthly Pre-Speaker Workshop to craft your core message and overcome your fears. Get clarity on your speaking voice.",
               },
               {
                 step: "2",
@@ -718,7 +718,7 @@ export default function Home() {
             {[
               {
                 level: "Gateway",
-                title: "The Premier Speaker Event™",
+                title: "Pre-Speaker Workshop",
                 price: "Low-Cost",
                 desc: "Monthly in-person workshop. Craft your core message, overcome your fears, and get clarity on your first speaking opportunity.",
                 cta: "Learn More",
@@ -816,7 +816,7 @@ export default function Home() {
               className="font-body mb-8"
               style={{ color: "oklch(0.80 0.01 75)", lineHeight: "1.8", fontFamily: "'DM Sans', sans-serif" }}
             >
-              The The Premier Speaker Event™ is a low-cost entry point to discover your speaking voice. You'll craft your core message, overcome your fears, and get clarity on your first speaking opportunity.
+              The Pre-Speaker Workshop is a low-cost entry point to discover your speaking voice. You'll craft your core message, overcome your fears, and get clarity on your first speaking opportunity.
             </p>
             <a href="/workshop" className="btn-gold">
               Learn About the Workshop

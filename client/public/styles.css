@@ -103,8 +103,10 @@ section { padding: clamp(64px, 10vw, 118px) 0; }
 .nav--open .nav__hamburger span:nth-child(2) { opacity: 0; }
 .nav--open .nav__hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* Mid-size screens: logo-only brand so the links fit on one uncrowded row */
-@media (min-width: 1024px) and (max-width: 1299px) { .nav__brand-name { display: none; } }
+/* Desktop nav is logo-only: the full wordmark + 7 links can never share
+   1120px without crowding. Hero and footer carry the full name. The wordmark
+   returns below 1024px where the links collapse into the hamburger menu. */
+@media (min-width: 1024px) { .nav__brand-name { display: none; } }
 
 @media (max-width: 1023px) {
   .nav__hamburger { display: flex; }

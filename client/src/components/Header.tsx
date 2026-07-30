@@ -12,7 +12,7 @@ export default function Header({ scrolled = false }: HeaderProps) {
   const navItems = [
     { label: "About", href: "/#about" },
     { label: "The Soulful Speaker", href: "/#offer" },
-    { label: "Pre-Speaker Workshop", href: "/workshop" },
+    { label: "The Premier Speaker Event™", href: "/workshop" },
     { label: "Podcast", href: "/podcast" },
     { label: "Testimonials", href: "/testimonials" },
   ];

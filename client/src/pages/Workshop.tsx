@@ -11,7 +11,7 @@ export default function Workshop() {
       <Header />
 
       {/* ════════════════════════════════════════════════════
-          HERO — Pre-Speaker Workshop
+          HERO — The Premier Speaker Event™
       ════════════════════════════════════════════════════ */}
       <section
         className="relative min-h-screen flex items-center"
@@ -80,7 +80,7 @@ export default function Workshop() {
             <div className="reveal order-2 md:order-1">
               <img
                 src={WORKSHOP_DETAIL}
-                alt="Pre-Speaker Workshop"
+                alt="The Premier Speaker Event™"
                 className="w-full object-cover rounded-lg"
                 style={{ maxHeight: "500px", objectPosition: "center" }}
               />
@@ -223,7 +223,7 @@ export default function Workshop() {
 
           <div className="text-center reveal">
             <a
-              href="mailto:kyal@kyalcurrant.com?subject=Pre-Speaker Workshop Application"
+              href="mailto:kyal@kyalcurrant.com?subject=The Premier Speaker Event™ Application"
               className="btn-gold"
               style={{ padding: "1rem 2.5rem", fontSize: "1rem" }}
             >

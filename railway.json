@@ -1,0 +1,9 @@
+{
+  "build": {
+    "builder": "nixpacks",
+    "buildCommand": "pnpm install && pnpm run build:railway"
+  },
+  "deploy": {
+    "startCommand": "pnpm run start:railway"
+  }
+}

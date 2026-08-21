@@ -451,8 +451,8 @@ export default function Home() {
             {/* Left — Kyal speaking at event */}
             <div className="relative min-h-[320px] md:min-h-0">
               <img
-                src="/manus-storage/kyal_8bdc1fef.jpg"
-                alt="Kyal speaking to an engaged audience at an event"
+                src="/images/offer-new.jpg"
+                alt="Kyal Neil Currant portrait"
                 className="absolute inset-0 w-full h-full object-cover"
               />
               <div className="absolute inset-0" style={{ background: "oklch(0.12 0.04 155 / 0.2)" }} />

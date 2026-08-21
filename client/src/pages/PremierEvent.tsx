@@ -67,7 +67,7 @@ export default function PremierEvent() {
 
             <div className="flex flex-col md:flex-row gap-4">
               <a
-                href="https://www.eventbrite.com.au/e/the-premier-speaker-event-is-in-brisbane-tickets-1990535007792"
+                href="https://www.eventbrite.com.au/e/1994753070130"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-[#c9a84c] text-[#0d1a0d] px-8 py-4 rounded font-semibold hover:bg-[#8a6f3a] transition text-center"
@@ -279,7 +279,7 @@ export default function PremierEvent() {
             </p>
 
             <p className="text-lg leading-relaxed text-[#f5f0e8]/90 mb-6">
-              He has spoken across 14+ countries and trained with world class leaders, bringing a global perspective to his work. Known for his raw honesty, humour, and vulnerability, Kyal helps people reconnect with their voice and body, step into leadership, and create meaningful change in their lives.
+              He has spoken across 14+ countries virtually and trained with world class leaders, bringing a global perspective to his work. Known for his raw honesty, humour, and vulnerability, Kyal helps people reconnect with their voice and body, step into leadership, and create meaningful change in their lives.
             </p>
 
             <p className="text-lg leading-relaxed text-[#f5f0e8]/90">
@@ -326,14 +326,19 @@ export default function PremierEvent() {
               Leave with clarity, inspiration, powerful connections, and the courage to create change.
             </p>
 
-            <a
-              href="https://www.eventbrite.com.au/e/the-premier-speaker-event-is-in-brisbane-tickets-1990535007792"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-[#c9a84c] text-[#0d1a0d] px-12 py-4 rounded font-semibold hover:bg-[#8a6f3a] transition text-lg"
-            >
-              Register Now — Limited Spots
-            </a>
+            <div className="flex flex-col items-center gap-6">
+              <a
+                href="https://www.eventbrite.com.au/e/1994753070130"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-[#c9a84c] text-[#0d1a0d] px-12 py-4 rounded font-semibold hover:bg-[#8a6f3a] transition text-lg"
+              >
+                Register Now — Limited Spots
+              </a>
+              <p className="text-[#f5f0e8]/60 text-sm">
+                Or <a href="https://calendly.com/kyalcurrant/connectioncall" target="_blank" rel="noopener" className="text-[#c9a84c] underline hover:text-[#8a6f3a] transition-colors">apply directly to work 1-on-1</a>.
+              </p>
+            </div>
           </div>
         </div>
       </section>

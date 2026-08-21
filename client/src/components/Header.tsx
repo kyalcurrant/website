@@ -11,10 +11,11 @@ export default function Header({ scrolled = false }: HeaderProps) {
 
   const navItems = [
     { label: "About", href: "/#about" },
-    { label: "The Soulful Speaker", href: "/#offer" },
-    { label: "Pre-Speaker Workshop", href: "/workshop" },
     { label: "Podcast", href: "/podcast" },
-    { label: "Testimonials", href: "/testimonials" },
+    { label: "Premier Speaker Event™", href: "/premierspeakerevent" },
+    { label: "Be That Speaker", href: "/be-that-speaker" },
+    { label: "The Soulful Speaker", href: "/#offer" },
+    { label: "Client Wins", href: "/testimonials" },
   ];
 
   const isActive = (href: string) => {
@@ -57,7 +58,7 @@ export default function Header({ scrolled = false }: HeaderProps) {
               href={item.href}
               className="text-sm font-body transition-colors"
               style={{
-                color: "oklch(0.85 0.01 75)",
+                color: isActive(item.href) ? "oklch(0.72 0.12 75)" : "oklch(0.85 0.01 75)",
                 textDecoration: "none",
                 fontFamily: "'DM Sans', sans-serif",
                 letterSpacing: "0.04em",
@@ -65,15 +66,17 @@ export default function Header({ scrolled = false }: HeaderProps) {
               onMouseEnter={(e) =>
                 (e.currentTarget.style.color = "oklch(0.72 0.12 75)")
               }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.color = "oklch(0.85 0.01 75)")
-              }
+              onMouseLeave={(e) => {
+                if (!isActive(item.href)) {
+                  e.currentTarget.style.color = "oklch(0.85 0.01 75)";
+                }
+              }}
             >
               {item.label}
             </a>
           ))}
           <a
-            href="/workshop"
+            href="/premierspeakerevent"
             className="btn-gold"
             style={{ padding: "0.6rem 1.5rem", fontSize: "0.75rem" }}
           >
@@ -110,7 +113,7 @@ export default function Header({ scrolled = false }: HeaderProps) {
               onClick={() => setMobileMenuOpen(false)}
               className="text-sm py-2"
               style={{
-                color: "oklch(0.85 0.01 75)",
+                color: isActive(item.href) ? "oklch(0.72 0.12 75)" : "oklch(0.85 0.01 75)",
                 textDecoration: "none",
                 fontFamily: "'DM Sans', sans-serif",
               }}
@@ -119,7 +122,7 @@ export default function Header({ scrolled = false }: HeaderProps) {
             </a>
           ))}
           <a
-            href="/workshop"
+            href="/premierspeakerevent"
             onClick={() => setMobileMenuOpen(false)}
             className="btn-gold text-center"
             style={{ padding: "0.6rem 1.5rem", fontSize: "0.75rem" }}

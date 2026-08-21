@@ -458,12 +458,12 @@ export default function Testimonials() {
                 Apply for Connected
               </Button>
             </Link>
-            <Link href="/#events">
+            <Link href="/premierspeakerevent">
               <Button
                 variant="outline"
                 className="border-[#f5f0e8]/30 text-[#f5f0e8] hover:bg-[#f5f0e8]/10 font-semibold text-base px-10 py-4 rounded-none h-auto bg-transparent"
               >
-                Attend a Speaker Event — From $47
+                Attend a Premier Speaker Event — From $15
               </Button>
             </Link>
           </div>

@@ -193,7 +193,7 @@ export default function Home() {
               You know you have something worth sharing. A story. A message. A perspective that could change people's lives. But fear, self-doubt, and lack of confidence have kept you quiet. In 12 weeks, I'll help you find your voice, own your story, and land your first speaking gig.
             </p>
             <div className="flex flex-wrap gap-4 reveal">
-              <a href="/workshop" className="btn-gold">Start with the Workshop</a>
+              <a href="/premierspeakerevent" className="btn-gold">Start with the Event</a>
               <a href="#offer" className="btn-outline-cream">
                 Learn About The Soulful Speaker
               </a>
@@ -342,7 +342,7 @@ export default function Home() {
               </p>
               <div className="flex flex-wrap gap-4">
                 <a href="#offer" className="btn-gold">Learn About The Soulful Speaker</a>
-                <a href="/workshop" className="btn-outline-gold">Start with the Workshop</a>
+                <a href="/premierspeakerevent" className="btn-outline-gold">Start with the Event</a>
               </div>
             </div>
           </div>
@@ -480,12 +480,12 @@ export default function Home() {
                 <p className="font-body text-xs mb-4" style={{ color: "oklch(0.65 0.01 75)", fontFamily: "'DM Sans', sans-serif" }}>
                   Limited spots available. This is 1-on-1 coaching, so I work with a small number of clients at a time.
                 </p>
-                <a href="/workshop" className="btn-gold w-full block text-center">
-                  Start with the Workshop
+                <a href="/premierspeakerevent" className="btn-gold w-full block text-center">
+                  Start with the Event
                 </a>
               </div>
               <p className="font-body text-xs text-center" style={{ color: "oklch(0.55 0.01 75)", fontFamily: "'DM Sans', sans-serif" }}>
-                Or apply directly to work 1-on-1.
+                Or <a href="https://calendly.com/kyalcurrant/connectioncall" target="_blank" rel="noopener" className="underline hover:text-[#c9a84c] transition-colors">apply directly to work 1-on-1</a>.
               </p>
             </div>
           </div>
@@ -517,8 +517,8 @@ export default function Home() {
             {[
               {
                 step: "1",
-                title: "Start with the Workshop",
-                body: "Attend the monthly Pre-Speaker Workshop to craft your core message and overcome your fears. Get clarity on your speaking voice.",
+                title: "Start with the Event",
+                body: "Attend the monthly Premier Speaker Event™ to craft your core message and overcome your fears. Get clarity on your speaking voice.",
               },
               {
                 step: "2",
@@ -718,11 +718,11 @@ export default function Home() {
             {[
               {
                 level: "Gateway",
-                title: "Pre-Speaker Workshop",
+                title: "Premier Speaker Event™",
                 price: "Low-Cost",
                 desc: "Monthly in-person workshop. Craft your core message, overcome your fears, and get clarity on your first speaking opportunity.",
                 cta: "Learn More",
-                href: "/workshop",
+                href: "/premierspeakerevent",
                 highlight: false,
               },
               {
@@ -731,7 +731,7 @@ export default function Home() {
                 price: "12 Weeks",
                 desc: "1-on-1 coaching to find your voice, own your story, and land your first speaking gig. This is where the real work happens.",
                 cta: "Apply Now",
-                href: "/#offer",
+                href: "https://calendly.com/kyalcurrant/connectioncall",
                 highlight: true,
               },
               {
@@ -740,7 +740,7 @@ export default function Home() {
                 price: "By Application",
                 desc: "For speakers who've landed their gig and are ready to scale their impact. Available after completing The Soulful Speaker.",
                 cta: "Express Interest",
-                href: "mailto:kyal@kyalcurrant.com?subject=Speaking Impact Interest",
+                href: "mailto:kyalcurrantcoaching@gmail.com?subject=Speaking Impact Interest",
                 highlight: false,
               },
             ].map((tier) => (
@@ -810,16 +810,16 @@ export default function Home() {
               }}
             >
               Ready to find your voice?<br />
-              <em style={{ color: "oklch(0.72 0.12 75)" }}>Start with the workshop.</em>
+              <em style={{ color: "oklch(0.72 0.12 75)" }}>Start with the event.</em>
             </h2>
             <p
               className="font-body mb-8"
               style={{ color: "oklch(0.80 0.01 75)", lineHeight: "1.8", fontFamily: "'DM Sans', sans-serif" }}
             >
-              The Pre-Speaker Workshop is a low-cost entry point to discover your speaking voice. You'll craft your core message, overcome your fears, and get clarity on your first speaking opportunity.
+              The Premier Speaker Event™ is a low-cost entry point to discover your speaking voice. You'll craft your core message, overcome your fears, and get clarity on your first speaking opportunity.
             </p>
-            <a href="/workshop" className="btn-gold">
-              Learn About the Workshop
+            <a href="/premierspeakerevent" className="btn-gold">
+              Learn About the Event
             </a>
           </div>
         </div>
@@ -854,7 +854,7 @@ export default function Home() {
               <p className="font-body mb-8" style={{ color: "oklch(0.35 0.04 75)", lineHeight: "1.8", fontFamily: "'DM Sans', sans-serif" }}>
                 Whether it's a corporate leadership event, a wellness summit, or a personal development conference, Kyal's presence on your stage will be the talk of the room.
               </p>
-              <a href="mailto:kyal@kyalcurrant.com?subject=Speaking Enquiry" className="btn-gold">
+              <a href="mailto:kyalcurrantcoaching@gmail.com?subject=Speaking Enquiry" className="btn-gold">
                 Enquire About Speaking
               </a>
             </div>
@@ -898,11 +898,11 @@ export default function Home() {
               The Soulful Speaker is for the aspiring entrepreneur who knows their message matters but hasn't had the confidence or clarity to share it on stage. If that's you, let's talk.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <a href="mailto:kyal@kyalcurrant.com?subject=The Soulful Speaker Application" className="btn-gold">
+              <a href="mailto:kyalcurrantcoaching@gmail.com?subject=The Soulful Speaker Application" className="btn-gold">
                 Apply to Work 1-on-1
               </a>
-              <a href="/workshop" className="btn-outline-cream">
-                Start with the Workshop
+              <a href="/premierspeakerevent" className="btn-outline-cream">
+                Start with the Event
               </a>
             </div>
           </div>
@@ -929,10 +929,10 @@ export default function Home() {
             <div className="flex flex-wrap gap-6 justify-center">
               {[
                 { label: "The Soulful Speaker", href: "/#offer" },
-                { label: "Workshop", href: "/workshop" },
+                { label: "Premier Speaker Event™", href: "/premierspeakerevent" },
                 { label: "Podcast", href: "/podcast" },
                 { label: "Testimonials", href: "/testimonials" },
-                { label: "Contact", href: "mailto:kyal@kyalcurrant.com" },
+                { label: "Contact", href: "mailto:kyalcurrantcoaching@gmail.com" },
               ].map((link) => (
                 <a
                   key={link.label}
@@ -947,7 +947,7 @@ export default function Home() {
               ))}
             </div>
             <p className="font-body text-xs" style={{ color: "oklch(0.4 0.02 75)", fontFamily: "'DM Sans', sans-serif" }}>
-              © 2025 Kyal Neil Currant
+              © 2026 Kyal Neil Currant
             </p>
           </div>
         </div>

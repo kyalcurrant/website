@@ -287,10 +287,9 @@
 // Native testimonial players — swap the poster card for a <video> on demand.
 // Only one plays at a time. VIDEO_BASE is the public video host.
 (function () {
-  // Videos are hosted on Cloudflare Pages (uploaded at deploy time from
-  // videos-src/web, which is gitignored). Absolute URL so the player works
-  // from any host during the Railway -> Cloudflare migration.
-  var VIDEO_BASE = 'https://kyal-website.pages.dev/videos/web';
+  // Videos live in the repo at client/public/videos/web, so they ship with
+  // every build (wrangler or GitHub) — a same-origin relative path always resolves.
+  var VIDEO_BASE = '/videos/web';
   var current = null;
   document.querySelectorAll('.video[data-video]').forEach(function (card) {
     var btn = card.querySelector('.video__thumb');
